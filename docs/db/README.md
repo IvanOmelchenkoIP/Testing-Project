@@ -4,6 +4,6 @@ This part of documentation describes structures of different databases used in a
 
 ## Data Base Types:
 
-- [General Purpose Data Bases]
-- [Data Bases For Holding Courses]
-- [Data Bases For Holding Tests]
+- [General Purpose Data Bases](https://github.com/IvanOmelchenkoIP/Testing-Project/blob/db/docs/db/general/README.md)
+- [Data Bases For Holding Courses](https://github.com/IvanOmelchenkoIP/Testing-Project/blob/db/docs/db/courses/README.md)
+- [Data Bases For Holding Tests](https://github.com/IvanOmelchenkoIP/Testing-Project/blob/db/docs/db/tests/README.md)
