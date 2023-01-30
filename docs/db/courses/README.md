@@ -1,4 +1,4 @@
-# Data Bases For Holding Courses
+# Data Bases For Courses
 
 ## Courses
 
