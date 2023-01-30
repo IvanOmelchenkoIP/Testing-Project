@@ -15,7 +15,7 @@
 |-----------------|--------------|--------------------------|
 | id              | varchar(36)  | Primary Key              |
 | user_id         | varchar(36)  | Foreign Key ('Users'.id) |
-| key             | varchar(256) | Unique Key               |
+| key_value       | varchar(256) | Unique Key               |
 | creation_time   | time         |                          |
 | expiration_time | int          |						    |
-| used            | bool         |						    |
+| key_used        | bool         |						    |
