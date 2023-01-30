@@ -20,26 +20,29 @@
 | class_name | varchar(256) |                            |
 | course_id  | varchar(36)  | Foreign Key ('Courses'.id) |
 
-## Course Teachers
+## Course Participants
 
 | key           | type 		   | notes                      |
 |---------------|--------------|----------------------------|
 | id            | varchar(36)  | Primary Key 		        |
-| name  		| varchar(256) |             		        |
-| user_id  		| varchar(36)  | Foreign Key('Users'.id)  	|
+| full_name  	| varchar(256) |             		        |
+| user_id  		| varchar(36)  | Foreign Key ('Users'.id)  	|
 | course_id 	| varchar(36)  | Foreign Key ('Courses'.id) |
 | entry_code    | varchar(256) | Unique Key			     	|
 | code_used     | bool  	   | 					     	|
-| course_editor | bool 		   | 					     	|
+
+## Course Teachers
+
+| key            | type 	   | notes                      		    |
+|----------------|-------------|----------------------------------------|
+| id             | varchar(36) | Primary Key 		        		    |
+| participant_id | varchar(36) | Foreign Key ('Course Participants'.id) |
+| editor_granted | bool 	   | 					     				|
 
 ## Course Students
 
-| key           | type 		   | notes                      	   |
-|---------------|--------------|-----------------------------------|
-| id            | varchar(36)  | Primary Key 		        	   |
-| name  		| varchar(256) |             		        	   |
-| user_id  		| varchar(36)  | Foreign Key ('Users'.id)  		   |
-| course_id 	| varchar(36)  | Foreign Key ('Courses'.id)        |
-| class         | varchar(36)  | Foreign Key ('Course Classes'.id) |
-| entry_code    | varchar(256) | Unique Key			     		   |
-| code_used     | bool  	   | 					     		   |
+| key            | type 	   | notes                      	  		|
+|----------------|-------------|----------------------------------------|
+| id             | varchar(36) | Primary Key 		        	   		|
+| participant_id | varchar(36) | Foreign Key ('Course Participants'.id) |
+| course_id 	 | varchar(36) | Foreign Key ('Courses'.id)        	    |
