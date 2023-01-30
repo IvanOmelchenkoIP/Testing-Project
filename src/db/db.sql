@@ -114,7 +114,7 @@ CREATE TABLE `course_teachers` (
   `editor_rights` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `participant_id` (`participant_id`),
-  CONSTRAINT `course_teachers_ibfk_1` FOREIGN KEY (`participant_id`) REFERENCES `course_participants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `course_teachers_ibfk_1` FOREIGN KEY (`participant_id`) REFERENCES `course_participants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
