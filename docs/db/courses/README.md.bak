@@ -37,7 +37,7 @@
 |----------------|-------------|----------------------------------------|
 | id             | varchar(36) | Primary Key 		        		    |
 | participant_id | varchar(36) | Foreign Key ('Course Participants'.id) |
-| editor_rights  | bool 	   | 					     				|
+| editor_granted | bool 	   | 					     				|
 
 ## Course Students
 
