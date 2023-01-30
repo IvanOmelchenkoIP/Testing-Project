@@ -17,7 +17,7 @@ const postRequest = async (route, json) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(json),
-  }).then(req => console.log(req.body))
+  }).then(response => console.log(response.json()))
     .catch(console.error);
 };
 
@@ -25,7 +25,7 @@ const registerUser = async () => {
   const username = getFormContentsByName(RESIGSTRATION_FORMS.username);
   const email = getFormContentsByName(RESIGSTRATION_FORMS.email);
   const passwd = getFormContentsByName(RESIGSTRATION_FORMS.passwd);
-  await postRequest("http://localhost:8080/register?username="+username+"&email="+email+"&passwd="+passwd, {
+  await postRequest("http://localhost:8080/register", {
     username: username,
     email: email,
     passwd: passwd,
