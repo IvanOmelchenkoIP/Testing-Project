@@ -17,7 +17,7 @@ const postRequest = async (route, json) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(json),
-  })
+  }).then(req => console.log(req.body))
     .catch(console.error);
 };
 

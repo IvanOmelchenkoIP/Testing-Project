@@ -21,8 +21,9 @@ public class RegisterController {
 	}
 	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void registerNewUser(@RequestParam("username") String name, @RequestParam("email") String email, @RequestParam("passwd") String passwd) {
+	public Object registerNewUser(@RequestParam("username") String name, @RequestParam("email") String email, @RequestParam("passwd") String passwd) {
 		System.out.println(name + " " + email + " " + passwd);
+		return name;
 	}
 }
 
