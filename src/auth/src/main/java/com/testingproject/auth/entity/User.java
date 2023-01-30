@@ -1,5 +1,6 @@
 package com.testingproject.auth.entity;
 
+import org.hibernate.annotations.DialectOverride.GeneratedColumns;
 import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.Column;
@@ -12,9 +13,9 @@ import jakarta.persistence.Table;
 @Table(name = "users")
 public class User {
 	
-	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@Id 
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "id")
 	private String id;
 	
