@@ -1,5 +1,7 @@
 package com.testingproject.auth.service;
 
+import org.springframework.dao.DataIntegrityViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +15,7 @@ public class UserService {
 	@Autowired
 	private UserRepository users;
 	
-	public User registerUser(String username, String email, String passwd) throws Exception  {
+	public User registerUser(String username, String email, String passwd) throws DataIntegrityViolationException  {
 		/*if (emailExists(user.getEmail()) || usernameExists(user.getUsername())) {
 			throw new Exception("Email or Username Already Exists");
 		}*/

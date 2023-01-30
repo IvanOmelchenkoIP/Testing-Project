@@ -46,7 +46,7 @@ const registerUser = () => {
       userData,
       "http://localhost:8080/register"
     );
-    console.log(response);
+    response.then(res => console.log(res.json + res.body)).catch(err => console.log("Error occured" + err));
   } catch (err) {
     console.error(err);
   }

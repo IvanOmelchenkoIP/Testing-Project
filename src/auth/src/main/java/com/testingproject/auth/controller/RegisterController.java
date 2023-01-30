@@ -1,8 +1,10 @@
 package com.testingproject.auth.controller;
 
+import java.util.HashMap;
 import java.util.Map;
-
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,9 +41,11 @@ public class RegisterController {
 			user = userService.registerUser(username, email, passwd);
 			System.out.println(user.toString());
 			return ResponseEntity.ok(user);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return ResponseEntity.badRequest().build();
+		} catch (DataIntegrityViolationException exception) {
+			System.out.println(exception);
+			Map<String, String> m = new HashMap<String, String>();
+			m.put("message", "Already exists");
+			return new ResponseEntity<Object>(m, HttpStatus.BAD_REQUEST);
 		}
 	}
 }
