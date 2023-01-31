@@ -33,9 +33,9 @@ public class RegisterController {
 	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> registerNewUser(@RequestBody Map<String, String> userReq) {
-		String username = userReq.get("username");
-		String email = userReq.get("email");
-		String passwd = userReq.get("passwd");
+		String username = userReq.get("username") == "" ? null : userReq.get("username");
+		String email = userReq.get("email") == "" ? null : userReq.get("email");
+		String passwd = userReq.get("passwd") == "" ? null :userReq.get("passwd");
 		User user;
 		try {
 			user = userService.registerUser(username, email, passwd);
@@ -43,9 +43,14 @@ public class RegisterController {
 			return ResponseEntity.ok(user);
 		} catch (DataIntegrityViolationException exception) {
 			System.out.println(exception);
-			Map<String, String> m = new HashMap<String, String>();
-			m.put("message", "Already exists");
-			return new ResponseEntity<Object>(m, HttpStatus.BAD_REQUEST);
+			Map<String, String> msg = new HashMap<String, String>();
+			msg.put("message", "Already exists");
+			return new ResponseEntity<Object>(msg, HttpStatus.BAD_REQUEST);
+		} catch (IllegalArgumentException exception) {
+			System.out.println(exception);
+			Map<String, String> msg = new HashMap<String, String>();
+			msg.put("message", "Cannot be empty");
+			return new ResponseEntity<Object>(msg, HttpStatus.BAD_REQUEST);
 		}
 	}
 }

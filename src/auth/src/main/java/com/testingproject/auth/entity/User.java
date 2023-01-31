@@ -1,6 +1,5 @@
 package com.testingproject.auth.entity;
 
-import org.hibernate.annotations.DialectOverride.GeneratedColumns;
 import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.Column;
@@ -39,6 +38,7 @@ public class User {
 		this.email = email;
 		this.passwd = passwd;
 	}
+	
 	
 	public String getId() {
 		return id;

@@ -15,19 +15,8 @@ public class UserService {
 	@Autowired
 	private UserRepository users;
 	
-	public User registerUser(String username, String email, String passwd) throws DataIntegrityViolationException  {
-		/*if (emailExists(user.getEmail()) || usernameExists(user.getUsername())) {
-			throw new Exception("Email or Username Already Exists");
-		}*/
+	public User registerUser(String username, String email, String passwd) throws DataIntegrityViolationException, IllegalArgumentException  {
 		User user = new User(username, email, new PasswordEncoder().encode(passwd));
 		return users.saveAndFlush(user);
 	}
-	
-	/*private boolean emailExists(String email) {
-		return users.getByEmail(email) == null ? false : true;
-	}
-	
-	private boolean usernameExists(String username) {
-		return users.getByUsername(username) == null ? false : true;
-	}*/
 }
