@@ -7,14 +7,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+/*@Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration {
 
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().requestMatchers("/user").authenticated()
-				.requestMatchers("/", "/login", "/register").permitAll();
+		http.securityMatcher("/user");
+		.authorizeHttpRequests().requestMatchers("/user").authenticated()
+				.requestMatchers(HttpMethod.GET, "/", "/login", "/register").permitAll()
+				.requestMatchers(HttpMethod.POST, "/", "/login", "/register").permitAll();
 		return http.build();
 	}
-}
+}*/

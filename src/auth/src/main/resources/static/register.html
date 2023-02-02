@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <script type='module' src="./js/listeners/register.js"></script>
+
     <form>
         <div class="register-form">
             <div class="input-form">
@@ -22,14 +24,11 @@
                 <input type="text" placeholder="Input Your Password" name="passwd" required>
             </div>
 
-            <button type="submit" onclick="registerUser()">Sign Up</button>
-            <button type="button" onclick="registerUser()">Check</button>
+            <button type="submit" id="submitRegister">Sign Up</button>
+            <button type="button" id="register-user">Check</button>
             <a href="./login">Already Have An Account? Log In</a>
         </div>
     </form>
 </body>
-
-<script src="./js/password.js"></script>
-<script src="./js/register.js"></script>
 
 </html>

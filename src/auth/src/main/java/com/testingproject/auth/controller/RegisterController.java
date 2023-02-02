@@ -33,9 +33,10 @@ public class RegisterController {
 	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> registerNewUser(@RequestBody Map<String, String> userReq) {
-		String username = userReq.get("username") == "" ? null : userReq.get("username");
-		String email = userReq.get("email") == "" ? null : userReq.get("email");
-		String passwd = userReq.get("passwd") == "" ? null :userReq.get("passwd");
+		String username = userReq.get("username");
+		String email = userReq.get("email");
+		String passwd = userReq.get("passwd");
+		System.out.println("preview: " + username + ", " + email + ", " + passwd);
 		User user;
 		try {
 			user = userService.registerUser(username, email, passwd);
