@@ -1,7 +1,5 @@
 package com.testingproject.auth.controller;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,45 +13,37 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.testingproject.auth.entity.User;
+import com.testingproject.auth.httpbody.request.RegisterRequest;
+import com.testingproject.auth.httpbody.response.HttpResponseBody;
 import com.testingproject.auth.service.UserService;
 
 @RequestMapping("/register")
 @RestController
 public class RegisterController {
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@GetMapping
 	public ModelAndView showRegisterPage() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("register.html");
 		return mav;
 	}
-	
+
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> registerNewUser(@RequestBody Map<String, String> userReq) {
-		String username = userReq.get("username");
-		String email = userReq.get("email");
-		String passwd = userReq.get("passwd");
-		System.out.println("preview: " + username + ", " + email + ", " + passwd);
+	public ResponseEntity<?> registerNewUser(@RequestBody RegisterRequest request) {
 		User user;
 		try {
-			user = userService.registerUser(username, email, passwd);
+			user = userService.registerUser(request.getUsername(), request.getEmail(), request.getPasswd());
 			System.out.println(user.toString());
-			return ResponseEntity.ok(user);
+			return ResponseEntity.ok(new HttpResponseBody(user.toString()));
 		} catch (DataIntegrityViolationException exception) {
 			System.out.println(exception);
-			Map<String, String> msg = new HashMap<String, String>();
-			msg.put("message", "Already exists");
-			return new ResponseEntity<Object>(msg, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
 		} catch (IllegalArgumentException exception) {
 			System.out.println(exception);
-			Map<String, String> msg = new HashMap<String, String>();
-			msg.put("message", "Cannot be empty");
-			return new ResponseEntity<Object>(msg, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("illegal-field"), HttpStatus.BAD_REQUEST);
 		}
 	}
 }
-
-
