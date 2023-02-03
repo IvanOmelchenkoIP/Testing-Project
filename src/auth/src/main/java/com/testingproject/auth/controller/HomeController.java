@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	@GetMapping
-	public ModelAndView home() {
+	public ModelAndView showHomePage() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("home.html");
 		return mav;

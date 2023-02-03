@@ -25,7 +25,7 @@ public class RegisterController {
 	UserService userService;
 	
 	@GetMapping
-	public ModelAndView registerPage() {
+	public ModelAndView showRegisterPage() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("register.html");
 		return mav;
