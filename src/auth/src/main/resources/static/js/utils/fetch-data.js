@@ -7,9 +7,7 @@ const HEADERS = {
 };
 
 const fetchData = async (method, route, json = {}, headers = HEADERS.json) => {
-  console.log(json);
   const fullRoute = BASE_ROUTE + route;
-  console.log(fullRoute);
   try {
     const response = await fetch(fullRoute, {
       method: method,
