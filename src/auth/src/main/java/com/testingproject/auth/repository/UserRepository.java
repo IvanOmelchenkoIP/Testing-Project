@@ -12,9 +12,6 @@ import com.testingproject.auth.entity.User;
 @Component
 public interface UserRepository extends JpaRepository<User, String>{
 
-	/*@Query("SELECT * FROM users WHERE users.username = :username")
-	public User getByUsername(@Param("username") String username);
 	
-	@Query("SELECT * FROM users WHERE users.email = :email")
-	public User getByEmail(@Param("username") String email);*/
+	public User findByUsername(String username);
 }
