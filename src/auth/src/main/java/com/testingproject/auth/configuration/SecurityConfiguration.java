@@ -3,6 +3,7 @@ package com.testingproject.auth.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -22,19 +23,28 @@ public class SecurityConfiguration {
 
 	@Autowired
 	private JwtTokenFilter jwtTokenFilter;
-	
+
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable();
+		return http.cors().and().csrf().disable().authorizeHttpRequests()
+				.requestMatchers("/user", "/user**", "/user/**").authenticated()
+				.requestMatchers("/**", "/register", "/register**", "/login", "/login**").permitAll().and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class).build();
 
-		http = http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and();
+		/*
+		 * http = http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.
+		 * STATELESS).and();
+		 * 
+		 * http.authorizeHttpRequests((authorize) ->
+		 * authorize.requestMatchers("/user**, /user/**").authenticated()
+		 * .requestMatchers("/**", "/login**", "/register**").permitAll());
+		 * 
+		 * http.addFilterBefore(jwtTokenFilter,
+		 * UsernamePasswordAuthenticationFilter.class);
+		 */
 
-		http.authorizeHttpRequests((authorize) -> authorize.requestMatchers("/user**, /user/**").fullyAuthenticated()
-				.requestMatchers("/**", "/login**", "/register**").permitAll());
-
-		http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
-		
-		return http.build();
+		// return http.build();
 	}
 
 	@Bean
