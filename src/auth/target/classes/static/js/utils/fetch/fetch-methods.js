@@ -1,11 +1,22 @@
 import { HEADERS, METHODS } from "./fetch-const-data.js";
+import fetchData from "../fetch-data.js";
 
-const post = async (route, json = {}, headers = HEADERS.json) => {
-  return await fetch(METHODS.post, route, json, headers);
+const post = (route, json = {}, headers = HEADERS.json) => {
+  try {
+    const response = fetchData(METHODS.post, route, json, headers);
+    return response
+  } catch (err) {
+    throw err;
+  }
 };
 
-const get = async (route, json = {}, headers = HEADERS.json) => {
-  return await fetch(METHODS.get, route, json, headers);
+const get = (route, json = {}, headers = HEADERS.json) => {
+  try {
+    const response = fetchData(METHODS.get, route, json, headers);
+    return response;
+  } catch (err) {
+    throw err;
+  }
 };
 
 export { post, get };

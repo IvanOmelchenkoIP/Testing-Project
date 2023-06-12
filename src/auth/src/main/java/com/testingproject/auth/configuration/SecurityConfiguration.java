@@ -30,29 +30,14 @@ public class SecurityConfiguration {
 	public HttpFirewall defaultHttpFirewall() {
 		return new DefaultHttpFirewall();
 	}
-	
+
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		return http.cors().and().csrf().disable().authorizeHttpRequests()
-				.requestMatchers("/user", "/user**", "/user/**").authenticated()
-				.requestMatchers("/**", "/register", "/register**", "register/**", "register?**", "/login", "/login**",
-						"/login/**", "login?**")
-				.permitAll().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.requestMatchers("/user**", "/user/**").authenticated()
+				.requestMatchers("/**", "/register**", "register/**", "/login**", "/login/**").permitAll().and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class).build();
-
-		/*
-		 * http = http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.
-		 * STATELESS).and();
-		 * 
-		 * http.authorizeHttpRequests((authorize) ->
-		 * authorize.requestMatchers("/user**, /user/**").authenticated()
-		 * .requestMatchers("/**", "/login**", "/register**").permitAll());
-		 * 
-		 * http.addFilterBefore(jwtTokenFilter,
-		 * UsernamePasswordAuthenticationFilter.class);
-		 */
-
-		// return http.build();
 	}
 
 	@Bean

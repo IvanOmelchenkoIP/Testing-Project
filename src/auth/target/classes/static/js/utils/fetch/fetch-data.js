@@ -11,6 +11,8 @@ const fetchData = async (method, route, json = {}, headers = HEADERS.json) => {
       headers: headers,
       body: JSON.stringify(json),
     });
+    console.log("res - raw - " + response);
+    console.log("res - " + response.json());
     return response.json();
   } catch (err) {
     throw err;
