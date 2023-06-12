@@ -22,7 +22,7 @@ class RegisterService extends AbstractAuthService {
       passwd
     );
     const response = post(this._route, userData);
-    console.log(response/*.message*/);
+    console.log("Res: " + response/*.message*/);
     return response;
   }
 }

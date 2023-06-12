@@ -23,12 +23,16 @@ const fetchData = async (method, route, json = {}, headers = HEADERS.json) => {
   } catch (err) {
     throw err;
   }*/
-  fetch(fullRoute, {
+  const fetchResponse = fetch(fullRoute, {
     method: method,
     headers: headers,
     body: JSON.stringify(json),
-  }).then(response => response.json()).then(data => console.log(data.message));
-  return null;
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data.message;
+    });
+  return await fetchResponse;
 };
 
 export default fetchData;

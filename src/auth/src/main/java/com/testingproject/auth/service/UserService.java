@@ -19,4 +19,8 @@ public class UserService {
 		User user = new User(username, email, new PasswordEncoder().encode(passwd));
 		return users.saveAndFlush(user);
 	}
+	
+	public User findByUsername(String username) {
+		return users.findByUsername(username);
+	}
 }

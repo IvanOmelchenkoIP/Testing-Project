@@ -10,9 +10,9 @@ const post = (route, json = {}, headers = HEADERS.json) => {
   }
 };
 
-const get = (route, json = {}, headers = HEADERS.json) => {
+const get = async (route, json = {}, headers = HEADERS.json) => {
   try {
-    const response = fetchData(METHODS.get, route, json, headers);
+    const response = await fetchData(METHODS.get, route, json, headers);
     return response;
   } catch (err) {
     throw err;

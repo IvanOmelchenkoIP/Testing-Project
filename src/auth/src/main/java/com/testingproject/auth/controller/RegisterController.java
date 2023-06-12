@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.testingproject.auth.encryption.PasswordEncoder;
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.httpbody.request.RegisterRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
@@ -28,6 +29,9 @@ public class RegisterController {
 	@Autowired
 	JwtUtil jwtUtil;
 
+	@Autowired
+	PasswordEncoder encoder;
+	
 	@GetMapping
 	public ModelAndView showRegisterPage() {
 		ModelAndView mav = new ModelAndView();
@@ -39,7 +43,7 @@ public class RegisterController {
 	public ResponseEntity<?> registerNewUser(@RequestBody RegisterRequest request) {
 		User user;
 		try {
-			user = userService.registerUser(request.getUsername(), request.getEmail(), request.getPasswd());
+			user = userService.registerUser(request.getUsername(), request.getEmail(), encoder.encode(request.getPasswd()));
 			System.out.println(user.toString());
 			return ResponseEntity.ok(new HttpResponseBody(jwtUtil.generate(user)));
 		} catch (DataIntegrityViolationException exception) {
