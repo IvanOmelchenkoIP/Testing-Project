@@ -10,6 +10,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.firewall.DefaultHttpFirewall;
+import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -25,11 +27,17 @@ public class SecurityConfiguration {
 	private JwtTokenFilter jwtTokenFilter;
 
 	@Bean
+	public HttpFirewall defaultHttpFirewall() {
+		return new DefaultHttpFirewall();
+	}
+	
+	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		return http.cors().and().csrf().disable().authorizeHttpRequests()
 				.requestMatchers("/user", "/user**", "/user/**").authenticated()
-				.requestMatchers("/**", "/register", "/register**", "/login", "/login**").permitAll().and()
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.requestMatchers("/**", "/register", "/register**", "register/**", "register?**", "/login", "/login**",
+						"/login/**", "login?**")
+				.permitAll().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class).build();
 
 		/*
