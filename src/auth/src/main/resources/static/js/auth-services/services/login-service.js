@@ -2,7 +2,7 @@
 
 import AbstractAuthService from "./abstract-auth-service.js";
 import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
-import fetchData from "../../utils/fetch-data.js";
+import fetchData from "../../fetch/fetch.js";
 
 class LoginService extends AbstractAuthService {
   constructor(route) {

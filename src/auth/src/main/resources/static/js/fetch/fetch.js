@@ -21,10 +21,11 @@ const fetchData = async (method, route, json = {}, headers = HEADERS.json) => {
         console.log(message);
         return message;
       } else {
+		console.log("returned error");
         return false;
       }
     })
-    .catch((err) => console.log(1));
+    .catch((err) => console.log(err));
   return await fetchResponse;
 };
 

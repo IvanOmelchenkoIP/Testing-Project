@@ -2,8 +2,7 @@
 
 import AbstractAuthService from "./abstract-auth-service.js";
 import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
-import { post } from "../../utils/fetch/fetch-methods.js";
-//import fetchData from "../../utils/fetch/fetch-data.js";
+import { post } from "../../fetch/fetch-methods.js";
 
 class RegisterService extends AbstractAuthService {
   constructor(route) {

@@ -2,7 +2,7 @@
 
 import AbstractAuthService from "./abstract-auth-service.js";
 import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
-import { post } from "../../utils/fetch/fetch-methods.js";
+import fetchData from "../../fetch/fetch.js";
 
 class LoginService extends AbstractAuthService {
   constructor(route) {
@@ -15,7 +15,7 @@ class LoginService extends AbstractAuthService {
 
   execute(username, passwd) {
     const userData = parseDomData(DOM_DATA_GETTERS.name, username, passwd);
-    const response = post(this._route, userData);
+    const response = fetchData("POST", this._route, userData);
     return response;
   }
 }

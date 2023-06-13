@@ -5,6 +5,6 @@ import { DOM_DATA_GETTERS } from "../utils/dom-parser.js";
 
 const names = ["username, passwd"];
 
-DOM_DATA_GETTERS.id("login-user").addEventListener("click", () => {
+DOM_DATA_GETTERS.id("logout-user").addEventListener("click", () => {
   userService.login(...names);
 });
