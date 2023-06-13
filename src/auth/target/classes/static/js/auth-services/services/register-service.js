@@ -21,9 +21,7 @@ class RegisterService extends AbstractAuthService {
       email,
       passwd
     );
-    const response = post(this._route, userData);
-    console.log("Res: " + response/*.message*/);
-    return response;
+    post(this._route, userData);
   }
 }
 

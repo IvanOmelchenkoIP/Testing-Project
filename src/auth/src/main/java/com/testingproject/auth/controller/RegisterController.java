@@ -44,13 +44,10 @@ public class RegisterController {
 		User user;
 		try {
 			user = userService.registerUser(request.getUsername(), request.getEmail(), encoder.encode(request.getPasswd()));
-			System.out.println(user.toString());
 			return ResponseEntity.ok(new HttpResponseBody(jwtUtil.generate(user)));
 		} catch (DataIntegrityViolationException exception) {
-			System.out.println(exception);
 			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
 		} catch (IllegalArgumentException exception) {
-			System.out.println(exception);
 			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("illegal-field"), HttpStatus.BAD_REQUEST);
 		}
 	}

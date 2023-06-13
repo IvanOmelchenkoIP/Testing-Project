@@ -18,6 +18,7 @@ const fetchData = async (method, route, json = {}, headers = HEADERS.json) => {
     .then(({ ok, json }) => {
       const message = json.message;
       if (ok) {
+        console.log(message);
         return message;
       } else {
         return false;
