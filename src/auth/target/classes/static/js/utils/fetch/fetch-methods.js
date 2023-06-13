@@ -1,10 +1,12 @@
-import { HEADERS, METHODS } from "./fetch-const-data.js";
-import fetchData from "../fetch-data.js";
+"use strict";
+
+import { HEADERS, METHODS } from "./fetch-consts.js";
+import fetchData from "./fetch.js";
 
 const post = (route, json = {}, headers = HEADERS.json) => {
   try {
     const response = fetchData(METHODS.post, route, json, headers);
-    return response
+    return response;
   } catch (err) {
     throw err;
   }
