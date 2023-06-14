@@ -18,8 +18,9 @@ const get = ({
     .then((response) => {
     return response.text();
   })
-  .then((html) => {
-    document.body.innerHTML = html     
+  .then((pageText) => {
+    document.body.innerHTML = pageText;
+    html.location.href = fullRoute;     
   });
 };
 
