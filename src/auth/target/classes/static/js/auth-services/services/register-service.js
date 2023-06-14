@@ -2,7 +2,8 @@
 
 import AbstractAuthService from "./abstract-auth-service.js";
 import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
-import { post } from "../../fetch/fetch-methods.js";
+import { post } from "../../fetch/methods/fetch-methods.js";
+import { successCallback, errorCallback } from "../../fetch/callbacks/auth-callbacks.js";
 
 class RegisterService extends AbstractAuthService {
   constructor(route) {
@@ -20,7 +21,7 @@ class RegisterService extends AbstractAuthService {
       email,
       passwd
     );
-    post(this._route, userData);
+    post({ route: this._route, json: userData, successCallback: successCallback, errorCallback: errorCallback });
   }
 }
 

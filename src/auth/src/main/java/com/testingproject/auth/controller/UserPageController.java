@@ -11,8 +11,9 @@ public class UserPageController {
 	
 	@GetMapping
 	public ModelAndView showUserPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("userpage.html");
-		return mav;
+		System.out.println("here");
+		/*ModelAndView mav = new ModelAndView();
+		mav.setViewName("userpage.html");*/
+		return new ModelAndView("redirect:/userpage.html");
 	}
 }

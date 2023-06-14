@@ -33,7 +33,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-
+		System.out.println(header);
 		if (header == null || !header.startsWith(JWT_HEADER)) {
 			filterChain.doFilter(request, response);
 			return;

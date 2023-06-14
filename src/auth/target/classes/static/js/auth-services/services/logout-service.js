@@ -2,7 +2,7 @@
 
 import AbstractAuthService from "./abstract-auth-service.js";
 import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
-import { post } from "../../fetch/fetch-methods.js";
+import { post } from "../../fetch/methods/fetch-methods.js";
 
 class LogoutService extends AbstractAuthService {
   constructor(route) {
@@ -19,8 +19,7 @@ class LogoutService extends AbstractAuthService {
       username,
       passwd
     );
-    const response = post(this._route, userData);
-    return response;
+    post({ route: this._route });
   }
 }
 
