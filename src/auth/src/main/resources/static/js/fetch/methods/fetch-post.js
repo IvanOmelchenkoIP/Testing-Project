@@ -26,15 +26,12 @@ const post = ({
     .then(({ ok, json }) => {
       const message = json.message;
       if (ok) {
-		console.log("ok - " + message);
 		if (successCallback) successCallback(message);
       } else {
-		console.log("no - " + message);
 		if (errorCallback) errorCallback(FETCH_ERRORS[message]);
       }
     })
     .catch((err) => {
-	  console.log("err - " + err);
 	  if (errorCallback) errorCallback(FETCH_ERRORS["response-error"]);
 	});
 };
