@@ -1,7 +1,6 @@
 "use strict";
 
 import AbstractAuthService from "./abstract-auth-service.js";
-import { DOM_DATA_GETTERS, parseDomData } from "../../utils/dom-parser.js";
 import { post } from "../../fetch/methods/fetch-methods.js";
 
 class LogoutService extends AbstractAuthService {
@@ -13,12 +12,7 @@ class LogoutService extends AbstractAuthService {
     new LogoutService(route);
   }
 
-  execute(username, passwd) {
-	const userData = parseDomData(
-      DOM_DATA_GETTERS.name,
-      username,
-      passwd
-    );
+  execute(...params) {
     post({ route: this._route });
   }
 }

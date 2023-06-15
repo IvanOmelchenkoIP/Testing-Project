@@ -10,7 +10,7 @@ const successCallback = (token) => {
 
 const errorCallback = (error) => {
   const id = "error-field";
-  parseDomData(DOM_DATA_GETTERS.id, id)[id].innerText = error;
+  DOM_DATA_GETTERS.id(id).innerText = error;
 }
 
 export { successCallback, errorCallback };

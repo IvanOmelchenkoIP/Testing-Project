@@ -32,7 +32,8 @@ const post = ({
       }
     })
     .catch((err) => {
-	  if (errorCallback) errorCallback(FETCH_ERRORS["response-error"]);
+	  const messageId = "response-error";
+	  if (errorCallback) errorCallback(FETCH_ERRORS[messageId]);
 	});
 };
 
