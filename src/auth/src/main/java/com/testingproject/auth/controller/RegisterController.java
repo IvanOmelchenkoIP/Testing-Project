@@ -41,7 +41,6 @@ public class RegisterController {
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> registerNewUser(@RequestBody RegisterRequest request) {
-		System.out.println(request.getPasswd());
 		User user;
 		try {
 			user = userService.registerUser(request.getUsername(), request.getEmail(), encoder.encode(request.getPasswd()));
