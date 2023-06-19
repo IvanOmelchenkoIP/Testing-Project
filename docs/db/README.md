@@ -2,11 +2,11 @@
 
 This part of documentation gives some information about different databases used in app development.
 
-## Data Base
+## Used Data Base
 
 The program is planed to use PostgreSQL database.
 
-## Data Base Types:
+## Data Base Types
 
 - General Data Bases
 
