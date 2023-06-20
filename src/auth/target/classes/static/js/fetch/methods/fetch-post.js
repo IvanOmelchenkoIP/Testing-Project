@@ -3,17 +3,15 @@
 import { HEADERS, METHODS, BASE_ROUTE, FETCH_ERRORS } from "../fetch-consts.js";
 import { createHeaders } from "../headers.js";
 
-const post = ({
-  route,
-  json = {},
-  headers = null,
-  successCallback = null,
-  errorCallback = null,
-}) => {
+const post = ({  
+	route, 
+	json = {}, 
+	headers = null, 
+	successCallback = null, 
+	errorCallback = null
+  }) => {
   const fullRoute = BASE_ROUTE + route;
-  if (headers == null) {
-    headers = createHeaders(HEADERS.acceptJson, HEADERS.contentTypeJson);
-  }
+  if (headers == null) headers = createHeaders(HEADERS.acceptJson, HEADERS.contentTypeJson);
   fetch(fullRoute, {
     method: METHODS.post,
     headers: headers,
@@ -28,15 +26,15 @@ const post = ({
     .then(({ ok, json }) => {
       const message = json.message;
       if (ok) {
-        if (successCallback) successCallback(message);
+		if (successCallback) successCallback(message);
       } else {
-        if (errorCallback) errorCallback(FETCH_ERRORS[message]);
+		if (errorCallback) errorCallback(FETCH_ERRORS[message]);
       }
     })
     .catch((err) => {
-      const messageId = "response-error";
-      if (errorCallback) errorCallback(FETCH_ERRORS[messageId]);
-    });
+	  const messageId = "response-error";
+	  if (errorCallback) errorCallback(FETCH_ERRORS[messageId]);
+	});
 };
 
 export default post;
