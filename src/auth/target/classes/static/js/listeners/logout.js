@@ -6,3 +6,5 @@ import { DOM_DATA_GETTERS } from "../utils/dom-parser.js";
 DOM_DATA_GETTERS.id("logout-user").addEventListener("click", () => {
   userService.logout({});
 });
+
+
