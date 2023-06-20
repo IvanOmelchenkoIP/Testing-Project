@@ -18,7 +18,11 @@ public class PasswordResetTokenService {
 		return passwordResetTokens.saveAndFlush(passwordResetToken);
 	}
 	
-	public PasswordResetToken findByUserId(String userId) {
-		return passwordResetTokens.findByUserId(userId);
+	public PasswordResetToken findByUser(User user) {
+		return passwordResetTokens.findByUser(user);
+	}
+	
+	public void deleteByUser(User user) {
+		passwordResetTokens.deleteByUser(user);
 	}
 }
