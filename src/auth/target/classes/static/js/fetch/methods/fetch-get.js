@@ -16,12 +16,12 @@ const get = ({
     headers: headers,
   })
     .then((response) => {
-    return response.text();
-  })
-  .then((pageText) => {
-	window.history.pushState(null, null, fullRoute);   
-    document.body.innerHTML = pageText;
-  });
+      return response.text();
+    })
+    .then((pageText) => {
+      window.history.pushState(null, null, fullRoute);
+      document.body.innerHTML = pageText;
+    });
 };
 
 export default get;
