@@ -15,12 +15,12 @@ import com.testingproject.auth.entity.data.Test;
 @Component
 public interface CourseTestRepository extends JpaRepository<CourseTest, String> {
 
-	public List<CourseTest> findByTest(Test test);
-	
 	public List<CourseTest> findByCourse(Course course);
 	
-	public CourseTest findByTestAndCourse(Test test, Course course);
+	public List<CourseTest> findByTest(Test test);
+		
+	public CourseTest findByCourseAndTest(Course course, Test test);
 	
 	@Modifying
-	public void deleteByTestAndCourse(Test test, Course course);
+	public void deleteByCourseAndTest(Course course, Test test);
 }

@@ -11,12 +11,12 @@ import com.testingproject.auth.entity.data.TestEditor;
 
 public interface TestEditorRepository extends JpaRepository<TestEditor, String> {
 
-	public List<TestEditor> findByTest(Test test);
-	
 	public List<TestEditor> findByUser(User user);
 	
-	public TestEditor findByTestAndUser(Test test, User user);
+	public List<TestEditor> findByTest(Test test);
+		
+	public TestEditor findByUserAndTest(User user, Test test);
 	
 	@Modifying
-	public void deleteByTestAndUser(Test test, User user);
+	public void deleteByUserAndTest(User user, Test test);
 }

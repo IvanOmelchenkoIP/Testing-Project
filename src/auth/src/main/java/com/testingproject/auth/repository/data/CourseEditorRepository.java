@@ -15,12 +15,12 @@ import com.testingproject.auth.entity.data.CourseEditor;
 @Component
 public interface CourseEditorRepository extends JpaRepository<CourseEditor, String> {
 
-	public List<CourseEditor> findByCourse(Course course);
-	
 	public List<CourseEditor> findByUser(User user);
 	
-	public CourseEditor findByCourseAndUser(Course course, User user);
+	public List<CourseEditor> findByCourse(Course course);
+		
+	public CourseEditor findByUserAndCourse(User user, Course course);
 	
 	@Modifying
-	public void deleteByCourseAndUser(Course course, User user);
+	public void deleteByUserAndCourse(User user, Course course);
 }

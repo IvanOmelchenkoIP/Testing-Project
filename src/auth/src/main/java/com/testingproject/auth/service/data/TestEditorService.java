@@ -20,20 +20,20 @@ public class TestEditorService {
 		TestEditor testEditor = new TestEditor(user, test);
 		return testEditors.saveAndFlush(testEditor);
 	}
+	
+	public List<TestEditor> findByUser(User user) {
+		return testEditors.findByUser(user);
+	}
 
 	public List<TestEditor> findByTest(Test test) {
 		return testEditors.findByTest(test);
 	}
 	
-	public List<TestEditor> findByUser(User user) {
-		return testEditors.findByUser(user);
+	public TestEditor findByUserAndTest(User user, Test test) { 
+		return testEditors.findByUserAndTest(user, test); 
 	}
 	
-	public TestEditor findByTestAndUser(Test test, User user) { 
-		return testEditors.findByTestAndUser(test, user); 
-	}
-	
-	public void deleteByTestAndUser(Test test, User user) {
-		testEditors.deleteByTestAndUser(test, user);
+	public void deleteByUserAndTest(User user, Test test) {
+		testEditors.deleteByUserAndTest(user, test);
 	}
 }

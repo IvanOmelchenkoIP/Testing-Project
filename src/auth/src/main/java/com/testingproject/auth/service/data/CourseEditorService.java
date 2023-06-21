@@ -19,19 +19,19 @@ public class CourseEditorService {
 		return courseEditors.saveAndFlush(courseEditor);
 	}
 
+	public List<CourseEditor> findByUser(User user) {
+		return courseEditors.findByUser(user);
+	}
+	
 	public List<CourseEditor> findByCourse(Course course) {
 		return courseEditors.findByCourse(course);
 	}
 
-	public List<CourseEditor> findByUser(User user) {
-		return courseEditors.findByUser(user);
+	public CourseEditor findByUserAndCourse(User user, Course course) {
+		return courseEditors.findByUserAndCourse(user, course);
 	}
 
-	public CourseEditor findByCourseAndUser(Course course, User user) {
-		return courseEditors.findByCourseAndUser(course, user);
-	}
-
-	public void deleteByCourseAndUser(Course course, User user) {
-		courseEditors.deleteByCourseAndUser(course, user);
+	public void deleteByCourseAndUser(User user, Course course) {
+		courseEditors.deleteByUserAndCourse(user, course);
 	}
 }
