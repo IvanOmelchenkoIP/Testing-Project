@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.testingproject.auth.entity.data.Course;
+import com.testingproject.auth.entity.data.CourseEditor;
 import com.testingproject.auth.entity.data.Test;
 import com.testingproject.auth.entity.data.TestEditor;
 
@@ -111,5 +113,35 @@ public class User {
 	
 	public void addTestEditor(TestEditor testEditor) {
 		testEditors.add(testEditor);
+	}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Course> courses;
+	
+	public Collection<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Collection<Course> courses) {
+		this.courses = courses;
+	}
+	
+	public void addCourse(Course course) {
+		courses.add(course);
+	}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<CourseEditor> courseEditors;
+	
+	public Collection<CourseEditor> setCourseEditors() {
+		return courseEditors;
+	}
+
+	public void setCourseEditors(Collection<CourseEditor> courseEditors) {
+		this.courseEditors = courseEditors;
+	}
+	
+	public void addCourseEditor(CourseEditor courseEditor) {
+		courseEditors.add(courseEditor);
 	}
 } 

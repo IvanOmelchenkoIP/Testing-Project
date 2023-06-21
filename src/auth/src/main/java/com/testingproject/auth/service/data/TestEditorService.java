@@ -3,7 +3,6 @@ package com.testingproject.auth.service.data;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Component;
 
 import com.testingproject.auth.entity.User;
@@ -34,7 +33,6 @@ public class TestEditorService {
 		return testEditors.findByTestAndUser(test, user); 
 	}
 	
-	@Modifying
 	public void deleteByTestAndUser(Test test, User user) {
 		testEditors.deleteByTestAndUser(test, user);
 	}
