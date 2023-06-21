@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.testingproject.auth.entity.data.Test;
+import com.testingproject.auth.entity.data.TestEditor;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -85,7 +86,6 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private Collection<Test> tests;
 	
-	
 	public Collection<Test> getTests() {
 		return tests;
 	}
@@ -97,4 +97,19 @@ public class User {
 	public void addTest(Test test) {
 		tests.add(test);
 	}
-}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<TestEditor> testEditors;
+	
+	public Collection<TestEditor> setTestEditors() {
+		return testEditors;
+	}
+
+	public void setTestEditors(Collection<TestEditor> testEditors) {
+		this.testEditors = testEditors;
+	}
+	
+	public void addTestEditor(TestEditor testEditor) {
+		testEditors.add(testEditor);
+	}
+} 

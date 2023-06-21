@@ -7,19 +7,17 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.testingproject.auth.entity.User;
+import com.testingproject.auth.entity.data.Question;
 import com.testingproject.auth.entity.data.Test;
 
 @Repository
 @Component
-public interface TestRepository extends JpaRepository<Test, String> {
+public interface QuestionRepository extends JpaRepository<Question, String> {
+
+	public List<Question> findByTest(Test test);
 	
-	public List<Test> findByName(String name);
-	
-	public List<Test> findByUser(User user);
-	
-	public Test findByNameAndUser(String name, User user);
+	public Question findByContentAndTest(String content, Test test);
 	
 	@Modifying
-	public void deleteByNameAndUser(String name, User user);
+	public void deleteByContentAndTest(String content, Test test);
 }

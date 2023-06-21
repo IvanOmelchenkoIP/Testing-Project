@@ -1,5 +1,7 @@
 package com.testingproject.auth.service.data;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,11 +20,11 @@ public class TestService {
 		return tests.saveAndFlush(test);
 	}
 	
-	public Test findByUser(User user) {
+	public List<Test> findByUser(User user) {
 		return tests.findByUser(user);
 	}
 	
-	public Test findByName(String name) {
+	public List<Test> findByName(String name) {
 		return tests.findByName(name);
 	}
 	

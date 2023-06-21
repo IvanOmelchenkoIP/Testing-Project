@@ -1,5 +1,8 @@
 package com.testingproject.auth.entity.data;
 
+import java.util.Collection;
+
+import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.testingproject.auth.entity.User;
@@ -12,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -78,5 +82,33 @@ public class Test {
 		this.user = user;
 	}
 	
+	@OneToMany(mappedBy = "test")
+	private Collection<TestEditor> testEditors;
 	
+	public Collection<TestEditor> getTestEditors() {
+		return testEditors;
+	}
+
+	public void setTestEditors(Collection<TestEditor> testEditors) {
+		this.testEditors = testEditors;
+	}
+	
+	public void addTestEditor(TestEditor testEditor) {
+		testEditors.add(testEditor);
+	}
+	
+	@OneToMany(mappedBy = "test")
+	private Collection<Question> questions;
+	
+	public Collection<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(Collection<Question> question) {
+		this.questions = question;
+	}
+	
+	public void addQuestion(Question question) {
+		questions.add(question);
+	}
 }
