@@ -22,8 +22,8 @@ public class PasswordResetToken {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 	
 	@Column(name = "token", unique = true)
@@ -32,7 +32,7 @@ public class PasswordResetToken {
 	@Column(name = "expire_date")
 	private Date date;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@MapsId
 	@JoinColumn(name = "user_id")
 	private User user;

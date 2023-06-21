@@ -13,9 +13,9 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id 
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
-	@Column(name = "id")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@Column(name = "id", unique = true)
 	private String id;
 	
 	@Column(name = "username")
