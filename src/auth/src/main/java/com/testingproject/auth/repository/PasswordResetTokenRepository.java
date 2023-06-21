@@ -14,9 +14,6 @@ import com.testingproject.auth.entity.User;
 @Component
 public interface PasswordResetTokenRepository  extends JpaRepository<PasswordResetToken, String> {
 	
-	@Query("SELECT p.* FROM password_reset_tokens p WHERE p.user_id = :userId")
-	public PasswordResetToken findByUserId(@Param("userId") String userId);
-	
 	public PasswordResetToken findByUser(User user);
 	
 	@Modifying

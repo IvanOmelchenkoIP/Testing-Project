@@ -22,21 +22,20 @@ public class RefreshToken {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 	
-	@Id
 	@Column(name = "token")
 	private String token;
+	
+	@Column(name = "expire_date")
+	private Date expireDate;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@MapsId
 	@JoinColumn(name = "user_id")
 	private User user;
-	
-	@Column(name = "expire_date")
-	private Date expireDate;
 	
 	public RefreshToken() {
 		super();
@@ -67,19 +66,19 @@ public class RefreshToken {
 		this.token = token;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public Date getExpireDate() {
 		return expireDate;
 	}
 
 	public void setExpireDate(Date expireDate) {
 		this.expireDate = expireDate;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

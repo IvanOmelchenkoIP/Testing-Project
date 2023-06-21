@@ -22,4 +22,8 @@ public class UserService {
 	public User findByUsername(String username) {
 		return users.findByUsername(username);
 	}
+	
+	public User findByEmail(String email) {
+		return users.findByEmail(email);
+	}
 }

@@ -10,6 +10,7 @@ import com.testingproject.auth.entity.User;
 @Component
 public interface UserRepository extends JpaRepository<User, String>{
 
-	
 	public User findByUsername(String username);
+	
+	public User findByEmail(String email);
 }
