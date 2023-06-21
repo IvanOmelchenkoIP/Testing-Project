@@ -1,11 +1,16 @@
 package com.testingproject.auth.entity;
 
+import java.util.Collection;
+
 import org.hibernate.annotations.GenericGenerator;
+
+import com.testingproject.auth.entity.data.Test;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,8 +31,7 @@ public class User {
 	
 	@Column(name = "passwd")
 	private String passwd;
-	
-	
+
 	public User() {
 		super();
 	}
@@ -75,5 +79,22 @@ public class User {
 	@Override
 	public String toString() {
 		return "User: { id = " + id + " username = " + username + " email = " + email + " }";
+	}
+	
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Test> tests;
+	
+	
+	public Collection<Test> getTests() {
+		return tests;
+	}
+
+	public void setTests(Collection<Test> tests) {
+		this.tests = tests;
+	}
+	
+	public void addTest(Test test) {
+		tests.add(test);
 	}
 }
