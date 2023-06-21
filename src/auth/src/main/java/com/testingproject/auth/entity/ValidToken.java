@@ -26,7 +26,7 @@ public class ValidToken {
 	@Column(name = "token", unique = true)
 	private String token;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@MapsId
 	@JoinColumn(name = "user_id")
 	private User user;
