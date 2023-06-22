@@ -1,7 +1,6 @@
 "use strict";
 
 import { post } from "../methods/fetch-methods.js";
-
 import { HEADERS } from "../fetch-consts.js"
 import { createHeaders, addToHeader } from "../headers.js";
 
