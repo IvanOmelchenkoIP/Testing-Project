@@ -1,7 +1,7 @@
 package com.testingproject.auth.httpbody.request;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Email;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class RegisterRequest {
 	

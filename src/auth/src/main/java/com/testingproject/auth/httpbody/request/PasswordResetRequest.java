@@ -2,20 +2,20 @@ package com.testingproject.auth.httpbody.request;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class LoginRequest {
+public class PasswordResetRequest {
 	
 	@NotBlank
-	private String username;
+	private String code;
 	
 	@NotBlank
 	private String passwd;
-	
-	public String getUsername() {
-		return username;
+
+	public String getCode() {
+		return code;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getPasswd() {

@@ -24,6 +24,10 @@ public class RefreshTokenService {
 		return refreshTokens.findByUser(user);
 	}
 	
+	public RefreshToken findByToken(String token) {
+		return refreshTokens.findByToken(token);
+	}
+	
 	public void deleteByUser(User user) {
 		refreshTokens.deleteByUser(user);
 	}
