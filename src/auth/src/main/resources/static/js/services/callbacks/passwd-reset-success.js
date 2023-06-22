@@ -1,9 +1,9 @@
 "use strict";
 
-import get from "../methods/fetch-get.js";
+import { get } from "../../utils/fetch/methods/fetch-methods.js";
 import ROUTES from "../../data/routes.js";
 
-const passwdResetSuccess = () => {
+const passwdResetSuccess = (...args) => {
   const REDIRECT_ROUTE = ROUTES.login;
   get({ route: REDIRECT_ROUTE });
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-import { getJwt } from "../jwt/jwt-fetch-methods.js";
+import { getJwt } from "../../utils/fetch/jwt/jwt-fetch-methods.js";
 import ROUTES from "../../data/routes.js";
 
 const authSuccess = (token) => {
