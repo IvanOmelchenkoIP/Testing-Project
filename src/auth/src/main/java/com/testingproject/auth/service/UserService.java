@@ -26,7 +26,7 @@ public class UserService {
 	public User findByEmail(String email) {
 		return users.findByEmail(email);
 	}
-	
+
 	public void resetPassword(User user, String passwd) {
 		user.setPasswd(passwd);
 		users.save(user);
