@@ -42,7 +42,8 @@ public class LoginController {
 	public ResponseEntity<?> loginUser(@RequestBody LoginRequest request) {
 		User user = userService.findByUsername(request.getUsername());
 		if (user != null && encoder.matches(request.getPasswd(), user.getPasswd())) {
-			return ResponseEntity.ok(new HttpResponseBody(jwtUtil.generate(user)));
+			String token = jwtUtil.generate(user);
+			return ResponseEntity.ok(new HttpResponseBody(token));
 		}
 		return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
 	}

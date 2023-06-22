@@ -7,9 +7,7 @@ const DOM_DATA_GETTERS = {
 
 const parseDomData = (method, ...args) => {
   const userData = {};
-  for (const element of args) {
-    userData[element] = method(element);
-  }
+  for (const element of args) userData[element] = method(element);
   return userData;
 };
 

@@ -17,24 +17,24 @@ const post = ({
     headers: headers,
     body: JSON.stringify(json),
   })
-    .then(
-      (response) =>
-        new Promise((resolve) =>
-          response.json().then((json) => resolve({ ok: response.ok, json }))
-        )
-    )
-    .then(({ ok, json }) => {
-      const message = json.message;
-      if (ok) {
-		if (successCallback) successCallback(message);
-      } else {
-		if (errorCallback) errorCallback(FETCH_ERRORS[message]);
-      }
-    })
-    .catch((err) => {
-	  const messageId = "response-error";
+  .then(
+    (response) =>
+      new Promise((resolve) =>
+        response.json().then((json) => resolve({ ok: response.ok, json }))
+      )
+  )
+  .then(({ ok, json }) => {
+    const message = json.message;
+    if (ok) {
+	  if (successCallback) successCallback(message);
+    } else {
+	  if (errorCallback) errorCallback(FETCH_ERRORS[message]);
+    }
+  })
+  .catch((err) => {
+    const messageId = "response-error";
 	  if (errorCallback) errorCallback(FETCH_ERRORS[messageId]);
-	});
+  });
 };
 
 export default post;
