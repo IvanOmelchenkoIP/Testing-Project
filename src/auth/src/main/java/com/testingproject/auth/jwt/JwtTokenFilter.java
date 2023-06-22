@@ -12,6 +12,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.repository.UserRepository;
+import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -27,7 +28,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	private JwtUtil jwtUtil;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -39,7 +40,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 		}
 
 		final String token = header.substring(JWT_HEADER.length()).trim();
-		User user = userRepository.findByUsername(jwtUtil.getUsername(token));
+		User user = userService.findByUsername(jwtUtil.getUsername(token));
 		boolean userExists = (user != null);
 		boolean expired = jwtUtil.tokenExpired(token);
 		boolean notAuthed = SecurityContextHolder.getContext().getAuthentication() == null;
