@@ -12,8 +12,8 @@ class PasswordResetService extends AbstractAuthService {
 		return new EmailService(route);
 	}
 	
-	execute(code, password) {
-		const userData = parseDomData(DOM_DATA_GETTERS.name, code, password);
+	execute(token, password) {
+		const userData = parseDomData(DOM_DATA_GETTERS.name, token, password);
 		post({ route: this._route, json: userData });
 	}
 }

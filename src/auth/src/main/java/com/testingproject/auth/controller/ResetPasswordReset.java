@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.testingproject.auth.entity.RefreshToken;
-import com.testingproject.auth.entity.User;
-import com.testingproject.auth.httpbody.request.EmailVerifyRequest;
+
 import com.testingproject.auth.httpbody.request.PasswordResetRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
 import com.testingproject.auth.service.RefreshTokenService;

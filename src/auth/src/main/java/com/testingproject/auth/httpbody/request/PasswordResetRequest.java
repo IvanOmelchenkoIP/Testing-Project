@@ -5,17 +5,17 @@ import jakarta.validation.constraints.NotBlank;
 public class PasswordResetRequest {
 	
 	@NotBlank
-	private String code;
+	private String token;
 	
 	@NotBlank
 	private String passwd;
 
-	public String getCode() {
-		return code;
+	public String getToken() {
+		return token;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public String getPasswd() {
