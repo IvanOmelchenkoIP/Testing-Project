@@ -2,12 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Reset Password</title>
+	<title>Verify Email</title>
 </head>
 <body>
+    <script type="module" src="./js/listeners/verifyemail.js"></script>
+
     <form>
         <div class="reset-passwd-email-form">
             <div class="input-form">
+            	<p id ="email-error-field"></p>
                 <input type="text" placeholder="Enter Your Email" name="email" required>
             </div>
             
@@ -16,7 +19,10 @@
             </div>
 
             <button type="button" id="send-verify-token">Send Verification Token</button>
-            <a href="./register">Don`t have an account? Sign Up</a>
+            
+            <div> 
+            	 <a href="./register">Don`t have an account? Sign Up</a>
+            </div>
             <div>
                  <p id="error-field"></p> 
             </div>
