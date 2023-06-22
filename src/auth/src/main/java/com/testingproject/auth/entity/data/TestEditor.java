@@ -26,7 +26,7 @@ public class TestEditor {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "editor_id")
 	private User user;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

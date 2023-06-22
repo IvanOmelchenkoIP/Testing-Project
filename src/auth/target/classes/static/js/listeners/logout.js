@@ -7,3 +7,4 @@ DOM_DATA_GETTERS.id("logout-user").addEventListener("click", () => {
   userService.logout({});
 });
 
+

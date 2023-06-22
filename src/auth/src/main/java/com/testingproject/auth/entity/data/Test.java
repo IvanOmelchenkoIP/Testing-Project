@@ -2,7 +2,6 @@ package com.testingproject.auth.entity.data;
 
 import java.util.Collection;
 
-import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.testingproject.auth.entity.User;
@@ -36,7 +35,7 @@ public class Test {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "creator_id")
 	private User user;
 
 	public Test() {

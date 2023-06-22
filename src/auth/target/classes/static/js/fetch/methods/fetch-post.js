@@ -3,7 +3,6 @@
 import { HEADERS, METHODS, BASE_ROUTE, FETCH_ERRORS } from "../fetch-consts.js";
 import { createHeaders } from "../headers.js";
 
-
 const post = ({  
 	route, 
 	json = {}, 
@@ -27,9 +26,9 @@ const post = ({
     .then(({ ok, json }) => {
       const message = json.message;
       if (ok) {
-        if (successCallback) successCallback(message);
+		if (successCallback) successCallback(message);
       } else {
-        if (errorCallback) errorCallback(FETCH_ERRORS[message]);
+		if (errorCallback) errorCallback(FETCH_ERRORS[message]);
       }
     })
     .catch((err) => {

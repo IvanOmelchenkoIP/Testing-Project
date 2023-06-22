@@ -31,17 +31,17 @@ public class Answer {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId
 	@JoinColumn(name = "question_id")
-	private Question test;
+	private Question question;
 	
 	public Answer() {
 		super();
 	}
 
-	public Answer(String content, boolean isCorrect, Question test) {
+	public Answer(String content, boolean isCorrect, Question question) {
 		super();
 		this.content = content;
 		this.isCorrect = isCorrect;
-		this.test = test;
+		this.question = question;
 	}
 
 	public String getId() {
@@ -68,11 +68,11 @@ public class Answer {
 		this.isCorrect = isCorrect;
 	}
 
-	public Question getTest() {
-		return test;
+	public Question getQuestiom() {
+		return question;
 	}
 
-	public void setTest(Question test) {
-		this.test = test;
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
 }
