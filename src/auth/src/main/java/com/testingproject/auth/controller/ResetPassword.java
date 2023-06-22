@@ -1,5 +1,6 @@
 package com.testingproject.auth.controller;
 
+import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,43 +15,37 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.testingproject.auth.entity.RefreshToken;
-import com.testingproject.auth.entity.User;
-import com.testingproject.auth.httpbody.request.EmailVerifyRequest;
-import com.testingproject.auth.httpbody.request.LoginRequest;
+
+import com.testingproject.auth.httpbody.request.PasswordResetRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
-import com.testingproject.auth.mail.EmailSenderService;
 import com.testingproject.auth.service.RefreshTokenService;
 import com.testingproject.auth.service.UserService;
 
-@RequestMapping("/resetpasswd-email")
+@RequestMapping("/resetPasswd")
 @RestController
-public class ResetPasswordEmail {
-
+public class ResetPassword {
+	
 	@Autowired
 	UserService userService;
 	
 	@Autowired
 	RefreshTokenService refreshTokenService;
 	
-	@Autowired
-	EmailSenderService emailSenderService;
-	
 	@GetMapping
-	public ModelAndView showResetPasswdPage() {
-		return new ModelAndView("resetpasswdemail.html");
+	public ModelAndView showResetPasswdResetPage() {
+		return new ModelAndView("resetpasswdt.html");
 	}
 	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> confirmEmail(@RequestBody EmailVerifyRequest request) {
-		String email = request.getEmail();
-		User user = userService.findByEmail(email);
-		if (user != null) {
-			String token = UUID.randomUUID().toString();
-			refreshTokenService.createRefreshToken(token, user);
-			System.out.println(token);
-			//emailSenderService.sendEmail(email, "Testing-Project: Password Refresh Token", token);
-			return ResponseEntity.ok(new HttpResponseBody("ok"));
+	public ResponseEntity<?> resetPassword(@RequestBody PasswordResetRequest request) {
+		RefreshToken refreshToken = refreshTokenService.findByToken(request.getToken());
+		if (refreshToken == null) {
+			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("token-error"), HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("no-user-found"), HttpStatus.BAD_REQUEST);
+		if (new Date().after(refreshToken.getExpireDate())) {
+			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("token-error"), HttpStatus.BAD_REQUEST);
+		}
+		userService.resetPassword(refreshToken.getUser(), request.getPasswd());
+		return ResponseEntity.ok(new HttpResponseBody("ok"));
 	}
 }
