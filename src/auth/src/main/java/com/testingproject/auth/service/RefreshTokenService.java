@@ -20,8 +20,12 @@ public class RefreshTokenService {
 		return refreshTokens.saveAndFlush(refreshToken);
 	}
 	
-	public RefreshToken findByUsername(User user) {
+	public RefreshToken findByUser(User user) {
 		return refreshTokens.findByUser(user);
+	}
+	
+	public RefreshToken findByToken(String token) {
+		return refreshTokens.findByToken(token);
 	}
 	
 	public void deleteByUser(User user) {

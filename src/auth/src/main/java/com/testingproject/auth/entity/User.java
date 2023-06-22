@@ -27,7 +27,6 @@ public class User {
 	@Column(name = "passwd")
 	private String passwd;
 	
-	
 	public User() {
 		super();
 	}

@@ -15,7 +15,7 @@ const get = ({
     method: METHODS.get,
     headers: headers,
   })
-    .then((response) => {
+  .then((response) => {
     return response.text();
   })
   .then((pageText) => {
