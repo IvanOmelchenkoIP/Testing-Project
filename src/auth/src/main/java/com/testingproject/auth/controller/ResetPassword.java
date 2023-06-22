@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.testingproject.auth.entity.PasswordResetToken;
 import com.testingproject.auth.entity.RefreshToken;
 
 import com.testingproject.auth.httpbody.request.PasswordResetRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
+import com.testingproject.auth.service.PasswordResetTokenService;
 import com.testingproject.auth.service.RefreshTokenService;
 import com.testingproject.auth.service.UserService;
 
@@ -29,7 +31,7 @@ public class ResetPassword {
 	UserService userService;
 	
 	@Autowired
-	RefreshTokenService refreshTokenService;
+	PasswordResetTokenService passwdResetService;
 	
 	@GetMapping
 	public ModelAndView showResetPasswdResetPage() {
@@ -38,11 +40,11 @@ public class ResetPassword {
 	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> resetPassword(@RequestBody PasswordResetRequest request) {
-		RefreshToken refreshToken = refreshTokenService.findByToken(request.getToken());
+		PasswordResetToken refreshToken = passwdResetService.findByToken(request.getToken());
 		if (refreshToken == null) {
 			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("token-error"), HttpStatus.BAD_REQUEST);
 		}
-		if (new Date().after(refreshToken.getExpireDate())) {
+		if (passwdResetService.tokenExpired(refreshToken)) {
 			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("token-error"), HttpStatus.BAD_REQUEST);
 		}
 		userService.resetPassword(refreshToken.getUser(), request.getPasswd());
