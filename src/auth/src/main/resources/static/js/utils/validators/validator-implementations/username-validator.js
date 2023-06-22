@@ -1,6 +1,6 @@
 "use string";
 
-import { validate, VALIDATOR_EXPRESSIONS } from "./validate.js";
+import { validate, VALIDATOR_EXPRESSIONS } from "../generic/validate.js";
 
 const validateUsername = (username) => validate(username, VALIDATOR_EXPRESSIONS.username);
 
