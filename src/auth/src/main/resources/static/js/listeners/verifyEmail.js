@@ -1,7 +1,7 @@
 "use strict";
 
-import { resetService } from "../auth-services/services.js";
-import { DOM_DATA_GETTERS } from "../utils/dom-parser.js";
+import { resetService } from "../services/services.js";
+import { DOM_DATA_GETTERS } from "../utils/parser/dom-parser.js";
 import genericDomListener from "./listeners-archetypes/generic-dom-listener.js";
 
 const names = ["email"];
