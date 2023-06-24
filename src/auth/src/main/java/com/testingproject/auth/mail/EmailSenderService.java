@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmailSenderService {
-	
+
 	@Autowired
 	private JavaMailSender mailSender;
-	
+
 	@Value("${spring.mail.username}")
 	private String from;
-	
+
 	public void sendEmail(String to, String subject, String text) {
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setTo(to);

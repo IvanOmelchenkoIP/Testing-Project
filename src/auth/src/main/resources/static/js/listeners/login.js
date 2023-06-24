@@ -7,5 +7,5 @@ import genericDomListener from "./listeners-archetypes/generic-dom-listener.js";
 const names = ["username", "passwd"];
 
 DOM_DATA_GETTERS.id("login-user").addEventListener("click", () => {
-  genericDomListener(names, userAuthService.login)
+	genericDomListener(names, userAuthService.login)
 });

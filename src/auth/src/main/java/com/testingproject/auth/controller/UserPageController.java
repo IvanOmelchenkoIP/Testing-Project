@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/user")
 @RestController
 public class UserPageController {
-	
+
 	@GetMapping
 	public ModelAndView showUserPage() {
 		return new ModelAndView("userpage.html");

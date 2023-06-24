@@ -24,20 +24,20 @@ public class LoginController {
 
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	JwtUtil jwtUtil;
-	
+
 	@Autowired
 	PasswordEncoder encoder;
-	
+
 	@GetMapping
 	public ModelAndView showLoginPage() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("login.html");
 		return mav;
 	}
-	
+
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> loginUser(@RequestBody LoginRequest request) {
 		User user = userService.findByUsername(request.getUsername());
@@ -45,6 +45,6 @@ public class LoginController {
 			String token = jwtUtil.generate(user);
 			return ResponseEntity.ok(new HttpResponseBody(token));
 		}
-		return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
 	}
 }

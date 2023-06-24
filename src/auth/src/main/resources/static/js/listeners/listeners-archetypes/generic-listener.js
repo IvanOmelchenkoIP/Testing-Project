@@ -1,7 +1,7 @@
 "use strict";
 
 const genericListener = (service) => {
-  service({});
+	service({});
 }
 
 export default genericListener;

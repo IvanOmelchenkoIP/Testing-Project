@@ -7,8 +7,8 @@ import PasswordResetService from "./implementations/passwd-reset-service.js"
 import ResetService from "./reset-service-class.js";
 
 const resetService = new ResetService(
-  EmailVerifyService.withRoute(ROUTES.emailVerify),
-  PasswordResetService.withRoute(ROUTES.resetPassword),
+	EmailVerifyService.withRoute(ROUTES.emailVerify),
+	PasswordResetService.withRoute(ROUTES.resetPassword),
 );
 
 export default resetService;

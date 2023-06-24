@@ -6,10 +6,10 @@ import usernameValidator from "./username-validator.js";
 import emptyValidator from "./empty-validator.js";
 
 const VALIDATORS = {
-  email: emailValidator,
-  passwd: passwordValidator,
-  username: usernameValidator,
-  empty: emptyValidator,
+	email: emailValidator,
+	passwd: passwordValidator,
+	username: usernameValidator,
+	empty: emptyValidator,
 }
 
 export default VALIDATORS;

@@ -26,24 +26,24 @@ public class VerifyEmail {
 
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	PasswordResetTokenService passwdResetService;
-	
+
 	@Autowired
 	EmailSenderService emailSenderService;
-	
+
 	@GetMapping
 	public ModelAndView showResetPasswdPage() {
 		return new ModelAndView("verifyemail.html");
 	}
-	
+
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> confirmEmail(@RequestBody EmailVerifyRequest request) {
 		String email = request.getEmail();
 		User user = userService.findByEmail(email);
 		if (user == null) {
-			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("no-user-found"), HttpStatus.BAD_REQUEST);			
+			return new ResponseEntity<>(new HttpResponseBody("no-user-found"), HttpStatus.BAD_REQUEST);
 		}
 		String token = UUID.randomUUID().toString();
 		passwdResetService.createOrRewritePasswordResetToken(token, user);

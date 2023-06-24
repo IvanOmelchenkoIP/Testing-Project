@@ -5,22 +5,22 @@ import { HEADERS } from "../fetch-consts.js"
 import { createHeaders, addToHeader } from "../headers.js";
 
 const getJwt = ({
-	route, 
-	jwtToken, 
-	successCallback = null, 
+	route,
+	jwtToken,
+	successCallback = null,
 	errorCallback = null
-  }) => {
-  const jwtHeaders = createHeaders(
-	HEADERS.acceptAll, 
-    HEADERS.contentTypeAll, 
-    addToHeader(HEADERS.authorization, jwtToken)
-  );
-  get({ 
-	route: route, 
-	headers: jwtHeaders, 
-	successCallback: successCallback, 
-	errorCallback: errorCallback 
-  });
+}) => {
+	const jwtHeaders = createHeaders(
+		HEADERS.acceptAll,
+		HEADERS.contentTypeAll,
+		addToHeader(HEADERS.authorization, jwtToken)
+	);
+	get({
+		route: route,
+		headers: jwtHeaders,
+		successCallback: successCallback,
+		errorCallback: errorCallback
+	});
 };
 
 export default getJwt;

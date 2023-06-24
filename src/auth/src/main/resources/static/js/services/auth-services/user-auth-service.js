@@ -8,9 +8,9 @@ import LogoutService from "./implementations/logout-service.js";
 import UserAuthService from "./user-auth-service-class.js";
 
 const userAuthService = new UserAuthService(
-  RegisterService.withRoute(ROUTES.register),
-  LoginService.withRoute(ROUTES.login),
-  LogoutService.withRoute(ROUTES.logout),
+	RegisterService.withRoute(ROUTES.register),
+	LoginService.withRoute(ROUTES.login),
+	LogoutService.withRoute(ROUTES.logout),
 );
 
 export default userAuthService;

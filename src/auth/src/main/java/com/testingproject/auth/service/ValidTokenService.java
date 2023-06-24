@@ -12,16 +12,16 @@ public class ValidTokenService {
 
 	@Autowired
 	private ValidTokenRepository validTokens;
-	
+
 	public ValidToken createValidToken(String token, User user) {
 		ValidToken validToken = new ValidToken(token, user);
 		return validTokens.saveAndFlush(validToken);
 	}
-	
+
 	public ValidToken findByToken(String token) {
 		return validTokens.findByToken(token);
 	}
-	
+
 	public void deleteByToken(String token) {
 		validTokens.deleteByToken(token);
 	}

@@ -7,5 +7,5 @@ import genericDomListener from "./listeners-archetypes/generic-dom-listener.js";
 const names = ["email"];
 
 DOM_DATA_GETTERS.id("send-verify-token").addEventListener("click", () => {
-  genericDomListener(names, resetService.verifyEmail);
+	genericDomListener(names, resetService.verifyEmail);
 });
