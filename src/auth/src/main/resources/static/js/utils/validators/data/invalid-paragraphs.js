@@ -1,7 +1,7 @@
 "use strict";
 
 const INVALID_PARAGRAPHS = {
-	username: "email-error-field",
+	username: "username-error-field",
 	passwd: "passwd-error-field",
 	email: "email-error-field",
 	"verify-token": "verify-token-error-field"

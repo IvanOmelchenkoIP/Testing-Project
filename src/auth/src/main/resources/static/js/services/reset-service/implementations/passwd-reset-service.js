@@ -11,7 +11,7 @@ class PasswordResetService extends AbstractAuthService {
 	}
 
 	static withRoute(route) {
-		return new EmailService(route);
+		return new PasswordResetService(route);
 	}
 
 	execute(userData) {

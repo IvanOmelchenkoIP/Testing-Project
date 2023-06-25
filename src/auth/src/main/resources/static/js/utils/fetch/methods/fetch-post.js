@@ -1,7 +1,7 @@
 "use strict";
 
 import BASE_ROUTE from "../../../data/routes/base-route.js"
-import { FETCH_HEADERS, FETCH_METHODS, FETCH_ERRORS } from "../fetch-consts.js";
+import { FETCH_HEADERS, FETCH_METHODS, FETCH_ERRORS } from "../data/fetch-data.js";
 import { createHeaders } from "../headers/headers.js";
 
 const post = ({

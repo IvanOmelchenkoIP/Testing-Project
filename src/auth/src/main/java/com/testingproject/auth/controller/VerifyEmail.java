@@ -47,7 +47,8 @@ public class VerifyEmail {
 		}
 		String token = UUID.randomUUID().toString();
 		passwdResetService.createOrRewritePasswordResetToken(token, user);
-		emailSenderService.sendEmail(email, "Testing-Project: Password Refresh Token", token);
+		//emailSenderService.sendEmail(email, "Testing-Project: Password Refresh Token", token);
+		System.out.println(token);
 		return ResponseEntity.ok(new HttpResponseBody("ok"));
 	}
 }

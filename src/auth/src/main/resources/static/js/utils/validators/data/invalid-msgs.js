@@ -3,7 +3,7 @@
 const INVALID_MSGS = {
 	username: "Wrong username format!",
 	passwd: "Wrong password format!",
-	email: "Wrong email forma!",
+	email: "Wrong email format!",
 	empty: "Field cannt be empty!"
 };
 

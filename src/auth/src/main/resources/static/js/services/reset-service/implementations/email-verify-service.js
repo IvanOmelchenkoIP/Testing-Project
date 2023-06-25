@@ -11,7 +11,7 @@ class EmailVerifyService extends AbstractAuthService {
 	}
 
 	static withRoute(route) {
-		return new EmailService(route);
+		return new EmailVerifyService(route);
 	}
 
 	execute(userData) {
