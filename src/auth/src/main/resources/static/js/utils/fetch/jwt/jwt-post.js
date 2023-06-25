@@ -1,8 +1,8 @@
 "use strict";
 
 import { post } from "../methods/fetch-methods.js";
-import { HEADERS } from "../fetch-consts.js"
-import { createHeaders, addToHeader } from "../headers.js";
+import { FETCH_HEADERS } from "../data/fetch-data.js.js"
+import { createHeaders, addToHeader } from "../headers/headers.js";
 
 const postJwt = ({
 	route,
@@ -12,8 +12,8 @@ const postJwt = ({
 	errorCallback = null
 }) => {
 	const jwtHeaders = createHeaders(
-		HEADERS.acceptJson,
-		HEADERS.contentTypeJson,
+		FETCH_HEADERS.acceptJson,
+		FETCH_HEADERS.contentTypeJson,
 		addToHeader(HEADERS.authorization, jwtToken)
 	);
 	post({

@@ -1,6 +1,6 @@
 "use strict";
 
-import ROUTES from "../../data/routes.js";
+import ROUTES from "../../data/routes/routes.js";
 
 import RegisterService from "./implementations/register-service.js";
 import LoginService from "./implementations/login-service.js";

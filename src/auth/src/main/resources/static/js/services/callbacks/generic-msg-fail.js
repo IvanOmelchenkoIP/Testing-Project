@@ -1,6 +1,6 @@
 "use strict";
 
-import { DOM_DATA_GETTERS } from "../../utils/dom-parser.js";
+import DOM_DATA_GETTERS from "../../utils/parser/dom/dom-getters.js";
 
 const genericMsgFail = (error) => {
 	const id = "error-field";

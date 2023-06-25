@@ -1,8 +1,8 @@
 "use strict";
 
 import { get } from "../methods/fetch-methods.js";
-import { HEADERS } from "../fetch-consts.js"
-import { createHeaders, addToHeader } from "../headers.js";
+import { FETCH_HEADERS } from "../data/fetch-data.js.js"
+import { createHeaders, addToHeader } from "../headers/headers.js";
 
 const getJwt = ({
 	route,
@@ -11,8 +11,8 @@ const getJwt = ({
 	errorCallback = null
 }) => {
 	const jwtHeaders = createHeaders(
-		HEADERS.acceptAll,
-		HEADERS.contentTypeAll,
+		FETCH_HEADERS.acceptAll,
+		FETCH_HEADERS.contentTypeAll,
 		addToHeader(HEADERS.authorization, jwtToken)
 	);
 	get({

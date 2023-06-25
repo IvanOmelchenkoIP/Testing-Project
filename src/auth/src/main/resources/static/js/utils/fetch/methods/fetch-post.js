@@ -1,7 +1,8 @@
 "use strict";
 
-import { HEADERS, METHODS, BASE_ROUTE, FETCH_ERRORS } from "../fetch-consts.js";
-import { createHeaders } from "../headers.js";
+import BASE_ROUTE from "../../../data/routes/base-route.js"
+import { FETCH_HEADERS, FETCH_METHODS, FETCH_ERRORS } from "../fetch-consts.js";
+import { createHeaders } from "../headers/headers.js";
 
 const post = ({
 	route,
@@ -11,9 +12,9 @@ const post = ({
 	errorCallback = null
 }) => {
 	const fullRoute = BASE_ROUTE + route;
-	if (headers == null) headers = createHeaders(HEADERS.acceptJson, HEADERS.contentTypeJson);
+	if (headers == null) headers = createHeaders(FETCH_HEADERS.acceptJson, FETCH_HEADERS.contentTypeJson);
 	fetch(fullRoute, {
-		method: METHODS.post,
+		method: FETCH_METHODS.post,
 		headers: headers,
 		body: JSON.stringify(json),
 	})

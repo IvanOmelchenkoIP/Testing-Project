@@ -1,6 +1,6 @@
 "use strict";
 
-import ROUTES from "../../data/routes.js";
+import ROUTES from "../../data/routes/routes.js";
 
 import EmailVerifyService from "./implementations/email-verify-service.js"
 import PasswordResetService from "./implementations/passwd-reset-service.js"

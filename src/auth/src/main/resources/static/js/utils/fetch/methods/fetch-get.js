@@ -1,6 +1,8 @@
 "use strict";
 
-import { BASE_ROUTE, HEADERS, METHODS } from "../fetch-consts.js";
+import BASE_ROUTE from "../../../data/routes/base-route.js"
+import { FETCH_HEADERS, FETCH_METHODS } from "../fetch-consts.js";
+import { createHeaders } from "../headers/headers.js";
 
 const get = ({
 	route,
@@ -9,8 +11,8 @@ const get = ({
 	errorCallback = null
 }) => {
 	const fullRoute = BASE_ROUTE + route;
-	console.log("called get - " + METHODS.get + " r - " + fullRoute + " h " + JSON.stringify(headers));
-	if (headers == null) headers = createHeaders(HEADERS.acceptAll, HEADERS.contentTypeAll);
+	console.log("called get - " + FETCH_METHODS.get + " r - " + fullRoute + " h " + JSON.stringify(headers));
+	if (headers == null) headers = createHeaders(FETCH_HEADERS.acceptAll, FETCH_HEADERS.contentTypeAll);
 	fetch(fullRoute, {
 		method: METHODS.get,
 		headers: headers,

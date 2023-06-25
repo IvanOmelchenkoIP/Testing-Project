@@ -1,9 +1,9 @@
 "use strict";
 
-import INVALID_MSGS from "./invalid-msgs/js";
-import INVALID_PARAGAPHS from "./invalid-paragraphs.js";
-import VALIDATORS from "./validator-implementations/validators.js";
-import { DOM_DATA_GETTERS } from "../parser/dom-parser.js";
+import INVALID_MSGS from "../data/invalid-msgs.js";
+import INVALID_PARAGAPHS from "../data/invalid-paragraphs.js";
+import VALIDATORS from "../validate/validators.js";
+import DOM_DATA_GETTERS from "../../parser/dom/dom-getters.js";
 
 const validateField = (key, value) => {
 	const invalidParagraph = DOM_DATA_GETTERS.id(INVALID_PARAGAPHS[key]);
