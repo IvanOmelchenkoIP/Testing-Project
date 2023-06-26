@@ -1,15 +1,15 @@
 "use strict";
 
-import emailValidator from "./implementations/email-validator.js";
-import passwordValidator from "./implementations/password-validator.js";
-import usernameValidator from "./implementations/username-validator.js";
-import emptyValidator from "./implementations/empty-validator.js";
+import validateEmail from "./implementations/email-validator.js";
+import validatePassword from "./implementations/password-validator.js";
+import validateUsername from "./implementations/username-validator.js";
+import validateEmpty from "./implementations/empty-validator.js";
 
 const VALIDATORS = {
-	email: emailValidator,
-	passwd: passwordValidator,
-	username: usernameValidator,
-	empty: emptyValidator,
+	email: validateEmail,
+	passwd: validatePassword,
+	username: validateUsername,
+	empty: validateEmpty,
 }
 
 export default VALIDATORS;

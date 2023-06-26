@@ -6,8 +6,9 @@ const validateFields = (fields) => {
 	let result = true;
 	const keys = Object.keys(fields);
 	for (const key of keys) {
-		if (validateField(key, fields[key])) result = false;
+		if (!validateField(key, fields[key])) result = false;
 	}
+	console.log(result);
 	return result;
 }
 

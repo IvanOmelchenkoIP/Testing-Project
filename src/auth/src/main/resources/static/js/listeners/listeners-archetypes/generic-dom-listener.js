@@ -6,6 +6,10 @@ import validateFields from "../../utils/validators/fields/validate-fields.js"
 
 const genericDomListener = (names, service) => {
 	const fields = parseDomData(DOM_DATA_GETTERS.name, ...names);
-	if (validateFields(fields)) service(fields);
+	console.log(service);
+	if (validateFields(fields)) {
+		console.log("here");
+		service(fields);
+	}
 }
 export default genericDomListener;
