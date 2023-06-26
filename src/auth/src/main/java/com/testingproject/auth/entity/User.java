@@ -1,11 +1,19 @@
 package com.testingproject.auth.entity;
 
+import java.util.Collection;
+
 import org.hibernate.annotations.GenericGenerator;
+
+import com.testingproject.auth.entity.data.Course;
+import com.testingproject.auth.entity.data.CourseEditor;
+import com.testingproject.auth.entity.data.Test;
+import com.testingproject.auth.entity.data.TestEditor;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -75,4 +83,65 @@ public class User {
 	public String toString() {
 		return "User: { id = " + id + " username = " + username + " email = " + email + " }";
 	}
-}
+	
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Test> tests;
+	
+	public Collection<Test> getTests() {
+		return tests;
+	}
+
+	public void setTests(Collection<Test> tests) {
+		this.tests = tests;
+	}
+	
+	public void addTest(Test test) {
+		tests.add(test);
+	}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<TestEditor> testEditors;
+	
+	public Collection<TestEditor> setTestEditors() {
+		return testEditors;
+	}
+
+	public void setTestEditors(Collection<TestEditor> testEditors) {
+		this.testEditors = testEditors;
+	}
+	
+	public void addTestEditor(TestEditor testEditor) {
+		testEditors.add(testEditor);
+	}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Course> courses;
+	
+	public Collection<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Collection<Course> courses) {
+		this.courses = courses;
+	}
+	
+	public void addCourse(Course course) {
+		courses.add(course);
+	}
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<CourseEditor> courseEditors;
+	
+	public Collection<CourseEditor> setCourseEditors() {
+		return courseEditors;
+	}
+
+	public void setCourseEditors(Collection<CourseEditor> courseEditors) {
+		this.courseEditors = courseEditors;
+	}
+	
+	public void addCourseEditor(CourseEditor courseEditor) {
+		courseEditors.add(courseEditor);
+	}
+} 
