@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reset Password</title>
+</head>
+<body>
+    <script type="module" src="./js/listeners/resetpasswd.js"></script>
+
+	<form>
+        <div class="reset-passwd-email-form">
+            <div class="input-form">
+                <p id ="verify-token-error-field"></p>
+                <input type="text" placeholder="Enter Verification Token" name="verify-token" required>
+            </div>
+            <div class="input-form">
+                <p id ="passwd-error-field"></p>
+                <input type="text" placeholder="Enter New Password" name="passwd" required>
+            </div>
+
+			<button type="button" id="reset-passwd">Reset Password</button>
+            <div>
+                  <a href="./verifyEmail">Resend Verify Token</a>
+            </div>
+            <div>
+                 <p id="error-field"></p> 
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -15,11 +15,11 @@ const get = ({
     method: METHODS.get,
     headers: headers,
   })
-    .then((response) => {
+  .then((response) => {
     return response.text();
   })
   .then((pageText) => {
-	window.history.pushState(null, null, fullRoute);   
+	  window.history.pushState(null, null, fullRoute);   
     document.body.innerHTML = pageText;
   });
 };

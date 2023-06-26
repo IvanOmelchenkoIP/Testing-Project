@@ -30,6 +30,7 @@ hs_err_pid*
 
 # *.bak files
 *.bak
+*.md.back
 
 HELP.md
 META-INF/

@@ -30,7 +30,7 @@ public class PasswordResetToken {
 	private String token; 
 	
 	@Column(name = "expire_date")
-	private Date date;
+	private Date expireDate;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@MapsId
@@ -48,7 +48,7 @@ public class PasswordResetToken {
 		
 		Calendar now = Calendar.getInstance();
 		now.add(Calendar.MINUTE, 3);
-		this.date = now.getTime();
+		this.expireDate = now.getTime();
 		
 		this.user = user;
 	}
@@ -69,12 +69,12 @@ public class PasswordResetToken {
 		this.token = token;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getExpireDate() {
+		return expireDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setExpireDate(Date date) {
+		this.expireDate = date;
 	}
 
 	public User getUser() {
