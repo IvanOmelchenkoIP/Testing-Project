@@ -4,7 +4,6 @@ class UserAuthService {
 	#registerService;
 	#loginService;
 	#logoutService;
-
 	constructor(registerService, loginService, logoutService) {
 		this.#registerService = registerService;
 		this.#loginService = loginService;
