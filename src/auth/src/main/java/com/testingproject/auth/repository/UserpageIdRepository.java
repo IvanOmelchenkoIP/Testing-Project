@@ -5,15 +5,17 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.testingproject.auth.entity.RefreshToken;
 import com.testingproject.auth.entity.User;
+import com.testingproject.auth.entity.UserpageId;
 
 @Repository
 @Component
-public interface RefreshTokenRepository extends JpaRepository<RefreshToken, String> {
+public interface UserpageIdRepository extends JpaRepository<UserpageId, String> {
 
-	public RefreshToken findByUser(User user);
+	public UserpageId findByUser(User user);
+	
+	public UserpageId findByUserpageId(String userpahgeId);
 	
 	@Modifying
-	public void deleteByUser(User user);
+	public void deleteByUser(User user);	
 }

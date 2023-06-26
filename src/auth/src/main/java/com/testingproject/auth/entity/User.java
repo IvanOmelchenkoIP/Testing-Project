@@ -14,6 +14,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -82,6 +83,17 @@ public class User {
 	@Override
 	public String toString() {
 		return "User: { id = " + id + " username = " + username + " email = " + email + " }";
+	}
+	
+	@OneToOne(mappedBy = "user")
+	private UserpageId userpageId;
+	
+	public UserpageId getUserpageId() {
+		return userpageId;
+	}
+	
+	public void setUserpageId(UserpageId userpageId) {
+		this.userpageId = userpageId;
 	}
 	
 	
