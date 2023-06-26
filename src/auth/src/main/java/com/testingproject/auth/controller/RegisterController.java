@@ -45,7 +45,7 @@ public class RegisterController {
 		try {
 			user = userService.registerUser(request.getUsername(), request.getEmail(), encoder.encode(request.getPasswd()));
 			String token = jwtUtil.generate(user);
-			return ResponseEntity.ok(new HttpResponseBody(token);
+			return ResponseEntity.ok(new HttpResponseBody(token));
 		} catch (DataIntegrityViolationException exception) {
 			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
 		} catch (IllegalArgumentException exception) {

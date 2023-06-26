@@ -3,11 +3,13 @@ package com.testingproject.auth.service;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.testingproject.auth.entity.PasswordResetToken;
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.repository.PasswordResetTokenRepository;
 
+@Component
 public class PasswordResetTokenService {
 
 	@Autowired
