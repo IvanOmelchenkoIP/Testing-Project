@@ -8,7 +8,6 @@ const validateFields = (fields) => {
 	for (const key of keys) {
 		if (!validateField(key, fields[key])) result = false;
 	}
-	console.log(result);
 	return result;
 }
 

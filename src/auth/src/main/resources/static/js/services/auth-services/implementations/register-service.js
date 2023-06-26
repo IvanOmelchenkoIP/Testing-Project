@@ -15,7 +15,6 @@ class RegisterService extends AbstractAuthService {
 	}
 
 	execute(userData) {
-		console.log("data");
 		post({ route: this._route, json: userData, successCallback: authSuccess, errorCallback: genericMsgFail });
 	}
 }

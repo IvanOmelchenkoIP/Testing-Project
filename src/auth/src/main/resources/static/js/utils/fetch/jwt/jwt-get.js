@@ -13,7 +13,7 @@ const getJwt = ({
 	const jwtHeaders = createHeaders(
 		FETCH_HEADERS.acceptAll,
 		FETCH_HEADERS.contentTypeAll,
-		addToHeader(HEADERS.authorization, jwtToken)
+		addToHeader(FETCH_HEADERS.authorization, jwtToken)
 	);
 	get({
 		route: route,

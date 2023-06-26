@@ -19,10 +19,9 @@ const post = ({
 		body: JSON.stringify(json),
 	})
 		.then(
-			(response) =>
-				new Promise((resolve) =>
-					response.json().then((json) => resolve({ ok: response.ok, json }))
-				)
+			(response) => new Promise((resolve) =>
+				response.json().then((json) => resolve({ ok: response.ok, json }))
+			)
 		)
 		.then(({ ok, json }) => {
 			const message = json.message;

@@ -14,7 +14,7 @@ const postJwt = ({
 	const jwtHeaders = createHeaders(
 		FETCH_HEADERS.acceptJson,
 		FETCH_HEADERS.contentTypeJson,
-		addToHeader(HEADERS.authorization, jwtToken)
+		addToHeader(FETCH_HEADERS.authorization, jwtToken)
 	);
 	post({
 		route: route,
