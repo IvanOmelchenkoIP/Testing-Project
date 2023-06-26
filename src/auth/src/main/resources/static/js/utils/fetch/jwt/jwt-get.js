@@ -1,26 +1,26 @@
 "use strict";
 
 import { get } from "../methods/fetch-methods.js";
-import { HEADERS } from "../fetch-consts.js"
-import { createHeaders, addToHeader } from "../headers.js";
+import { FETCH_HEADERS } from "../data/fetch-data.js"
+import { createHeaders, addToHeader } from "../headers/headers.js";
 
 const getJwt = ({
-	route, 
-	jwtToken, 
-	successCallback = null, 
+	route,
+	jwtToken,
+	successCallback = null,
 	errorCallback = null
-  }) => {
-  const jwtHeaders = createHeaders(
-	HEADERS.acceptAll, 
-    HEADERS.contentTypeAll, 
-    addToHeader(HEADERS.authorization, jwtToken)
-  );
-  get({ 
-	route: route, 
-	headers: jwtHeaders, 
-	successCallback: successCallback, 
-	errorCallback: errorCallback 
-  });
+}) => {
+	const jwtHeaders = createHeaders(
+		FETCH_HEADERS.acceptAll,
+		FETCH_HEADERS.contentTypeAll,
+		addToHeader(FETCH_HEADERS.authorization, jwtToken)
+	);
+	get({
+		route: route,
+		headers: jwtHeaders,
+		successCallback: successCallback,
+		errorCallback: errorCallback
+	});
 };
 
 export default getJwt;

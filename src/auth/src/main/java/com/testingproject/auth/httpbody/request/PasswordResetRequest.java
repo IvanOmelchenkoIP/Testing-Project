@@ -3,10 +3,10 @@ package com.testingproject.auth.httpbody.request;
 import jakarta.validation.constraints.NotBlank;
 
 public class PasswordResetRequest {
-	
+
 	@NotBlank
 	private String token;
-	
+
 	@NotBlank
 	private String passwd;
 

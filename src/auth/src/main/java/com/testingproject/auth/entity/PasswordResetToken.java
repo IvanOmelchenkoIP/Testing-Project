@@ -25,19 +25,19 @@ public class PasswordResetToken {
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
-	
+
 	@Column(name = "token", unique = true)
-	private String token; 
-	
+	private String token;
+
 	@Column(name = "expire_date")
 	private Date expireDate;
-	
+
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@MapsId
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	
+
 	public PasswordResetToken() {
 		super();
 	}
@@ -45,11 +45,11 @@ public class PasswordResetToken {
 	public PasswordResetToken(String token, User user) {
 		super();
 		this.token = token;
-		
+
 		Calendar now = Calendar.getInstance();
 		now.add(Calendar.MINUTE, 3);
 		this.expireDate = now.getTime();
-		
+
 		this.user = user;
 	}
 
