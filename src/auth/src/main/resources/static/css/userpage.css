@@ -19,21 +19,21 @@ body {
 }
 
 .userpage-menue {
-	background-color: rgb(98, 30, 61);
+	background-color: rgb(0, 13, 51);
 	width: 20%;
 }
 
 .fillable {
 	width: 100%;
 	flex-grow: 100%;
-	background-color: rgb(249, 236, 242);
+	background-color: rgb(194, 194, 214);
 }
 
 .logo-container {
 	height: 10%;
 	text-align: center;
 	position: relative;
-	color: rgb(249, 236, 242);;
+	color: rgb(194, 194, 214);
 }
 
 .logo-container img {
@@ -46,67 +46,62 @@ body {
 
 .profile-container {
 	width: 100%;
-	height: 25%;
-	background-color: rgb(204, 0, 204);
+	height: 20%;
 	text-align: center;
 }
 
 .user-profile {
-	width: 80%;
-	height: 80%;
-	display: block;
-	border-bottom: 1px solid black;
+	width: 100%;
+	height: 100%;
+}
+
+#profile {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: 0pt;
+	font-size: 13pt;
+	color: rgb(194, 194, 214);
+}
+
+#profile:hover {
+	text-decoration: underline;
+	background-color: rgb(10, 20, 60);
 }
 
 .user-profile img {
-	width: 60%;
-	height: auto;
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
+	border: 3px solid rgb(194, 194, 214);
 }
 
-.logout-button {
-	height: auto;
-}
-
-#logout {
-	width: 50%;
-	border: 3px solid;
-	border-radius: 6px;
-	background-color: rgb(255, 0, 128);
-	border-color: rgb(107, 50, 76);
-	transform: translateY(25%);
-	color: rgb(98, 30, 61);
-	font-weight: 600;
-}
-
-#logout:hover {
-	background-color: white;
+#profile:hover img {
+	border: 3px solid rgb(230, 230, 230);
 }
 
 .main-menue-container {
-	height: 55%;
-	color: rgb(102, 0, 102);
-	font-size: 12pt;
-	font-weight: 600;
-	text-decoration: none;
-}
-
-.main-menue-container a {
-	color: rgb(242, 204, 255);
-	font-size: 12pt;
-	font-weight: 500;
-	text-decoration: none;
-}
-
-.main-menue-container a:hover {
-	text-decoration: underline;
-	font-weight: 550;
+	height: 60%;
 }
 
 .menue-instance {
-	height: 7%;
+	height: 9%;
+}
+
+.main-menue-container button {
+	background-color: transparent;
+	border: 0pt;
+	color: rgb(170, 170, 170);
+	font-size: 11pt;
+	font-weight: 500;
 	text-decoration: none;
-	color: rgb(102, 0, 102);
+	width: 100%;
+	height: 100%;
+}
+
+.main-menue-container button:hover {
+	background-color: rgb(38, 77, 115);
+	color: rgb(194, 194, 214);
 }
 
 .submenues-container {
