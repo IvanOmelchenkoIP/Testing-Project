@@ -13,12 +13,12 @@ public class UserpageRouteService {
 	@Autowired
 	public UserpageRouteRepository userpageRoutes;
 	
-	public UserpageRoute createUserpageId(String route, User user) {
+	public UserpageRoute createUserpageRoute(String route, User user) {
 		UserpageRoute userpageRoute = new UserpageRoute(route, user);
 		return userpageRoutes.saveAndFlush(userpageRoute);
 	}
 	
-	public UserpageRoute findByUserpageId(String route) {
+	public UserpageRoute findByToute(String route) {
 		return userpageRoutes.findByRoute(route);
 	}
 	
