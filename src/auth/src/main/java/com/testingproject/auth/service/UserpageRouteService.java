@@ -11,22 +11,22 @@ import com.testingproject.auth.repository.UserpageRouteRepository;
 public class UserpageRouteService {
 
 	@Autowired
-	public UserpageRouteRepository userpageIds;
+	public UserpageRouteRepository userpageRoutes;
 	
-	public UserpageRoute createUserpageId(String userpageId, User user) {
-		UserpageRoute userpageIdInstance = new UserpageRoute(userpageId, user);
-		return userpageIds.saveAndFlush(userpageIdInstance);
+	public UserpageRoute createUserpageId(String route, User user) {
+		UserpageRoute userpageRoute = new UserpageRoute(route, user);
+		return userpageRoutes.saveAndFlush(userpageRoute);
 	}
 	
 	public UserpageRoute findByUserpageId(String route) {
-		return userpageIds.findByRoute(route);
+		return userpageRoutes.findByRoute(route);
 	}
 	
 	public UserpageRoute findByUser(User user) {
-		return userpageIds.findByUser(user);
+		return userpageRoutes.findByUser(user);
 	}
 	
 	public void deleteByUser(User user) {
-		userpageIds.deleteByUser(user);
+		userpageRoutes.deleteByUser(user);
 	}
 }
