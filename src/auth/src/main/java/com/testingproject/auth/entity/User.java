@@ -20,42 +20,42 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-	
-	@Id 
+
+	@Id
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "id", unique = true)
 	private String id;
-	
+
 	@Column(name = "username")
 	private String username;
 
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "passwd")
 	private String passwd;
 
 	public User() {
 		super();
 	}
-	
+
 	public User(String username, String email, String passwd) {
 		super();
 		this.username = username;
 		this.email = email;
 		this.passwd = passwd;
 	}
-	
-	
+
+
 	public String getId() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -79,7 +79,7 @@ public class User {
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "User: { id = " + id + " username = " + username + " email = " + email + " }";

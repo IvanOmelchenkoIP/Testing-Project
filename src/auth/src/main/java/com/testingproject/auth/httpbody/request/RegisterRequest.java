@@ -4,17 +4,17 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public class RegisterRequest {
-	
+
 	@NotBlank
 	private String username;
-	
+
 	@NotBlank
 	@Email
 	private String email;
-	
+
 	@NotBlank
 	private String passwd;
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -22,7 +22,7 @@ public class RegisterRequest {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -30,7 +30,7 @@ public class RegisterRequest {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 
 	public String getPasswd() {
 		return passwd;

@@ -22,10 +22,10 @@ public class ValidToken {
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
-	
+
 	@Column(name = "token", unique = true)
 	private String token;
-	
+
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@MapsId("id")
 	@JoinColumn(name = "user_id")
@@ -34,7 +34,7 @@ public class ValidToken {
 	public ValidToken() {
 		super();
 	}
-	
+
 	public ValidToken(String token, User user) {
 		super();
 		this.token = token;
@@ -48,7 +48,7 @@ public class ValidToken {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public String getToken() {
 		return token;
 	}

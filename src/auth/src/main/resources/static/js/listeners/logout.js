@@ -1,11 +1,8 @@
 "use strict";
 
-import { userAuthService } from "../auth-services/services.js";
-import { DOM_DATA_GETTERS } from "../utils/dom-parser.js";
-import genericListener from "./listeners-archetypes/generic-listener.js";
+import { userAuthService } from "../services/services.js";
+import DOM_DATA_GETTERS from "../utils/parser/dom/dom-getters.js";
 
 DOM_DATA_GETTERS.id("logout-user").addEventListener("click", () => {
-  genericListener(userAuthService.logout);
+	userAuthService.logout({});
 });
-
-

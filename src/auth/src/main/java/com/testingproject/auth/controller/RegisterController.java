@@ -1,7 +1,7 @@
 package com.testingproject.auth.controller;
 
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -25,13 +25,13 @@ public class RegisterController {
 
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	JwtUtil jwtUtil;
 
 	@Autowired
 	PasswordEncoder encoder;
-	
+
 	@GetMapping
 	public ModelAndView showRegisterPage() {
 		ModelAndView mav = new ModelAndView();
@@ -47,9 +47,9 @@ public class RegisterController {
 			String token = jwtUtil.generate(user);
 			return ResponseEntity.ok(new HttpResponseBody(token));
 		} catch (DataIntegrityViolationException exception) {
-			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
 		} catch (IllegalArgumentException exception) {
-			return new ResponseEntity<HttpResponseBody>(new HttpResponseBody("illegal-field"), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(new HttpResponseBody("illegal-field"), HttpStatus.BAD_REQUEST);
 		}
 	}
 }

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.testingproject.auth.entity.User;
-import com.testingproject.auth.repository.UserRepository;
 import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.FilterChain;

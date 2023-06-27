@@ -2,39 +2,40 @@
 <html>
 
 <head>
-    <title>Registration Page</title>
-
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="./css/register.css">
+<title>Registration Page</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/register.css">
 </head>
 
 <body>
-    <script type='module' src="./js/listeners/register.js"></script>
+	<script type='module' src="./js/listeners/register.js"></script>
 
-    <form>
-        <div class="register-form">
-            <div class="input-form">
-                <p id ="username-error-field"></p>
-                <input type="text" placeholder="Enter Your Username" name="username" autofocus required>
-            </div>
-            <div class="input-form">
-                <p id ="email-error-field"></p>
-                <input type="email" placeholder="Enter Your Email" name="email" required>
-            </div>
-            <div class="input-form">
-                <p id ="passwd-error-field"></p>
-                <input type="text" placeholder="Enter Your Password" name="passwd" required>
-            </div>
+	<form>
+		<div class="register-form">
+			<div class="input-form">
+				<p id="username-error-field"></p>
+				<input type="text" placeholder="Enter Your Username" name="username"
+					autofocus required>
+			</div>
+			<div class="input-form">
+				<p id="email-error-field"></p>
+				<input type="email" placeholder="Enter Your Email" name="email"
+					required>
+			</div>
+			<div class="input-form">
+				<p id="passwd-error-field"></p>
+				<input type="text" placeholder="Enter Your Password" name="passwd"
+					required>
+			</div>
 
-            <button type="button" id="register-user">Sign Up</button>
-            <a href="./login">Already Have An Account? Log In</a>
-            
-            <div>
-                 <p id="error-field"></p> 
-            </div>
-        </div>
-    </form>
+			<button type="button" id="register-user">Sign Up</button>
+			<a href="./login">Already Have An Account? Log In</a>
+
+			<div>
+				<p id="error-field"></p>
+			</div>
+		</div>
+	</form>	
 </body>
 
 </html>

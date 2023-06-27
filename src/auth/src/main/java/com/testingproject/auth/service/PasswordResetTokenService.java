@@ -14,12 +14,12 @@ public class PasswordResetTokenService {
 
 	@Autowired
 	private PasswordResetTokenRepository passwordResetTokens;
-	
+
 	public PasswordResetToken createPasswordResetToken(String token, User user) {
 		PasswordResetToken passwordResetToken = new PasswordResetToken(token, user);
 		return passwordResetTokens.saveAndFlush(passwordResetToken);
 	}
-	
+
 	public PasswordResetToken createOrRewritePasswordResetToken(String token, User user) {
 		PasswordResetToken oldResetToken = passwordResetTokens.findByUser(user);
 		if (oldResetToken != null) {
@@ -27,19 +27,19 @@ public class PasswordResetTokenService {
 		}
 		return createPasswordResetToken(token, user);
 	}
-	
+
 	public PasswordResetToken findByUser(User user) {
 		return passwordResetTokens.findByUser(user);
 	}
-	
+
 	public PasswordResetToken findByToken(String token) {
 		return passwordResetTokens.findByToken(token);
 	}
-	
+
 	public boolean tokenExpired(PasswordResetToken token) {
 		return new Date().after(token.getExpireDate());
 	}
-	
+
 	public void deleteByUser(User user) {
 		passwordResetTokens.deleteByUser(user);
 	}

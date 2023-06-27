@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Verify Email</title>
+<meta charset="UTF-8">
+<title>Verify Email</title>
 </head>
+
 <body>
-    <script type="module" src="./js/listeners/verifyemail.js"></script>
+	<script type="module" src="./js/listeners/verifyemail.js"></script>
 
-    <form>
-        <div class="reset-passwd-email-form">
-            <div class="input-form">
-            	<p id ="email-error-field"></p>
-                <input type="text" placeholder="Enter Your Email" name="email" required>
-            </div>
-            
-            <div> 
-            	<a href="./login">Return to Log In Page</a>
-            </div>
+	<form>
+		<div class="reset-passwd-email-form">
+			<div class="input-form">
+				<p id="email-error-field"></p>
+				<input type="text" placeholder="Enter Your Email" name="email"
+					required>
+			</div>
 
-            <button type="button" id="send-verify-token">Send Verification Token</button>
-            
-            <div> 
-            	 <a href="./register">Don`t have an account? Sign Up</a>
-            </div>
-            <div>
-                 <p id="error-field"></p> 
-            </div>
-        </div>
-    </form>
+			<div>
+				<a href="./login">Return to Log In Page</a>
+			</div>
+
+			<button type="button" id="send-verify-token">Send
+				Verification Token</button>
+
+			<div>
+				<a href="./register">Don`t have an account? Sign Up</a>
+			</div>
+			<div>
+				<p id="error-field"></p>
+			</div>
+		</div>
+	</form>
 </body>
+
 </html>

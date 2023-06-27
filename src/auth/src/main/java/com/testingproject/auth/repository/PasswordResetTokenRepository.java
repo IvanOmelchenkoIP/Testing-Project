@@ -11,11 +11,11 @@ import com.testingproject.auth.entity.User;
 @Repository
 @Component
 public interface PasswordResetTokenRepository  extends JpaRepository<PasswordResetToken, String> {
-	
+
 	public PasswordResetToken findByUser(User user);
-	
+
 	public PasswordResetToken findByToken(String token);
-  
+
 	@Modifying
 	public void deleteByUser(User user);
 }

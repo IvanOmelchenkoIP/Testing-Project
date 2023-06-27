@@ -12,7 +12,7 @@ import com.testingproject.auth.entity.ValidToken;
 public interface ValidTokenRepository extends JpaRepository<ValidToken, String>{
 
 	public ValidToken findByToken(String token);
-	
+
 	@Modifying
 	public void deleteByToken(String token);
 }
