@@ -27,7 +27,7 @@ public class ValidToken {
 	private String token;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "user_id")
 	private User user;
 
