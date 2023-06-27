@@ -15,7 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "question")
+@Table(name = "questions")
 public class Question {
 
 	@Id 
@@ -31,7 +31,7 @@ public class Question {
 	private int mark;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "test_id")
 	private Test test;
 

@@ -14,8 +14,8 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "userpage_ids")
-public class UserpageId {
+@Table(name = "userpage_routes")
+public class UserpageRoute {
 	
 	@Id
 	@GeneratedValue(generator = "system-uuid")
@@ -23,21 +23,21 @@ public class UserpageId {
 	@Column(name = "id", unique = true)
 	private String id;
 	
-	@Column(name = "userpage_id")
-	private String userpageId;
+	@Column(name = "route", unique = true)
+	private String route;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	public UserpageId() {
+	public UserpageRoute() {
 		super();
 	}
 
-	public UserpageId(String userpageId, User user) {
+	public UserpageRoute(String route, User user) {
 		super();
-		this.userpageId = userpageId;
+		this.route = route;
 		this.user = user;
 	}
 
@@ -49,12 +49,12 @@ public class UserpageId {
 		this.id = id;
 	}
 
-	public String getUserpageId() {
-		return userpageId;
+	public String getRoute() {
+		return route;
 	}
 
-	public void setUserpageId(String userpageId) {
-		this.userpageId = userpageId;
+	public void setRoute(String route) {
+		this.route = route;
 	}
 
 	public User getUser() {

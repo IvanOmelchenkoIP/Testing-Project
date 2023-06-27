@@ -86,14 +86,14 @@ public class User {
 	}
 	
 	@OneToOne(mappedBy = "user")
-	private UserpageId userpageId;
+	private UserpageRoute userpageRoute;
 	
-	public UserpageId getUserpageId() {
-		return userpageId;
+	public UserpageRoute getUserpageRoute() {
+		return userpageRoute;
 	}
 	
-	public void setUserpageId(UserpageId userpageId) {
-		this.userpageId = userpageId;
+	public void setUserpageRoute(UserpageRoute userpageRoute) {
+		this.userpageRoute = userpageRoute;
 	}
 	
 	

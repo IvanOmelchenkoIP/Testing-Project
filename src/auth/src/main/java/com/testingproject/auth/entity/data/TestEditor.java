@@ -25,12 +25,12 @@ public class TestEditor {
 	private String id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "editor_id")
 	private User user;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "test_id")
 	private Test test;
 	

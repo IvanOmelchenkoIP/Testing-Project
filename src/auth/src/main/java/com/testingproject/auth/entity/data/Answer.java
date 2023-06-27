@@ -29,7 +29,7 @@ public class Answer {
 	private boolean isCorrect;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "question_id")
 	private Question question;
 	
