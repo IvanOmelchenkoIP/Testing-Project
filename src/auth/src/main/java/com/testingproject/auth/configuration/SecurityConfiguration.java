@@ -30,7 +30,7 @@ public class SecurityConfiguration {
 
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-		return http.cors().and().csrf().disable().authorizeHttpRequests().requestMatchers("/user**", "/user/**")
+		return http.cors().and().csrf().disable().authorizeHttpRequests().requestMatchers("/workspace**", "/workspace/**")
 				.authenticated()
 				.requestMatchers("/**", "/register**", "register/**", "/login**", "/login/**", "/verifyEmail**",
 						"/verifyEmail/**", "/resetPasswd**", "/resetPasswd/**")

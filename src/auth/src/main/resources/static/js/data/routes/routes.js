@@ -6,7 +6,7 @@ const ROUTES = {
 	logout: "/logout",
 	emailVerify: "/verifyEmail",
 	resetPassword: "/resetPasswd",
-	user: "/user",
+	workspace: "/workspace",
 };
 
 export default ROUTES;
