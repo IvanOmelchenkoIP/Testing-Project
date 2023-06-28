@@ -1,0 +1,119 @@
+html {
+	height: 100%;
+	min-height: 100%;
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	display: flex;
+} 
+
+.container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+}
+
+.userpage-menue {
+	background-color: rgb(0, 33, 71);
+	width: 18%;
+}
+
+.fillable {
+	width: 100%;
+	flex-grow: 100%;
+	background-color: rgb(194, 194, 214);
+}
+
+.logo-container {
+	height: 10%;
+	text-align: center;
+	position: relative;
+	color: rgb(194, 194, 214);
+}
+
+.logo-container img {
+	position: absolute;
+	top: 30%;
+	left: 5%;
+	height: auto;
+	width: 90%;
+}
+
+.profile-container {
+	width: 100%;
+	height: 20%;
+	text-align: center;
+}
+
+.user-profile {
+	width: 100%;
+	height: 100%;
+}
+
+#profile {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: 0pt;
+	font-size: 13pt;
+	color: rgb(194, 194, 214);
+}
+
+#profile:hover {
+	text-decoration: underline;
+	background-color: rgb(10, 20, 60);
+}
+
+.user-profile img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 3px solid rgb(194, 194, 214);
+}
+
+#profile:hover img {
+	border: 3px solid rgb(230, 230, 230);
+}
+
+.main-menue-container {
+	height: 60%;
+}
+
+.menue-instance {
+	height: 9%;
+}
+
+.main-menue-container button {
+	background-color: transparent;
+	border: 0pt;
+	color: rgb(170, 170, 170);
+	font-size: 11pt;
+	font-weight: 500;
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+}
+
+.main-menue-container button:hover, .main-menue-container button:focus {
+	background-color: rgb(38, 77, 115);
+	color: rgb(194, 194, 214);
+}
+
+.submenues-container {
+	height: auto;
+	display: flex;
+}
+
+.submenues {
+	height: 60%;
+}
+
+.language-selector {
+	flex-grow: 1;
+}
