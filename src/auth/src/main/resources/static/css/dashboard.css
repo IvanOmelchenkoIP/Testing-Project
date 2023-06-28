@@ -1,1 +1,95 @@
 @charset "UTF-8";
+
+html {
+	height: 100%;
+	min-height: 100%;
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 97%;
+	min-height: 97%;
+	display: flex;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	background-color: rgb(194, 194, 214);
+	column-gap: 10px;
+	padding: 10px;
+}
+
+.sub-container {
+	height: 100%;
+	width: 30%;
+	background-color: rgb(240, 240, 255);
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.sub-container-title {
+	color: rgb(138,43,226);
+	border-bottom: 6px solid rgb(255, 87, 51);
+	height: 10%;
+	width: 100%;
+	display: table;
+	background-color: rgb(0, 13, 51);
+}
+
+.sub-container-title p {
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.sub-container-content {
+	flex-grow: 1;
+}
+
+.primary-container {
+	height: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.primary-container-row {
+	height: 50%;
+	width: 100%;
+	display: flex;
+	background-color: rgb(240, 240, 255);
+	flex-direction: column;
+}
+
+.primary-container-row .title {
+	height: 15%;
+	border-bottom: 4px solid rgb(102, 0, 204);
+	background-color: rgb(179, 179, 204);
+	color: rgb(102, 0, 204);	
+}
+
+.title .title-text {
+	display: table;
+	width: 35%;
+	height: 100%;
+	text-align: center;
+	background-color: rgb(240, 182, 12);
+}
+
+.title-text p {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.primary-container-row .content {
+	flex-grow: 1;
+}
+
