@@ -1,8 +1,24 @@
 "use strict";
 
 class LocalStorageProcessor {
-	LocalStorageProcessor() {
-		throw new Error("Not implemented!");
+	setItem(key, value) {
+		localStorage.setItem(key, value);
+	}
+	
+	removeItem(key, value) {
+		localStorage.removeItem(key, value);
+	}
+	
+	getItem(key) {
+		return localStorage.getItem(key);
+	}
+	
+	itemExists(key) {
+		return getItem(key) != null;
+	}
+	
+	clear() {
+		localStorage.clear();
 	}
 }
 

@@ -1,8 +1,24 @@
 "use strict";
 
 class SessionStorageProcessor {
-	SessionStorageProcessor() {
-		throw new Error("Not implemented!");
+	setItem(key, value) {
+		sessionStorage.setItem(key, value);
+	}
+	
+	removeItem(key, value) {
+		sessionStorage.removeItem(key, value);
+	}
+	
+	getItem(key) {
+		return sessionStorage.getItem(key);
+	}
+	
+	itemExists(key) {
+		return getItem(key) != null;
+	}
+	
+	clear() {
+		sessionStorage.clear();
 	}
 }
 
