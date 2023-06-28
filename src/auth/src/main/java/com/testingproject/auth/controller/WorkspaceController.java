@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("/user")
+@RequestMapping("/workspace")
 @RestController
-public class UserPageController {
+public class WorkspaceController {
 
 	@GetMapping
 	public ModelAndView showUserPage() {
-		return new ModelAndView("userpage.html");
+		return new ModelAndView("workspace.html");
 	}
 }

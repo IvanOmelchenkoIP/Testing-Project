@@ -5,17 +5,17 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.testingproject.auth.entity.RefreshToken;
 import com.testingproject.auth.entity.User;
+import com.testingproject.auth.entity.UserpageRoute;
 
 @Repository
 @Component
-public interface RefreshTokenRepository extends JpaRepository<RefreshToken, String> {
+public interface UserpageRouteRepository extends JpaRepository<UserpageRoute, String> {
 
-	public RefreshToken findByUser(User user);
-
-	public RefreshToken findByToken(String token);
-
+	public UserpageRoute findByUser(User user);
+	
+	public UserpageRoute findByRoute(String route);
+	
 	@Modifying
-	public void deleteByUser(User user);
+	public void deleteByUser(User user);	
 }

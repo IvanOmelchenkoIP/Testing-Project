@@ -34,7 +34,7 @@ public class Test {
 	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "creator_id")
 	private User user;
 

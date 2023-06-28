@@ -23,12 +23,12 @@ public class CourseTest {
 	private String id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "course_id")
 	private Course course;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@MapsId("id")
 	@JoinColumn(name = "test_id")
 	private Test test;
 
