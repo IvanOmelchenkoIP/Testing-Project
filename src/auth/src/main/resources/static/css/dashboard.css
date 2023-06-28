@@ -75,13 +75,14 @@ body {
 	width: 100%;
 	display: flex;
 	text-indent: 1em;
+	background-color: rgb(230, 230, 240);
 	flex-direction: row;
-	font-weight: 600;
 }
 
 .title-text {
 	width: 85%;
-	background-color: rgb(240, 240, 255);
+	background: transparent;
+	font-weight: 600;
 	display: table;
 }
 
@@ -93,7 +94,7 @@ body {
 
 .all-button {
 	flex-grow: 1;
-	background-color: rgb(240, 240, 255);
+	background-color: transparent;
 }
 
 .all-button button {
@@ -103,9 +104,9 @@ body {
 	background: transparent;
 	border: 0pt;
 	font-size: 14px;
-	color: rgb(195, 195, 185);
+	color: rgb(170, 170, 170);
 }
 
 .all-button button:hover {
-	color: rgb(170, 170, 170);
+	color: rgb(0, 33, 71);
 }
