@@ -37,3 +37,15 @@ body {
 	flex-grow: 1;
 	background-color: rgb(240, 240, 255);
 }
+
+.menu button {
+	font-size: 16px;
+	border: 0;
+	height: 100%;
+	width: 20%;
+	background: rgb(240, 240, 255);
+}
+
+.menu button:hover {
+	background: rgb(255, 255, 255);
+}
