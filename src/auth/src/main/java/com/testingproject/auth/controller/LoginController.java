@@ -43,7 +43,8 @@ public class LoginController {
 		User user = userService.findByUsername(request.getUsername());
 		if (user != null && encoder.matches(request.getPasswd(), user.getPasswd())) {
 			String token = jwtUtil.generate(user);
-			return ResponseEntity.ok(new HttpResponseBody(token));
+			String response = "username=" + user.getUsername() + ";jwtToken=" + token;
+			return ResponseEntity.ok(new HttpResponseBody(response));
 		}
 		return new ResponseEntity<>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
 	}
