@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "userpage_routes")
-public class UserpageRoute {
+public class ProfileRoute {
 	
 	@Id
 	@GeneratedValue(generator = "system-uuid")
@@ -31,11 +31,11 @@ public class UserpageRoute {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	public UserpageRoute() {
+	public ProfileRoute() {
 		super();
 	}
 
-	public UserpageRoute(String route, User user) {
+	public ProfileRoute(String route, User user) {
 		super();
 		this.route = route;
 		this.user = user;

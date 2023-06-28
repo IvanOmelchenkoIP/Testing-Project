@@ -6,15 +6,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.testingproject.auth.entity.User;
-import com.testingproject.auth.entity.UserpageRoute;
+import com.testingproject.auth.entity.ProfileRoute;
 
 @Repository
 @Component
-public interface UserpageRouteRepository extends JpaRepository<UserpageRoute, String> {
+public interface ProfileRouteRepository extends JpaRepository<ProfileRoute, String> {
 
-	public UserpageRoute findByUser(User user);
+	public ProfileRoute findByUser(User user);
 	
-	public UserpageRoute findByRoute(String route);
+	public ProfileRoute findByRoute(String route);
 	
 	@Modifying
 	public void deleteByUser(User user);	

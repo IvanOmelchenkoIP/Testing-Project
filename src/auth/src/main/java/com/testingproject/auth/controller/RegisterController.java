@@ -17,6 +17,7 @@ import com.testingproject.auth.entity.User;
 import com.testingproject.auth.httpbody.request.RegisterRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
 import com.testingproject.auth.jwt.JwtUtil;
+import com.testingproject.auth.service.ProfileRouteService;
 import com.testingproject.auth.service.UserService;
 
 @RequestMapping("/register")
@@ -25,6 +26,9 @@ public class RegisterController {
 
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	ProfileRouteService profileRouteService;
 
 	@Autowired
 	JwtUtil jwtUtil;
@@ -44,6 +48,7 @@ public class RegisterController {
 		User user;
 		try {
 			user = userService.registerUser(request.getUsername(), request.getEmail(), encoder.encode(request.getPasswd()));
+			profileRouteService.createProfileRoute(profileRouteService.generateProfileRoute(), user);
 			String token = jwtUtil.generate(user);
 			return ResponseEntity.ok(new HttpResponseBody(token));
 		} catch (DataIntegrityViolationException exception) {
