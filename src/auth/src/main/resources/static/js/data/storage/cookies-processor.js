@@ -1,6 +1,6 @@
 "use strict";
 
-import addYears from "../../utils/time/add-years.js"
+import addYears from "../../utils/time/add-years.js";
 
 class CookiesProcessor {
 	
