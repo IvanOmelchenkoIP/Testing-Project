@@ -1,6 +1,6 @@
 "use strict";
 
-import addYears from "../../utils/time/add-years.js";
+import addDays from "../../utils/time/add-days.js";
 
 class CookiesProcessor {
 	
@@ -8,8 +8,10 @@ class CookiesProcessor {
 		return document.cookie;
 	}
 	
-	setCookie(name, value, date = addYears(new Date(), 10)) {
-		document.cookie = name + "=" + value + ";expires=" + date;
+	setCookie(name, value = "", days = 1000) {
+		const content = name + "=" + value;
+		const expires = "; expires=" + addDays(new Date(), days).toUTCString();
+		document.cookie = content + expires;
 	}
 	
 	editCookieValue(name, value) {
@@ -17,8 +19,9 @@ class CookiesProcessor {
 	}
 	
 	getCookie(name) {
-		const cookies = decodeURIComponent(getAllCookies()).split(`; ${name}=`);
-		return cookies.pop().split(";").shift();
+		const documentCookies = this.getAllCookies();
+		const cookies = `; ${documentCookies}`;
+		return cookies.split(`; ${name}=`).pop().split(";").shift();
 	}
 }
 
