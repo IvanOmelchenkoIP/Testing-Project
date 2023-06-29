@@ -15,13 +15,26 @@ const get = ({
 	fetch(fullRoute, {
 		method: FETCH_METHODS.get,
 		headers: headers,
+		redirect: "follow"
 	})
 		.then((response) => {
 			return response.text();
 		})
 		.then((pageText) => {
+			document.documentElement.innerHTML = pageText;
+			const oldScripts = document.getElementsByTagName("script");
+			for (const oldScript of oldScripts) {
+				const newScript = document.createElement("script");
+				const attributes = oldScript.attributes;
+				for (const attribute of attributes) newScript.setAttribute(attribute.name, attribute.value);
+				newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+				oldScript.parentNode.replaceChild(newScript, oldScript);
+				console.log(newScript);
+			}
+			
+			console.log(document.documentElement.innerHTML);
+			
 			window.history.replaceState(null, null, fullRoute);
-			document.body.innerHTML = pageText;
 		});
 };
 
