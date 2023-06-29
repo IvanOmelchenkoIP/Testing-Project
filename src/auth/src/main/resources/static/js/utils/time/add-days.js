@@ -1,8 +1,8 @@
 "use strict";
 
-const addYears = (date, years) => {
-	date.setFullDate(date.getFullYears() + years);
+const addDays = (date, days) => {
+	date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
 	return date;
 }
 
-export default addYears;
+export default addDays;
