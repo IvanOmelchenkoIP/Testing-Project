@@ -23,6 +23,7 @@ const get = ({
 		.then((pageText) => {
 			document.documentElement.innerHTML = pageText;
 			const oldScripts = document.getElementsByTagName("script");
+			console.log(oldScripts);
 			for (const oldScript of oldScripts) {
 				const newScript = document.createElement("script");
 				const attributes = oldScript.attributes;

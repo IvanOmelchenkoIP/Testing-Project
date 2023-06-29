@@ -3,10 +3,10 @@
 import INVALID_MSGS from "../data/invalid-msgs.js";
 import INVALID_PARAGAPHS from "../data/invalid-paragraphs.js";
 import VALIDATORS from "../validate/validators.js";
-import DOM_DATA_GETTERS from "../../parser/dom/dom-getters.js";
+import selector from "../../parsers/dom/dom-selector.js";
 
 const validateField = (key, value) => {
-	const invalidParagraph = DOM_DATA_GETTERS.id(INVALID_PARAGAPHS[key]);
+	const invalidParagraph = selector.selectById(INVALID_PARAGAPHS[key]);
 	if (VALIDATORS.empty(value)) {
 		invalidParagraph.innerText = INVALID_MSGS.empty;
 		return false;

@@ -1,10 +1,10 @@
 "use strict";
 
-import DOM_DATA_GETTERS from "../../utils/parser/dom/dom-getters.js";
+import selector from "../../utils/parsers/dom/dom-selector.js";
 
 const genericMsgFail = (error) => {
 	const id = "error-field";
-	DOM_DATA_GETTERS.id(id).innerText = error;
+	selector.selectById(id).innerText = error;
 }
 
 export default genericMsgFail;
