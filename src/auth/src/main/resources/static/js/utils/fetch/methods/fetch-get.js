@@ -15,7 +15,6 @@ const get = ({
 	fetch(fullRoute, {
 		method: FETCH_METHODS.get,
 		headers: headers,
-		redirect: "follow"
 	})
 		.then((response) => {
 			return response.text();
@@ -31,10 +30,7 @@ const get = ({
 				newScript.appendChild(document.createTextNode(oldScript.innerHTML));
 				oldScript.parentNode.replaceChild(newScript, oldScript);
 				console.log(newScript);
-			}
-			
-			console.log(document.documentElement.innerHTML);
-			
+			}			
 			window.history.replaceState(null, null, fullRoute);
 		});
 };
