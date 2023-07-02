@@ -15,6 +15,10 @@ class DOMSelector {
 		return DOM_SELECTORS.tag;
 	}
 	
+	classSelector() {
+		return DOM_SELECTORS.htmlClass;
+	}
+	
 	selectByTag(name) {
 		return DOM_SELECTORS.tag(name);
 	}
@@ -25,6 +29,10 @@ class DOMSelector {
 	
 	selectById(name) {
 		return DOM_SELECTORS.id(name);
+	}
+	
+	selectByClass(name) {
+		return DOM_SELECTORS.htmlClass(name);
 	}
 	
 	selectData(selector, ...names) {
