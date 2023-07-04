@@ -1,7 +1,7 @@
 "use strict";
 
 import { userAuthService } from "../services/services.js";
-import selector from "../utils/parsers/dom/dom-selector.js";
+import selector from "../dom/select/dom-selector.js";
 import domExtractor from "./utils/dom-listener-extractor.js";
 
 const names = ["username", "email", "passwd"];

@@ -1,6 +1,6 @@
 "use strict";
 
-import selector from "../../utils/parsers/dom/dom-selector.js";
+import selector from "../../dom/select/dom-selector.js";
 import validateFields from "../../utils/validators/fields/validate-fields.js"
 
 const domExtractor = (names) => {

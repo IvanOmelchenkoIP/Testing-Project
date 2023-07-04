@@ -3,7 +3,7 @@
 import INVALID_MSGS from "../data/invalid-msgs.js";
 import INVALID_PARAGAPHS from "../data/invalid-paragraphs.js";
 import VALIDATORS from "../validate/validators.js";
-import selector from "../../parsers/dom/dom-selector.js";
+import selector from "../../../dom/select/dom-selector.js";
 
 const validateField = (key, value) => {
 	const invalidParagraph = selector.selectById(INVALID_PARAGAPHS[key]);
