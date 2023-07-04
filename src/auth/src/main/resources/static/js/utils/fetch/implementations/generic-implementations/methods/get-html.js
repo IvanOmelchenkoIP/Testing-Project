@@ -4,7 +4,7 @@ import BASE_ROUTE from "../../../data/routes/base-route.js"
 import { FETCH_HEADERS, FETCH_METHODS } from "../data/fetch-data.js";
 import { createHeaders } from "../headers/headers.js";
 
-const getPage = ({
+const getHtml = ({
 	route,
 	headers = null,
 	htmlCallback = null,
@@ -14,10 +14,11 @@ const getPage = ({
 	//localStorageCallback = null,
 }) => {
 	const fullRoute = BASE_ROUTE + route;
-	if (headers == null) headers = createHeaders(FETCH_HEADERS.acceptAll, FETCH_HEADERS.contentTypeAll);
+	const baseHeaders = createHeaders(FETCH_HEADERS.acceptAll, FETCH_HEADERS.contentTypeAll);
+	const reqHeaders = headers == null ? baseHeaders : createHeaders(...baseHeaders, ...headers);
 	fetch(fullRoute, {
 		method: FETCH_METHODS.get,
-		headers: headers,
+		headers: reqHeaders,
 	})
 		.then((response) => {
 			return response.text();
@@ -32,4 +33,4 @@ const getPage = ({
 		});
 };
 
-export default get;
+export default getHtml;

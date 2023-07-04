@@ -7,17 +7,18 @@ import { createHeaders, addToHeader } from "../headers/headers.js";
 const getHtml = ({
 	route,
 	jwtToken,
-	successCallback = null,
-	errorCallback = null
+	headers = null,
+	htmlCallback = null,
+	routeCallback = null,
+	errorCallback = null,
+	sessionStorageCallback = null,
+	//localStorageCallback = null,
 }) => {
-	const jwtHeaders = createHeaders(
-		FETCH_HEADERS.acceptAll,
-		FETCH_HEADERS.contentTypeAll,
-		addToHeader(FETCH_HEADERS.authorization, jwtToken)
-	);
+	const jwtHeaders = addToHeader(FETCH_HEADERS.authorization, jwtToken);
+	const reqHeaders = headers == null ? jwtHeaders : createHeaders(...jwtHeaders, ...headers);
 	genericGetHtml({
 		route: route,
-		headers: jwtHeaders,
+		headers: reqHeaders,
 		successCallback: successCallback,
 		errorCallback: errorCallback
 	});
