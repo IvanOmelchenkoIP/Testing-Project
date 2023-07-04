@@ -4,7 +4,7 @@ import BASE_ROUTE from "../../../data/routes/base-route.js"
 import { FETCH_HEADERS, FETCH_METHODS } from "../data/fetch-data.js";
 import { createHeaders } from "../headers/headers.js";
 
-const get = ({
+const getPage = ({
 	route,
 	headers = null,
 	htmlCallback = null,
@@ -28,7 +28,7 @@ const get = ({
 			if (routeCallback) routeCallback(fullRoute);
 		})
 		.catch((err) => {
-			errorCallback(err);
+			if (errorCallback) errorCallback(err);
 		});
 };
 

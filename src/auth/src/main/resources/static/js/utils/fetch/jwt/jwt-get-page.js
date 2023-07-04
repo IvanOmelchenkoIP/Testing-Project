@@ -4,7 +4,7 @@ import { get } from "../methods/fetch-methods.js";
 import { FETCH_HEADERS } from "../data/fetch-data.js"
 import { createHeaders, addToHeader } from "../headers/headers.js";
 
-const getJwt = ({
+const getPageJwt = ({
 	route,
 	jwtToken,
 	successCallback = null,
@@ -23,4 +23,4 @@ const getJwt = ({
 	});
 };
 
-export default getJwt;
+export default getPageJwt;
