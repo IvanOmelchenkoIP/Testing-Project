@@ -1,28 +1,26 @@
 "use strict";
 
-import { post } from "../methods/fetch-methods.js";
+import { getHtml as genericGetHtml } from "../../generic-implementations/methods/get-html.js";
 import { FETCH_HEADERS } from "../data/fetch-data.js"
 import { createHeaders, addToHeader } from "../headers/headers.js";
 
-const postJwt = ({
+const getHtml = ({
 	route,
 	jwtToken,
-	json = {},
 	successCallback = null,
 	errorCallback = null
 }) => {
 	const jwtHeaders = createHeaders(
-		FETCH_HEADERS.acceptJson,
-		FETCH_HEADERS.contentTypeJson,
+		FETCH_HEADERS.acceptAll,
+		FETCH_HEADERS.contentTypeAll,
 		addToHeader(FETCH_HEADERS.authorization, jwtToken)
 	);
-	post({
+	genericGetHtml({
 		route: route,
-		json: json,
 		headers: jwtHeaders,
 		successCallback: successCallback,
 		errorCallback: errorCallback
 	});
 };
 
-export default postJwt;
+export default getHtml;
