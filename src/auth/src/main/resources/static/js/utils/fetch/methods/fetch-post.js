@@ -8,8 +8,12 @@ const post = ({
 	route,
 	json = {},
 	headers = null,
-	successCallback = null,
-	errorCallback = null
+	resSuccessCallback = null,
+	resErrorCallback = null,
+	//pageErrorCallback = null,
+	cookiesCallback = null,
+	//sessionStorageCallback = null,
+	//localStorageCallback = null
 }) => {
 	const fullRoute = BASE_ROUTE + route;
 	if (headers == null) headers = createHeaders(FETCH_HEADERS.acceptJson, FETCH_HEADERS.contentTypeJson);
@@ -26,14 +30,15 @@ const post = ({
 		.then(({ ok, json }) => {
 			const message = json.message;
 			if (ok) {
-				if (successCallback) successCallback(message);
+				if (cookiesCallback) cookiesCallback(message);
+				if (resSuccessCallback) resSuccessCallback(message);
 			} else {
-				if (errorCallback) errorCallback(FETCH_ERRORS[message]);
+				if (resErrorCallback) resErrorCallback(FETCH_ERRORS[message]);
 			}
 		})
 		.catch((err) => {
-			const messageId = "response-error";
-			if (errorCallback) errorCallback(FETCH_ERRORS[messageId]);
+			//if (pageErrorCallback) pageErrorCallback(err);
+			if (resErrorCallback) resErrorCallback(FETCH_ERRORS["response-error"]);
 		});
 };
 
