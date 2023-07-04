@@ -1,6 +1,6 @@
 "use strict";
 
-import post from "./fetch-post.js"
-import get from "./fetch-get.js"
+import post from "./methods/post.js"
+import getHtml from "./methods/get-html.js"
 
-export { post, get };
+export { post, getHtml };

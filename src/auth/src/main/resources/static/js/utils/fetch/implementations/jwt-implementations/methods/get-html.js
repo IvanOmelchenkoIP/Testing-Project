@@ -1,26 +1,27 @@
 "use strict";
 
 import { getHtml as genericGetHtml } from "../../generic-implementations/methods/get-html.js";
-import { FETCH_HEADERS } from "../data/fetch-data.js"
-import { createHeaders, addToHeader } from "../headers/headers.js";
+import headersProcessor from "../../../instances/headers-processor/headers-processor.js";
 
 const getHtml = ({
 	route,
+	headers,
 	jwtToken,
-	headers = null,
 	htmlCallback = null,
 	routeCallback = null,
 	errorCallback = null,
 	sessionStorageCallback = null,
 	//localStorageCallback = null,
 }) => {
-	const jwtHeaders = addToHeader(FETCH_HEADERS.authorization, jwtToken);
-	const reqHeaders = headers == null ? jwtHeaders : createHeaders(...jwtHeaders, ...headers);
+	const { Authorization } = headersProcessor.addToHeader(headers.Authorization, jwtToken);
+	headers.Authorization = Authorization;
 	genericGetHtml({
 		route: route,
-		headers: reqHeaders,
-		successCallback: successCallback,
-		errorCallback: errorCallback
+		headers: headers,
+		htmlCallback: htmlCallback,
+		routeCallback: routeCallback,
+		errorCallback: errorCallback,
+		sessionStorageCallback: sessionStorageCallback
 	});
 };
 

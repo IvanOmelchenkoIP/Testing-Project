@@ -1,13 +1,11 @@
 "use strict";
 
-import BASE_ROUTE from "../../../data/routes/base-route.js"
-import { FETCH_HEADERS, FETCH_METHODS, FETCH_ERRORS } from "../data/fetch-data.js";
-import { createHeaders } from "../headers/headers.js";
+import FETCH_METHODS from "../../../data/methods/fetch-methods.js";
 
 const post = ({
 	route,
+	headers,
 	json = {},
-	headers = null,
 	resSuccessCallback = null,
 	resErrorCallback = null,
 	//pageErrorCallback = null,
@@ -15,9 +13,7 @@ const post = ({
 	//sessionStorageCallback = null,
 	//localStorageCallback = null
 }) => {
-	const fullRoute = BASE_ROUTE + route;
-	if (headers == null) headers = createHeaders(FETCH_HEADERS.acceptJson, FETCH_HEADERS.contentTypeJson);
-	fetch(fullRoute, {
+	fetch(route, {
 		method: FETCH_METHODS.post,
 		headers: headers,
 		body: JSON.stringify(json),
@@ -33,12 +29,12 @@ const post = ({
 				if (cookiesCallback) cookiesCallback(message);
 				if (resSuccessCallback) resSuccessCallback(message);
 			} else {
-				if (resErrorCallback) resErrorCallback(FETCH_ERRORS[message]);
+				if (resErrorCallback) resErrorCallback(message);
 			}
 		})
 		.catch((err) => {
 			//if (pageErrorCallback) pageErrorCallback(err);
-			if (resErrorCallback) resErrorCallback(FETCH_ERRORS["response-error"]);
+			if (resErrorCallback) resErrorCallback(err);
 		});
 };
 

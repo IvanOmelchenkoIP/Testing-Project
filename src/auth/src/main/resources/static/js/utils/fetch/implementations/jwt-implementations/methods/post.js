@@ -1,27 +1,29 @@
 "use strict";
 
 import { post as genericPost } from "../../generic-implementations/methods/post.js";
-import { FETCH_HEADERS } from "../data/fetch-data.js"
-import { createHeaders, addToHeader } from "../headers/headers.js";
+import headersProcessor from "../../../instances/headers-processor/headers-processor.js";
 
 const post = ({
 	route,
+	headers,
 	jwtToken,
 	json = {},
-	successCallback = null,
-	errorCallback = null
+	resSuccessCallback = null,
+	resErrorCallback = null,
+	//pageErrorCallback = null,
+	cookiesCallback = null,
+	//sessionStorageCallback = null,
+	//localStorageCallback = null
 }) => {
-	const jwtHeaders = createHeaders(
-		FETCH_HEADERS.acceptJson,
-		FETCH_HEADERS.contentTypeJson,
-		addToHeader(FETCH_HEADERS.authorization, jwtToken)
-	);
+	const { Authorization } = headersProcessor.addToHeader(headers.Authorization, jwtToken);
+	headers.Authorization = Authorization;
 	genericPost({
 		route: route,
+		headers: headers,
 		json: json,
-		headers: jwtHeaders,
-		successCallback: successCallback,
-		errorCallback: errorCallback
+		resSuccessCallback: resSuccessCallback,
+		resErrorCallback: resErrorCallback,
+		cookiesCallback: cookiesCallback
 	});
 };
 
