@@ -1,11 +1,11 @@
 "use strict";
 
-import AbstractAuthService from "../../abstract-service/abstract-service.js"
+import AbstractService from "../../abstract-service/abstract-service.js"
 import { post } from "../../../utils/fetch/methods/fetch-methods.js"
 import emailVerifySuccess from "../../callbacks/email-verify-success.js";
 import genericMsgFail from "../../callbacks/generic-msg-fail.js";
 
-class EmailVerifyService extends AbstractAuthService {
+class EmailVerifyService extends AbstractService {
 	constructor(route) {
 		super(route);
 	}

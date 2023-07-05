@@ -1,11 +1,11 @@
 "use strict";
 
-import AbstractAuthService from "../../abstract-service/abstract-service.js"
+import AbstractService from "../../abstract-service/abstract-service.js"
 import { post } from "../../../utils/fetch/methods/fetch-methods.js"
 import passwdResetSuccess from "../../callbacks/passwd-reset-success.js";
 import genericMsgFail from "../../callbacks/generic-msg-fail.js";
 
-class PasswordResetService extends AbstractAuthService {
+class PasswordResetService extends AbstractService {
 	constructor(route) {
 		super(route);
 	}

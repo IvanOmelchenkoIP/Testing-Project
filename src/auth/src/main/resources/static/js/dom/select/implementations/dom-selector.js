@@ -1,6 +1,6 @@
 "use strict";
 
-import DOM_SELECTORS from "./dom-selectors.js";
+import DOM_SELECTORS from "../data/dom-selectors.js";
 
 class DOMSelector {
 	idSelector() {
@@ -33,12 +33,6 @@ class DOMSelector {
 	
 	selectByClass(name) {
 		return DOM_SELECTORS.htmlClass(name);
-	}
-	
-	selectData(selector, ...names) {
-		const data = {};
-		for (const name of names) data[name] = selector(name);
-		return data;
 	}
 }
 

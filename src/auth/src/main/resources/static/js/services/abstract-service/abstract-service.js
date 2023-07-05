@@ -1,6 +1,6 @@
 "use strict";
 
-class AbstractAuthService {
+class AbstractService {
 	_route;
 
 	constructor(route) {
@@ -17,4 +17,4 @@ class AbstractAuthService {
 	}
 }
 
-export default AbstractAuthService;
+export default AbstractService;

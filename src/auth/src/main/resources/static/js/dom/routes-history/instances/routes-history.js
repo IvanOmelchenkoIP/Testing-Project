@@ -1,6 +1,6 @@
 "use strict";
 
-import RoutesHistoryProcessor from "./implementation/routes-history-processor.js";
+import RoutesHistoryProcessor from "../implementations/routes-history-processor.js";
 
 const routesHistory = new RoutesHistoryProcessor();
 

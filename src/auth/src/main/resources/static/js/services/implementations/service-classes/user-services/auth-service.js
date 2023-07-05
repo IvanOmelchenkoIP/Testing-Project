@@ -1,9 +1,10 @@
 "use strict";
 
-class UserAuthService {
+class AuthService {
 	#registerService;
 	#loginService;
 	#logoutService;
+	
 	constructor(registerService, loginService, logoutService) {
 		this.#registerService = registerService;
 		this.#loginService = loginService;
@@ -23,4 +24,4 @@ class UserAuthService {
 	}
 }
 
-export default UserAuthService;
+export default AuthService;

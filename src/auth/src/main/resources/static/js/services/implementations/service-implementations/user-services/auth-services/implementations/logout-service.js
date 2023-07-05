@@ -1,9 +1,9 @@
 "use strict";
 
-import AbstractAuthService from "../../abstract-service/abstract-service.js"
+import AbstractService from "../../abstract-service/abstract-service.js"
 import { post } from "../../../utils/fetch/methods/fetch-methods.js"
 
-class LogoutService extends AbstractAuthService {
+class LogoutService extends AbstractService {
 	constructor(route) {
 		super(route);
 	}
