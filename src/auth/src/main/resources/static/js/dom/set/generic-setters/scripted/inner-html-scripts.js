@@ -1,6 +1,6 @@
 "use strict";
 
-const setScriptetInnerHtml = (element, html) => {
+const setScriptedInnerHtml = (element, html) => {
 	element.innerHTML = html;
 	const oldScripts = document.getElementsByTagName("script");
 	for (const oldScript of oldScripts) {
@@ -12,4 +12,4 @@ const setScriptetInnerHtml = (element, html) => {
 	}
 }
 
-export default setScriptetInnerHtml;
+export default setScriptedInnerHtml;
