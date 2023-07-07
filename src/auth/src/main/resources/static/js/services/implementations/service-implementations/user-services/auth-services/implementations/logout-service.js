@@ -1,6 +1,6 @@
 "use strict";
 
-import AbstractService from "../../abstract-service/abstract-service.js"
+import AbstractService from "../../../../../abstract-service/abstract-service.js";
 import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fetch-utils.js";
 
 class LogoutService extends AbstractService {

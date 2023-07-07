@@ -26,8 +26,8 @@ class ExtendedDOMSelector extends DOMSelector {
 	}
 	
 	selectAllBySelectorAndValidate(selector, validatorFn, ...names) {
-		const fieldVals = this.selectBySelector(selector, ...names);
-		return  { valid: validatorFn(fields), data: fieldVals };
+		const fieldVals = this.selectAllBySelector(selector, ...names);
+		return  { valid: validatorFn(fieldVals), data: fieldVals };
 	}
 	
 	selectAllByIdAndValidate(validatorFn, ...names) {

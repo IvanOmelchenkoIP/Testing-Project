@@ -7,5 +7,4 @@ const USER_FORMS_RESPONSE_ERRORS = {
 	"login-error": "Incorrect username or password when logging in"
 };
 
-export default USER_FORMS_ERRORS;
-USER_FORMS_RESPONSE_ERRORS
+export default USER_FORMS_RESPONSE_ERRORS;

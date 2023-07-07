@@ -1,9 +1,9 @@
 "use strict";
 
-import { getHtml as genericGetHtml } from "../../generic-implementations/methods/get-html.js";
+import getHtml from "../../generic-implementations/methods/get-html.js";
 import headersProcessor from "../../../instances/headers-processor/headers-processor.js";
 
-const getHtml = ({
+const getHtmlJwt = ({
 	route,
 	headers,
 	jwtToken,
@@ -25,4 +25,4 @@ const getHtml = ({
 	});
 };
 
-export default getHtml;
+export default getHtmlJwt;

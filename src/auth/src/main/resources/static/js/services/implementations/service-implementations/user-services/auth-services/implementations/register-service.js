@@ -1,6 +1,6 @@
 "use strict";
 
-import AbstractService from "../../abstract-service/abstract-service.js"
+import AbstractService from "../../../../../abstract-service/abstract-service.js";
 import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fetch-utils.js";
 import authCookiesCallback from "../../../../../../callbacks/user/auth/auth-cookies-callback.js";
 import authSuccessCallback from "../../../../../../callbacks/user/auth/auth-success-callback.js";

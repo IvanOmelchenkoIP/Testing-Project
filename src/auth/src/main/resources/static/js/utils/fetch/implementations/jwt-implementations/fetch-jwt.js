@@ -1,6 +1,6 @@
 "use strict";
 
-import post from "./methods/post.js"
-import getHtml from "./methods/get-html.js"
+import postJwt from "./methods/post.js"
+import getHtmlJwt from "./methods/get-html.js"
 
-export { post, getHtml };
+export { postJwt as post, getHtmlJwt as getHtml };

@@ -1,9 +1,10 @@
 "use strict";
 
-import GenericFetchUtil from "./generic-fetch-util.js";
+import GenericFetchUtil from "./generic/generic-fetch-util.js";
 
 class FetchUtil extends GenericFetchUtil {
 	constructor(postImpl, getHtmlImpl) {
+		super();
 		this.postImpl = postImpl;
 		this.getHtmlImpl = getHtmlImpl;
 	}

@@ -1,9 +1,9 @@
 "use strict";
 
-import { post as genericPost } from "../../generic-implementations/methods/post.js";
+import post from "../../generic-implementations/methods/post.js";
 import headersProcessor from "../../../instances/headers-processor/headers-processor.js";
 
-const post = ({
+const postJwt = ({
 	route,
 	headers,
 	jwtToken,
@@ -27,4 +27,4 @@ const post = ({
 	});
 };
 
-export default post;
+export default postJwt;

@@ -4,7 +4,7 @@ class AbstractService {
 	_route;
 
 	constructor(route) {
-		if (this.constructor == AbstractAuthService) {
+		if (this.constructor == AbstractService) {
 			throw new Error("Can`t make an instance of abstract class AuthService!");
 		}
 		this._route = route;
