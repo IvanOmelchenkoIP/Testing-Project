@@ -2,25 +2,25 @@
 
 class WorkspaceNavigationService {
 	#dashboardService;
-	#coursesService;
 	#archiveService;
+	#coursesService;
 	
-	constructor(dashboardService, coursesService, archiveService) {
+	constructor(dashboardService, archiveService, coursesService) {
 		this.#dashboardService = dashboardService;
+			this.#archiveService = archiveService;
 		this.#coursesService = coursesService;
-		this.#archiveService = archiveService;
 	}
 	
 	navigateToDashboard(...params) {
 		this.#dashboardService.execute(...params);
 	}
 	
-	navigateToCourses(...params) {
-		this.#coursesService.execute(...params);
-	}
-	
 	navigateToArchive(...params) {
 		this.#archiveService.execute(...params);
+	}
+	
+	navigateToCourses(...params) {
+		this.#coursesService.execute(...params);
 	}
 }
 
