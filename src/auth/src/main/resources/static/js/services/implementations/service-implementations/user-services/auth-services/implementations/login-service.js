@@ -1,9 +1,10 @@
 "use strict";
 
 import AbstractService from "../../abstract-service/abstract-service.js"
-import { post } from "../../../utils/fetch/methods/fetch-methods.js"
-import authSuccess from "../../callbacks/auth-success.js";
-import genericMsgFail from "../../callbacks/generic-msg-fail.js";
+import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fetch-utils.js";
+import authCookiesCallback from "../../../../../../callbacks/user/auth/auth-cookies-callback.js";
+import authSuccessCallback from "../../../../../../callbacks/user/auth/auth-success-callback.js";
+import setIdInnerHtmlCallback from "../../../../../../callbacks/generic/set-id-html-callback.js";
 
 class LoginService extends AbstractService {
 	constructor(route) {
@@ -15,7 +16,13 @@ class LoginService extends AbstractService {
 	}
 
 	execute(userData) {
-		post({ route: this._route, json: userData, successCallback: authSuccess, errorCallback: genericMsgFail });
+		fetchUtil.post({ 
+			route: this._route,
+			json: userData, 
+			resSuccessCallback: authSuccessCallback, 
+			resErrorCallback: setIdInnerHtmlCallback,
+			cookiesCallback: authCookiesCallback
+		});
 	}
 }
 

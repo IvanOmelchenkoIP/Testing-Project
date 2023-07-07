@@ -1,7 +1,7 @@
 "use strict";
 
 import AbstractService from "../../abstract-service/abstract-service.js"
-import { post } from "../../../utils/fetch/methods/fetch-methods.js"
+import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fetch-utils.js";
 
 class LogoutService extends AbstractService {
 	constructor(route) {
@@ -13,7 +13,7 @@ class LogoutService extends AbstractService {
 	}
 
 	execute(...params) {
-		post({ route: this._route });
+		fetchUtil.post({ route: this._route });
 	}
 }
 
