@@ -1,6 +1,7 @@
 "use strict";
 
 const setScriptedInnerHtml = (element, html) => {
+	console.log(element);
 	element.innerHTML = html;
 	const oldScripts = document.getElementsByTagName("script");
 	for (const oldScript of oldScripts) {

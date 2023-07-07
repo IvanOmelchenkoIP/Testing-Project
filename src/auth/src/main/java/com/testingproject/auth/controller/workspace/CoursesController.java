@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("/workspaceDashboard")
+@RequestMapping("/workspaceCourses")
 @RestController
-public class DashboardController {
-
+public class CoursesController {
+	
 	@GetMapping
-	public ModelAndView showDashboard() {
-		return new ModelAndView("dashboard.html");
+	public ModelAndView showCourses() {
+		return new ModelAndView("courses.html");
 	}
 }

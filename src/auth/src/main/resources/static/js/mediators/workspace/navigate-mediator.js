@@ -2,11 +2,10 @@
 
 import allHeadersMediator from "../fetch/headers/all-headers-mediator.js";
 import { jwtFetchUtil } from "../../utils/fetch/instances/fetch-util/fetch-utils.js";
-import cookiesProcessor from "../../data/storage/storages.js";
 import setScriptedClassInnerHtmlCurried from "../../dom/set/implementations/curried/scripted/set-class-html.js";
 import storeWorkspaceHtml from "../../callbacks/workspace/navigation/store-workspace-html-callback.js";
 
-import { sessionStorageProcessor } from "../../data/storage/storages.js";
+import { cookiesProcessor, sessionStorageProcessor } from "../../data/storage/storages.js";
 
 const navigateMediator = (route, state) => {
 	if (sessionStorageProcessor.getItem("workspaceState") == state) return;
@@ -22,7 +21,7 @@ const navigateMediator = (route, state) => {
 		sessionStorageCallback: storeWorkspaceHtml
 	});
 	
-	sessionStorageProcessor.setItem("workspaceState") = state;
+	sessionStorageProcessor.setItem("workspaceState", state);
 }
 
 export default navigateMediator;
