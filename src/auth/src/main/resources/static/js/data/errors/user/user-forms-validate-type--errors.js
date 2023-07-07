@@ -1,10 +1,9 @@
 "use strict";
 
-const INVALID_MSGS = {
+const USER_AUTH_FIELDS_VALIDATE_TYPE_ERRORS = {
 	username: "Wrong username format!",
 	passwd: "Wrong password format!",
 	email: "Wrong email format!",
-	empty: "Field cannt be empty!"
 };
 
-export default INVALID_MSGS;
+export default USER_AUTH_FIELDS_VALIDATE_TYPE_ERRORS;
