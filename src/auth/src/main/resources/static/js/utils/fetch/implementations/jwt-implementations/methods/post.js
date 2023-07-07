@@ -17,7 +17,7 @@ const postJwt = ({
 }) => {
 	const { Authorization } = headersProcessor.addToHeader(headers.Authorization, jwtToken);
 	headers.Authorization = Authorization;
-	genericPost({
+	post({
 		route: route,
 		headers: headers,
 		json: json,

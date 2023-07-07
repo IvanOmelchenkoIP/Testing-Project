@@ -19,9 +19,10 @@ const getHtml = ({
 			return response.text();
 		})
 		.then((html) => {
+			console.log(html);
 			if (htmlCallback) htmlCallback(html);
 			if (sessionStorageCallback) sessionStorageCallback(html);
-			if (routeCallback) routeCallback(fullRoute);
+			if (routeCallback) routeCallback(route);
 		})
 		.catch((err) => {
 			if (errorCallback) errorCallback(err);

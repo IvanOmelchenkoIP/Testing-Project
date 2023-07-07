@@ -13,9 +13,10 @@ const getHtmlJwt = ({
 	sessionStorageCallback = null,
 	//localStorageCallback = null,
 }) => {
-	const { Authorization } = headersProcessor.addToHeader(headers.Authorization, jwtToken);
-	headers.Authorization = Authorization;
-	genericGetHtml({
+	const { Authorization } = headers;
+	const jwtHeader = headersProcessor.addToHeader({ Authorization: Authorization }, jwtToken);
+	headers.Authorization = jwtHeader.Authorization;
+	getHtml({
 		route: route,
 		headers: headers,
 		htmlCallback: htmlCallback,
