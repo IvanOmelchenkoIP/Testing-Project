@@ -5,6 +5,7 @@ import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fe
 import authCookiesCallback from "../../../../../../callbacks/user/auth/auth-cookies-callback.js";
 import authSuccessCallback from "../../../../../../callbacks/user/auth/auth-success-callback.js";
 import authErrorCallback from "../../../../../../callbacks/user/auth/auth-error-callback.js";
+import jsonHeaderMediator from "../../../../../../mediators/fetch/headers/json-header-mediator.js";
 
 class RegisterService extends AbstractService {
 	constructor(route) {
@@ -16,8 +17,10 @@ class RegisterService extends AbstractService {
 	}
 
 	execute(userData) {
+		const jsonHeaders = jsonHeaderMediator();
 		fetchUtil.post({ 
 			route: this._route,
+			headers: jsonHeaders,
 			json: userData, 
 			resSuccessCallback: authSuccessCallback, 
 			resErrorCallback: authErrorCallback,
