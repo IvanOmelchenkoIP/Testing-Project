@@ -1,6 +1,7 @@
 package com.testingproject.auth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,8 @@ import com.testingproject.auth.httpbody.request.LoginRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
 import com.testingproject.auth.jwt.JwtUtil;
 import com.testingproject.auth.service.UserService;
+
+import jakarta.servlet.http.Cookie;
 
 @RequestMapping("/login")
 @RestController
@@ -43,8 +46,10 @@ public class LoginController {
 		User user = userService.findByUsername(request.getUsername());
 		if (user != null && encoder.matches(request.getPasswd(), user.getPasswd())) {
 			String token = jwtUtil.generate(user);
-			String response = "username=" + user.getUsername() + ";jwtToken=" + token;
-			return ResponseEntity.ok(new HttpResponseBody(response));
+			Cookie jwtCookie = new Cookie("jwtCookie", token);
+			jwtCookie.setHttpOnly(true);
+			return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
+					.body(new HttpResponseBody(user.getUsername()));
 		}
 		return new ResponseEntity<>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
 	}
