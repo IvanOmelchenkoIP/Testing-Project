@@ -11,7 +11,6 @@ const getHtml = ({
 	sessionStorageCallback = null,
 	//localStorageCallback = null,
 }) => {
-	console.log(htmlCallback);
 	fetch(route, {
 		method: FETCH_METHODS.get,
 		headers: headers,
@@ -20,7 +19,6 @@ const getHtml = ({
 			return response.text();
 		})
 		.then((html) => {
-			console.log(html);
 			if (htmlCallback) htmlCallback(html);
 			if (sessionStorageCallback) sessionStorageCallback(html);
 			if (routeCallback) routeCallback(route);

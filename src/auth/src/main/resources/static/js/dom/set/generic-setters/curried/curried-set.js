@@ -1,6 +1,6 @@
 "use strict";
 
-const curriedSet = (fn) => (elementName) => (html) => { 
+const curriedSet = (fn) => (elementName) => (html) => {
 	fn(elementName, html); 
 }
 

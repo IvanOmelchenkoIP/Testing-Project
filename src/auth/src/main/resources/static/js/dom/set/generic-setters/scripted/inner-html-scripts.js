@@ -2,6 +2,7 @@
 
 const setScriptedInnerHtml = (element, html) => {
 	console.log(element);
+	console.log(element.innerHTML);
 	element.innerHTML = html;
 	const oldScripts = document.getElementsByTagName("script");
 	for (const oldScript of oldScripts) {
