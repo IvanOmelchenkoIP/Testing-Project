@@ -9,12 +9,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.util.WebUtils;
 
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -32,13 +34,19 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
+		String token = "";
 		final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (header == null || !header.startsWith(JWT_HEADER)) {
-			filterChain.doFilter(request, response);
-			return;
+			Cookie jwtCookie = WebUtils.getCookie(request, "jwtToken");
+			if (jwtCookie == null) {
+				filterChain.doFilter(request, response);
+				return;
+			}
+			token = jwtCookie.getValue();
+		} else {
+			token = header.substring(JWT_HEADER.length()).trim();
 		}
 
-		final String token = header.substring(JWT_HEADER.length()).trim();
 		User user = userService.findByUsername(jwtUtil.getUsername(token));
 		boolean userExists = (user != null);
 		boolean expired = jwtUtil.tokenExpired(token);

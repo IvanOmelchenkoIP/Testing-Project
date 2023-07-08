@@ -21,7 +21,7 @@ public class JwtUtil {
 
 	// hardcode for now, move to properties
 	private static final String SECRET_KEY = "BlSYdsaUoQDNjpGId6ZxCXxk2yEjnOdxVRXAXHVWqZUSSZSjJUFjIDpx4ZEJs6LWo3fiUKBk7rpn5c2MPrWd31kRCYgC0sDM6aVKh9H1p3l7AXNGD8h9hQ59bMS/4R8wthhaEdAY468o2qK2irEtm6uCw8ObsfMvIKCd+z51QrAUb7IXaI/Ln41q0Jz+POHqAMsXgG1Xifa96dMLgxBJtc3TIkZasXwNrb4hCErML6ZUbpAc2TajrGQTMWeq/iiYcc9cYkebJqw3s6K9nsx+W3XVe175DkVx/gH7etNjhrKHx50bgUvk069P4m8CAFlp/kKwEYt03TzGOGXojJ3b1fOQAczSnXboGZpuTh4rHYE=\r\n";
-	private static final long EXPIRATION_MILLS = 1000 * 60;
+	private static final long EXPIRATION_MILLS = 1000 * 60 * 60 * 24;
 
 	private Key getSigningKey() {
 		byte[] bytes = Decoders.BASE64.decode(SECRET_KEY);
