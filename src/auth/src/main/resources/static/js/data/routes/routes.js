@@ -7,6 +7,9 @@ const ROUTES = {
 	emailVerify: "/verifyEmail",
 	resetPassword: "/resetPasswd",
 	workspace: "/workspace",
+	workspaceDashboard: "/workspaceDashboard",
+	workspaceArchive: "/workspaceArchive",
+	workspaceCourses: "/workspaceCourses"
 };
 
 export default ROUTES;
