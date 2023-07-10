@@ -20,7 +20,7 @@ const post = ({
 		body: JSON.stringify(json),
 	})
 		.then(
-			(response) => new Promise((resolve) =>
+			(response) => new Promise((resolve) => 
 				response.json().then((json) => resolve({ ok: response.ok, json }))
 			)
 		)

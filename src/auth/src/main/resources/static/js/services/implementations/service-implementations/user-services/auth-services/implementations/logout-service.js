@@ -16,7 +16,7 @@ class LogoutService extends AbstractService {
 
 	execute(...params) {
 		const allHeaders = allHeadersMediator();
-		fetchUtil.post({ route: this._route, headers: allHeaders, sresSuccessCallback: logoutCallback });
+		fetchUtil.post({ route: this._route, headers: allHeaders, resSuccessCallback: logoutCallback });
 	}
 }
 
