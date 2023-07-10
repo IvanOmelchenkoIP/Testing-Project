@@ -43,6 +43,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 				return;
 			}
 			token = jwtCookie.getValue();
+			System.out.println("RECEIVED_TOKEN = " + token);
 		} else {
 			token = header.substring(JWT_HEADER.length()).trim();
 		}

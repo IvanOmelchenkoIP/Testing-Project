@@ -46,8 +46,9 @@ public class LoginController {
 		User user = userService.findByUsername(request.getUsername());
 		if (user != null && encoder.matches(request.getPasswd(), user.getPasswd())) {
 			String token = jwtUtil.generate(user);
-			Cookie jwtCookie = new Cookie("jwtCookie", token);
+			Cookie jwtCookie = new Cookie("jwtToken", token);
 			jwtCookie.setHttpOnly(true);
+			System.out.println("\n------------------------\nGENERATED_TOKEN = " + token);
 			return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
 					.body(new HttpResponseBody(user.getUsername()));
 		}
