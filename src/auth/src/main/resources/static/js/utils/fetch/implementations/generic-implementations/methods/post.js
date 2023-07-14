@@ -16,7 +16,7 @@ const post = ({
 	fetch(route, {
 		method: FETCH_METHODS.post,
 		headers: headers,
-		credentials: "same-origin",
+		credentials: "include",
 		body: JSON.stringify(json),
 	})
 		.then(

@@ -48,6 +48,11 @@ public class LoginController {
 			String token = jwtUtil.generate(user);
 			Cookie jwtCookie = new Cookie("jwtToken", token);
 			jwtCookie.setHttpOnly(true);
+			jwtCookie.setDomain("localhost");
+			jwtCookie.setPath("/");
+			jwtCookie.setMaxAge(60 * 60);
+			jwtCookie.setSecure(true);
+			jwtCookie.setAttribute("SameSite", "None");
 			System.out.println("\n------------------------\nGENERATED_TOKEN = " + token);
 			return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
 					.body(new HttpResponseBody(user.getUsername()));
