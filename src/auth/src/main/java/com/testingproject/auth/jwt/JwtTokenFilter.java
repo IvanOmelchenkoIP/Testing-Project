@@ -12,6 +12,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
 import com.testingproject.auth.entity.User;
+import com.testingproject.auth.jwt.utils.AuthJwtTokenUtil;
 import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.FilterChain;
@@ -26,8 +27,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	private final String JWT_HEADER = "Bearer ";
 
 	@Autowired
-	private JwtUtil jwtUtil;
-
+	private AuthJwtTokenUtil jwtUtil;
+	
 	@Autowired
 	private UserService userService;
 
@@ -52,10 +53,9 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 		}
 
 		User user = userService.findByUsername(jwtUtil.getUsername(token));
-		boolean userExists = (user != null);
-		boolean expired = jwtUtil.tokenExpired(token);
+		boolean tokenValid = jwtUtil.validate(token, userService);
 		boolean notAuthed = SecurityContextHolder.getContext().getAuthentication() == null;
-		if (userExists && !expired && notAuthed) {
+		if (tokenValid && notAuthed) {
 			UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user, null, null);
 			auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 			SecurityContextHolder.getContext().setAuthentication(auth);

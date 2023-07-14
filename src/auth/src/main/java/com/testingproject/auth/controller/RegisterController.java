@@ -17,7 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.httpbody.request.RegisterRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
-import com.testingproject.auth.jwt.JwtUtil;
+import com.testingproject.auth.jwt.utils.AuthJwtTokenUtil;
+import com.testingproject.auth.jwt.utils.RefreshJwtTokenUtil;
 import com.testingproject.auth.service.ProfileRouteService;
 import com.testingproject.auth.service.UserService;
 
@@ -28,16 +29,19 @@ import jakarta.servlet.http.Cookie;
 public class RegisterController {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 	@Autowired
-	ProfileRouteService profileRouteService;
+	private ProfileRouteService profileRouteService;
 
 	@Autowired
-	JwtUtil jwtUtil;
+	private AuthJwtTokenUtil authJwtUtil;
+	
+	@Autowired
+	private RefreshJwtTokenUtil refreshJwtUtil;
 
 	@Autowired
-	PasswordEncoder encoder;
+	private PasswordEncoder encoder;
 
 	@GetMapping
 	public ModelAndView showRegisterPage() {
@@ -53,11 +57,20 @@ public class RegisterController {
 			user = userService.registerUser(request.getUsername(), request.getEmail(),
 					encoder.encode(request.getPasswd()));
 			profileRouteService.createProfileRoute(profileRouteService.generateProfileRoute(), user);
-			String token = jwtUtil.generate(user);
-			Cookie jwtCookie = new Cookie("jwtToken", token);
-			jwtCookie.setHttpOnly(true);
+			String authToken = authJwtUtil.generate(user);
+			String refreshToken = refreshJwtUtil.generate(user);
+			
+			/*Cookie authCookie = new Cookie("jwtToken", authToken);
+			authCookie.setHttpOnly(true);
+			
+			Cookie refreshCookie = new Cookie("refreshToken", refreshToken);
+			refreshCookie.setHttpOnly(true);
+			
 			return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-					.body(new HttpResponseBody(user.getUsername()));
+					.body(new HttpResponseBody(user.getUsername()));*/
+			
+			String response = "jwtToken=" + authToken + ";username=" + user.getUsername() + ";refreshToken=" + refreshToken;
+			return ResponseEntity.ok().body(new HttpResponseBody(response));
 		} catch (DataIntegrityViolationException exception) {
 			return new ResponseEntity<>(new HttpResponseBody("already-exists"), HttpStatus.BAD_REQUEST);
 		} catch (IllegalArgumentException exception) {

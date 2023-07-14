@@ -33,7 +33,7 @@ public abstract class AbstractJwtUtil<T, V> {
 		return getClaim(token, Claims::getExpiration);
 	}
 
-	protected boolean tokenExpired(String token) {
+	public boolean tokenExpired(String token) {
 		return getExpiration(token).before(new Date());
 	}
 	

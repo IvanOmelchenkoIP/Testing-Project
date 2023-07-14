@@ -16,7 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.testingproject.auth.entity.User;
 import com.testingproject.auth.httpbody.request.LoginRequest;
 import com.testingproject.auth.httpbody.response.HttpResponseBody;
-import com.testingproject.auth.jwt.JwtUtil;
+import com.testingproject.auth.jwt.utils.AuthJwtTokenUtil;
+import com.testingproject.auth.jwt.utils.RefreshJwtTokenUtil;
 import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.http.Cookie;
@@ -26,13 +27,16 @@ import jakarta.servlet.http.Cookie;
 public class LoginController {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 	@Autowired
-	JwtUtil jwtUtil;
+	private AuthJwtTokenUtil authJwtUtil;
+	
+	@Autowired
+	private RefreshJwtTokenUtil refreshJwtUtil;
 
 	@Autowired
-	PasswordEncoder encoder;
+	private PasswordEncoder encoder;
 
 	@GetMapping
 	public ModelAndView showLoginPage() {
@@ -45,17 +49,20 @@ public class LoginController {
 	public ResponseEntity<?> loginUser(@RequestBody LoginRequest request) {
 		User user = userService.findByUsername(request.getUsername());
 		if (user != null && encoder.matches(request.getPasswd(), user.getPasswd())) {
-			String token = jwtUtil.generate(user);
-			Cookie jwtCookie = new Cookie("jwtToken", token);
-			jwtCookie.setHttpOnly(true);
-			jwtCookie.setDomain("localhost");
-			jwtCookie.setPath("/");
-			jwtCookie.setMaxAge(60 * 60);
-			jwtCookie.setSecure(true);
-			jwtCookie.setAttribute("SameSite", "None");
-			System.out.println("\n------------------------\nGENERATED_TOKEN = " + token);
+			String authToken = authJwtUtil.generate(user);
+			String refreshToken = refreshJwtUtil.generate(user);
+			
+			/*Cookie authCookie = new Cookie("jwtToken", authToken);
+			authCookie.setHttpOnly(true);
+			
+			Cookie refreshCookie = new Cookie("refreshToken", refreshToken);
+			refreshCookie.setHttpOnly(true);
+			
 			return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-					.body(new HttpResponseBody(user.getUsername()));
+					.body(new HttpResponseBody(user.getUsername()));*/
+			
+			String response = "jwtToken=" + authToken + ";username=" + user.getUsername() + ";refreshToken=" + refreshToken;
+			return ResponseEntity.ok().body(new HttpResponseBody(response));
 		}
 		return new ResponseEntity<>(new HttpResponseBody("login-error"), HttpStatus.BAD_REQUEST);
 	}
