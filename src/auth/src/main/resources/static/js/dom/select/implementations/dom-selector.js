@@ -19,6 +19,10 @@ class DOMSelector {
 		return DOM_SELECTORS.htmlClass;
 	}
 	
+	allClassSelector() {
+		return DOM_SELECTORS.allHtmlClass;
+	}
+	
 	selectByTag(name) {
 		return DOM_SELECTORS.tag(name);
 	}
@@ -33,6 +37,10 @@ class DOMSelector {
 	
 	selectByClass(name) {
 		return DOM_SELECTORS.htmlClass(name);
+	}
+	
+	selectAllByClassName(name) {
+		return DOM_SELECTORS.allHtmlClass(name);
 	}
 }
 
