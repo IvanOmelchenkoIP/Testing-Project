@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+html {
+	height: 100%;
+	min-height: 100%;
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	display: flex;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	flex-direction: column;
+}
+
+.editor-panel {
+	width: 100%;
+	background-color: rgb(180, 180, 200);
+	height: 15%;
+	display: flex;
+	border-top: 1px solid rgb(150, 150, 150);
+	overflow-x: auto;
+}
+
+.editor-area {
+	flex-grow: 100%;
+	width: 100%;
+	background-color: rgb(194, 194, 214);
+	height: 100%;
+	overflow-y: auto;
+}
+
+.editor-area::-webkit-scrollbar {
+	width: 10px;
+}
+
+.editor-area::-webkit-scrollbar-thumb {
+  background: rgb(140, 140, 140); 
+  border-radius: 20px;
+}
+.editor-area::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100); 
+}
+
+/* editor panel */
+.task-window {
+	height: 100%;
+	flex-grow: 1;
+	overflow-y: auto;
+}
+
+.config-panel {
+	height: 100%;
+	width: 20%;
+	background-color: rgb(170, 170, 190);
+}
+
+/* tasks */
+.task-body {
+	margin: auto;
+	width: 65%;
+	border: 1px solid black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	height: 50%;
+}
