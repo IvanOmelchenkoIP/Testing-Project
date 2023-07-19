@@ -65,5 +65,46 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-top: 10px;
-	height: 50%;
+	display: flex;
+	flex-direction: column;
 }
+
+.task-content-container {
+	width: 98%;
+	margin: 0 auto;
+	margin-bottom: 2px;
+}
+
+.answers-container {
+	width: 95%;
+	flex-grow: 1;
+	background: lightgray;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.answer-row {
+	display: flex;
+	margin-top: 0.5em;
+}
+
+.round-checkmark {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: white;
+	border: 2px solid gray;
+}
+
+.add-new-answer {
+	border: 0px;
+	background-color: green;
+	border: 2px solid green;
+	text-align: center;
+	align-items: center;
+  	justify-content: center;
+	
+}
+
