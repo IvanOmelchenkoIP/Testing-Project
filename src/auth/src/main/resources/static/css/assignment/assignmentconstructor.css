@@ -69,10 +69,24 @@ body {
 	flex-direction: column;
 }
 
+@media (orientation: portrait) {
+	.task-body {
+		width: 85%; 
+	}
+}
+
+.task-body:hover:active {
+	border: 2px solid green;
+}
+
+.task-body:active {
+	border: 2px solid green;
+}
+
 .task-content-container {
 	width: 98%;
 	margin: 0 auto;
-	margin-bottom: 2px;
+	margin-bottom: 1em;
 }
 
 .answers-container {
@@ -87,7 +101,11 @@ body {
 
 .answer-row {
 	display: flex;
-	margin-top: 0.5em;
+	padding: 0.5em;
+}
+
+.answer-row:hover {
+	background-color: green;
 }
 
 .round-checkmark {
@@ -108,3 +126,6 @@ body {
 	
 }
 
+.editable-input:hover {
+	border-bottom: 3px solid green;
+}

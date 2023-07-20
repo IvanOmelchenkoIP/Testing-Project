@@ -11,6 +11,7 @@ const RESET_FIELDS = deepCopy(FIELD_NAMES);
 RESET_FIELDS.push("error-field");
 
 domSelector.selectById("login-user").addEventListener("click", () => {
+	console.log(document.getElementsByName("username"));
 	authResetErrorFieldsMediator(...RESET_FIELDS);
 	const { valid, data } = domSelector.selectAllByNameAndValidate(authValidateMediator, ...FIELD_NAMES);
 	if (valid) userAuthService.login(data);
