@@ -1,6 +1,6 @@
 "use strict";
 
-class RoutesHistoryProcessor {
+class RoutesProcessor {
 	pushToHistory(route) {
 		window.history.pushState(null, null, route);
 	}
@@ -8,6 +8,10 @@ class RoutesHistoryProcessor {
 	replace(route) {
 		window.history.replaceState(null, null, route);
 	}
+	
+	redirect(url) {
+		window.location.replace(url);
+	}
 }
 
-export default RoutesHistoryProcessor;
+export default RoutesProcessor;
