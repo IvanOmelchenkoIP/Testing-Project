@@ -1,6 +1,6 @@
 "use strict";
 
-class ResetService {
+class AccountService {
 	#emailVerifyService;
 	#passwordResetService;
 
@@ -18,4 +18,4 @@ class ResetService {
 	}
 }
 
-export default ResetService;
+export default AccountService;

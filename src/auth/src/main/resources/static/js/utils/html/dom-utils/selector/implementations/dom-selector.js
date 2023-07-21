@@ -1,7 +1,7 @@
 "use strict";
 
 import DOM_SELECTORS from "../data/dom-selectors.js";
-import ArrayUtil from "../../../../utils/array/array-util.js";
+import ArrayUtil from "../../../../collections/array/array-util.js";
 
 class DOMSelector {
 	// return selectors
