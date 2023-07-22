@@ -1,9 +1,9 @@
 "use strict";
 
-import setIdInnerHtml from "../../dom/set/implementations/set-id-html.js";
+import { htmlSetter } from "../../../utils/html/html-utils.js";
 
 const setIdInnerHtmlCallback = (id, html) => {
-	setIdInnerHtml(id, html);
+	htmlSetter.setIdInnerHtml(id, html);
 }
 
 export default setIdInnerHtmlCallback;
