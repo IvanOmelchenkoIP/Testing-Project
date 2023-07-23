@@ -75,11 +75,11 @@ body {
 	}
 }
 
-.task-body:hover:active {
-	border: 2px solid green;
+.task-body:hover {
+	border: 2px solid blue;
 }
 
-.task-body:active {
+.task-body:focus {
 	border: 2px solid green;
 }
 

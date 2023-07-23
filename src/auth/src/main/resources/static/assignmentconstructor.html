@@ -10,7 +10,7 @@
 <body>
 	<div class="editor-area">
 	
-		<div class="task-body">
+		<div tabindex="0" class="task-body">
 			<div class="task-content-container">
 				<div class="task-content">
 					<div class="editable-input" role="textbox" contenteditable=true>Enter the question</div>			
@@ -28,10 +28,6 @@
 			</div>
 		</div>
 		
-		<div class="task-body">
-		TASK2
-		</div>
-		
 	</div>
 
 	<div class="editor-panel">
@@ -43,6 +39,10 @@
 	</div>
 	<script type="module" src="./js/listeners/assignments/add-task.js"></script>
 	<script type="module" src="./js/listeners/assignments/add-answer.js"></script>
+	<script type="module" src="./js/listeners/assignments/constructor-locationchange.js"></script>
+	<script type="module" src="./js/listeners/assignments/constructor-onload.js"></script>
+	<script type="module" src="./js/listeners/assignments/reset-task-focus.js"></script>
+	<script type="module" src="./js/listeners/assignments/select-task-focus.js"></script>
 </body>
 
 </html>
