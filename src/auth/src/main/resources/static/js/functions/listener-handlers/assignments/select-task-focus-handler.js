@@ -4,9 +4,9 @@ import assignmentConstructorContext from "../../../context/assignments/assignmen
 
 const selectTaskAndSetFocusHandler = (event) => {
 	const target = event.target;
-	console.log(target);
 	target.focus();
 	assignmentConstructorContext.focusedTask.setFocus(target);
+	console.log(assignmentConstructorContext);
 }
 
 export default selectTaskAndSetFocusHandler;

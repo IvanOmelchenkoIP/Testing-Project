@@ -24,6 +24,11 @@ class DOMConstructor {
 		return this.setInnerHtml(innerHtml);
 	}
 	
+	addTabindex(tabindex) {
+		this.#element.setAttribute("tabindex", tabindex);
+		return this;
+	}
+	
 	addClasses(...classes) {
 		this.#element.classList.add(...classes);
 		return this;

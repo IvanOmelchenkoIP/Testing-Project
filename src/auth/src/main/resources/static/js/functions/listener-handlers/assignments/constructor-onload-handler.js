@@ -4,7 +4,8 @@ import assignmentConstructorContext from "../../../context/assignments/assignmen
 import AssignmentConstructorState from "../../../context/assignments/implementations/assignment-constructor-state.js";
 
 const constructorOnloadHandler = () => {
-	assignmentConstructorContext.focusedTask = new AssignmentConstructorState()
+	assignmentConstructorContext.focusedTask = new AssignmentConstructorState();
+	console.log(assignmentConstructorContext);
 }
 
 export default constructorOnloadHandler;
