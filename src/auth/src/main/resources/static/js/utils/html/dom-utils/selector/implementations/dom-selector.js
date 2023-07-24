@@ -42,7 +42,7 @@ class DOMSelector {
 	
 	selectAllByClass(element, name) {
 		console.log('here');
-		console.log(DOM_SELECTORS.htmlClass(document, name))
+		console.log(DOM_SELECTORS.htmlClass(document, name));
 		return DOM_SELECTORS.htmlClass(element, name);
 	}
 	
@@ -70,7 +70,7 @@ class DOMSelector {
 	}
 	
 	selectLastByClass(element, name) {
-		return ArrayList.last(this.selectAllByClass(element, name));
+		return ArrayUtil.last(this.selectAllByClass(element, name));
 	}
 }
 

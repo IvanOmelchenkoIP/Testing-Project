@@ -3,9 +3,15 @@
 import assignmentConstructorContext from "../../../context/assignments/assignment-constructor-context.js";
 
 const selectTaskAndSetFocusHandler = (event) => {
-	const target = event.target;
-	target.focus();
-	assignmentConstructorContext.focusedTask.setFocus(target);
+	let target = event.target;
+	while (true) {
+		if (target.className == "task-body") {
+			target.focus();
+			assignmentConstructorContext.focusedTask.setFocus(target);
+			return;
+		}
+		target = target.parentElement;
+	}
 }
 
 export default selectTaskAndSetFocusHandler;
