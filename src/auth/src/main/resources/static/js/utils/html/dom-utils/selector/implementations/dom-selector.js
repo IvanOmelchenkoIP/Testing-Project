@@ -24,50 +24,50 @@ class DOMSelector {
 	
 	//select by ...
 	
-	selectBySelector(selector, name) {
-		return selector(name);
+	selectBySelector(element, selector, name) {
+		return selector(element, name);
 	}
 	
-	selectById(name) {
-		return DOM_SELECTORS.id(name);
+	selectById(element, name) {
+		return DOM_SELECTORS.id(element, name);
 	}
 	
-	selectAllByName(name) {
-		return DOM_SELECTORS.name(name);
+	selectAllByName(element, name) {
+		return DOM_SELECTORS.name(element, name);
 	}
 	
-	selectAllByTag(name) {
-		return DOM_SELECTORS.tag(name);
+	selectAllByTag(element, name) {
+		return DOM_SELECTORS.tag(element, name);
 	}
 	
-	selectAllByClass(name) {
-		return DOM_SELECTORS.htmlClass(name);
+	selectAllByClass(element, name) {
+		return DOM_SELECTORS.htmlClass(element, name);
 	}
 	
 	// ordered select by ... for selectors that return collections (name, tag, class)
 	
-	selectFirstByName(name) { 
-		return ArrayUtil.first(this.selectAllByName(name));
+	selectFirstByName(element, name) { 
+		return ArrayUtil.first(this.selectAllByName(element, name));
 	}
 	
-	selectFirstByTag(name) {
-		return ArrayUtil.first(this.selectAllByTag(name));
+	selectFirstByTag(element, name) {
+		return ArrayUtil.first(this.selectAllByTag(element, name));
 	}
 	
-	selectFirstByClass(name) {
-		return ArrayUtil.first(this.selectAllByClass(name));
+	selectFirstByClass(element, name) {
+		return ArrayUtil.first(this.selectAllByClass(element, name));
 	}
 	
-	selectLastByName(name) {
-		return ArrayUtil.last(this.selectAllByName(name));
+	selectLastByName(element, name) {
+		return ArrayUtil.last(this.selectAllByName(element, name));
 	}
 	
-	selectLastByTag(name) {
-		return ArrayUtil.last(this.selectAllByTag(name));
+	selectLastByTag(element, name) {
+		return ArrayUtil.last(this.selectAllByTag(element, name));
 	}
 	
-	selectLastByClass(name) {
-		return ArrayList.last(this.selectAllByClass(name));
+	selectLastByClass(element, name) {
+		return ArrayList.last(this.selectAllByClass(element, name));
 	}
 }
 

@@ -2,10 +2,9 @@
 
 class AssignmentConstructorState {
 	#focusedTask = null;
-	
-	setFocus(focusedTask) {
-		this.#focusedTask = focusedTask;
-		console.log(this.#focusedTask);
+
+	setFocus(target) {
+		this.#focusedTask = target;
 	}
 	
 	resetFocus() {
@@ -17,7 +16,6 @@ class AssignmentConstructorState {
 	}
 	
 	isParentOf(element) {
-		console.log(this.#focusedTask);
 		return this.#focusedTask.contains(element);
 	}
 }

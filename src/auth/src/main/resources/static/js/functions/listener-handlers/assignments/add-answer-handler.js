@@ -8,6 +8,7 @@ const addAnswerListenerHandler = (event) => {
 	if (assignmentConstructorContext.focusedTask) {
 		if (assignmentConstructorContext.focusedTask.isParentOf(event.target)) console.log(1);
 	console.log(assignmentConstructorContext);
+		
 		event.target.before(domConstructor.newDiv().addClasses("answer-row").addChildren(
 			domConstructor.newDiv().addClasses("round-checkmark").getElement(),
 			domConstructor.newDiv("Enter your answer").addClasses("answer-content").getElement()
