@@ -48,27 +48,27 @@ class DocumentDOMSelector extends DOMSelector {
 	// ordered select by ... for selectors that return collections (name, tag, class)
 	
 	selectFirstByName(name) { 
-		return ArrayUtil.first(super.selectAllByName(document, name));
+		return super.selectFirstByName(document, name);
 	}
 	
 	selectFirstByTag(name) {
-		return ArrayUtil.first(super.selectAllByTag(document, name));
+		return super.selectFirstByTag(document, name);
 	}
 	
 	selectFirstByClass(name) {
-		return ArrayUtil.first(super.selectAllByClass(document, name));
+		return super.selectFirstByClass(document, name);
 	}
 	
 	selectLastByName(name) {
-		return ArrayUtil.last(super.selectAllByName(document, name));
+		return super.selectLastByName(document, name);
 	}
 	
 	selectLastByTag(name) {
-		return ArrayUtil.last(super.selectAllByTag(document, name));
+		return super.selectLastByTag(document, name);
 	}
 	
 	selectLastByClass(name) {
-		return ArrayList.last(super.selectAllByClass(document, name));
+		return super.selectLastByClass(document, name);
 	}
 }
 

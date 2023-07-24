@@ -3,4 +3,5 @@
 import { domSelector } from "../../utils/html/html-utils.js";
 import addAnswerListenerHandler from "../../functions/listener-handlers/assignments/add-answer-handler.js";
 
-domSelector.document.selectFirstByClass("add-answer").addEventListener("click", addAnswerListenerHandler);
+const answerAdders = domSelector.document.selectAllByClass("add-answer");
+for (const answerAdder of answerAdders) answerAdder.addEventListener("click", addAnswerListenerHandler);
