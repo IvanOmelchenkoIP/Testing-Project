@@ -123,7 +123,19 @@ body {
 	text-align: center;
 	align-items: center;
   	justify-content: center;
-	
+}
+
+.answer-content {
+	flex-grow: 1;
+}
+
+.delete-answer-button {
+	width: 4rem;
+	height: 2 rem;
+}
+
+.delete-answer-button:hover {
+	background: yellow;
 }
 
 .editable-input:hover {
