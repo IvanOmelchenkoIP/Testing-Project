@@ -2,6 +2,7 @@
 
 import DOMSelector from "./dom-selector.js";
 import { fnArgsCurry } from "../../../../fns/curry/curry.js";
+import ArrayUtil from "../../../../collections/array/array-util.js";
 
 class DocumentDOMSelector extends DOMSelector {
 	
@@ -48,27 +49,27 @@ class DocumentDOMSelector extends DOMSelector {
 	// ordered select by ... for selectors that return collections (name, tag, class)
 	
 	selectFirstByName(name) { 
-		return super.selectFirstByName(document, name);
+		return ArrayUtil.first(super.selectAllByName(document, name));
 	}
 	
 	selectFirstByTag(name) {
-		return super.selectFirstByTag(document, name);
+		return ArrayUtil.first(super.selectAllByTag(document, name));
 	}
 	
 	selectFirstByClass(name) {
-		return super.selectFirstByClass(document, name);
+		return ArrayUtil.first(super.selectAllByClass(document, name));
 	}
 	
 	selectLastByName(name) {
-		return super.selectLastByName(document, name);
+		return ArrayUtil.last(super.selectAllByName(document, name));
 	}
 	
 	selectLastByTag(name) {
-		return super.selectLastByTag(document, name);
+		return ArrayUtil.last(super.selectAllByTag(document, name));
 	}
 	
 	selectLastByClass(name) {
-		return super.selectLastByClass(document, name);
+		return ArrayUtil.last(super.selectAllByClass(document, name));
 	}
 }
 

@@ -41,8 +41,6 @@ class DOMSelector {
 	}
 	
 	selectAllByClass(element, name) {
-		console.log('here');
-		console.log(DOM_SELECTORS.htmlClass(document, name));
 		return DOM_SELECTORS.htmlClass(element, name);
 	}
 	
@@ -57,7 +55,6 @@ class DOMSelector {
 	}
 	
 	selectFirstByClass(element, name) {
-		console.log(element);
 		return ArrayUtil.first(this.selectAllByClass(element, name));
 	}
 	
