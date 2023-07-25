@@ -29,6 +29,26 @@ class DOMConstructor {
 		return this;
 	}
 	
+	addRole(role) {
+		this.#element.setAttribute("role", role);
+		return this;
+	}
+	
+	setContentEditableTrue() {
+		this.#element.setAttribute("contenteditable", true);
+		return this;
+	}
+	
+	setContentEditableFalse() {
+		this.#element.setAttribute("contenteditable", false);
+		return this;
+	}
+	
+	addEventListener(event, listenerHandler) {
+		this.#element.addEventListener(event, listenerHandler);
+		return this;
+	} 
+	
 	addClasses(...classes) {
 		this.#element.classList.add(...classes);
 		return this;

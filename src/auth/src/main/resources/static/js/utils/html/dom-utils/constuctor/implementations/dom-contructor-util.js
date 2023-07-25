@@ -10,6 +10,10 @@ class DOMConstructorUtil {
 	newDiv(innerText = "") {
 		return this.newDOMElement("div", innerText);
 	}
+	
+	newP(innerText = "") {
+		return this.newDOMElement("p", innerText);
+	}
 }
 
 export default DOMConstructorUtil;
