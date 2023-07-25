@@ -1,8 +1,6 @@
 "use strict";
 
 import { domConstructor } from "../../../utils/html/html-utils.js";
-import addAnswerListenerHandler from "../../../functions/listener-handlers/assignments/add-answer-handler.js";
-
 class AnswerAdder {
 	static new() {
 		return domConstructor.newDiv().addClasses("answer-row", "add-answer").addChildren(
@@ -10,7 +8,7 @@ class AnswerAdder {
 				domConstructor.newP("+").getElement()
 			).getElement(),
 			domConstructor.newDiv("Add new answer").addClasses("answer-content").getElement()
-		).addEventListener("click", addAnswerListenerHandler).getElement();
+		).getElement();
 	}
 }
 

@@ -44,11 +44,6 @@ class DOMConstructor {
 		return this;
 	}
 	
-	addEventListener(event, listenerHandler) {
-		this.#element.addEventListener(event, listenerHandler);
-		return this;
-	} 
-	
 	addClasses(...classes) {
 		this.#element.classList.add(...classes);
 		return this;
