@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
 	<div class="edit-options-menu task-edit-menu">
 		<div class="edit-option"></div>
 		<div class="edit-option"></div>
@@ -16,11 +17,12 @@
 	</div>
 
 	<div class="editor-area">
-	
+
 		<div tabindex="0" class="task-body">
 			<div class="task-content-container">
 				<div class="task-content">
-					<div class="editable-input" role="textbox" contenteditable=true>Enter the question</div>			
+					<div class="editable-input" role="textbox" contenteditable=true>Enter
+						the question</div>
 				</div>
 			</div>
 			<div class="answers-container">
@@ -30,27 +32,83 @@
 					<div class="delete-answer-button">DELETE</div>
 				</div>
 				<div class="answer-row add-answer">
-					<div class="round-checkmark add-new-answer"> <p>+</p> </div>
+					<div class="round-checkmark add-new-answer">
+						<p>+</p>
+					</div>
 					<div class="answer-content">Add new answer</div>
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 	<div class="editor-panel">
-		<div class="task-window">
-		</div>
+		<div class="task-window"></div>
 		<div class="config-panel">
 			<button id="add-task">Add new Task</button>
+			<button id="add-task-with-contructor">Add Task with type
+				choice</button>
 		</div>
 	</div>
-	<script type="module" src="./js/listeners/assignments/add-task-to-end.js"></script>
+
+	<div class="extended-add-task">
+		<div class="menu-panel-container">
+			<button name="close-extended-menu">CLOSE</button>
+		</div>
+	
+		<div class="type-choices-container-wrapper">
+		
+			<div class="type-choices-container">
+			
+				<div class="type-choice-wrapper">
+					<div class="type-choice">
+						<div class="type-icon"></div>
+						<label>Single answer</label>
+					</div>
+					<div class="config-option">
+						<input type="checkbox" id="last-selected-default-id"
+							name="last-selected-defalt"> 
+						<label for="last-selected-default-id">Set last selected type as
+							default</label>
+					</div>
+				</div>
+				
+				<div class="type-choice-wrapper">
+					<div class="type-choice">
+						<div class="type-icon"></div>
+						<label>Multiple answers</label>
+					</div>
+					<div class="config-option">
+						<input type="checkbox" id="last-selected-default-id"
+							name="last-selected-defalt"> 
+						<label for="last-selected-default-id">Set last selected type as
+							default</label>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="config-container">
+			<div class="config-option">
+				<input type="checkbox" id="last-selected-default-id"
+					name="last-selected-defalt"> 
+				<label for="last-selected-default-id">Set last selected type as
+					default</label>
+			</div>
+		</div>
+	</div>
+
+	<script type="module"
+		src="./js/listeners/assignments/add-task-to-end.js"></script>
 	<script type="module" src="./js/listeners/assignments/add-answer.js"></script>
-	<script type="module" src="./js/listeners/assignments/constructor-locationchange.js"></script>
-	<script type="module" src="./js/listeners/assignments/constructor-onload.js"></script>
-	<script type="module" src="./js/listeners/assignments/reset-task-focus.js"></script>
-	<script type="module" src="./js/listeners/assignments/select-task-focus.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/constructor-locationchange.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/constructor-onload.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/reset-task-focus.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/select-task-focus.js"></script>
 	<script type="module" src="./js/listeners/assignments/delete-answer.js"></script>
 </body>
 

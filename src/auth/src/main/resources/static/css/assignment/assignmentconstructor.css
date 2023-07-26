@@ -15,6 +15,16 @@ body {
 	flex-direction: column;
 }
 
+/*.working-area {
+	display: flex;
+	margin: 0;
+	flex-grow: 1;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	flex-direction: column;
+}*/
+
 .editor-panel {
 	width: 100%;
 	background-color: rgb(180, 180, 200);
@@ -152,7 +162,7 @@ body {
 
 .edit-option {
 	width: 25%;
-	height: 40px;;
+	height: 40px;
 	background: yellow;
 	border: 1px solid black;
 }
@@ -162,4 +172,73 @@ body {
 }*/
 .edit-option:hover {
 	background: lightyellow;
+}
+
+/* extended task addition */
+.extended-add-task {
+	position:absolute;
+	right: 0;
+    left: 0;
+    top: 0;
+  	bottom: 0;
+	margin: auto;
+	display: flex;
+	width: 90%;
+	height: 90%;
+	flex-direction: column;
+	background-color: lightgray;
+}
+
+.menu-panel-container {
+	width: 99%;
+	height: .5%;
+}
+
+.type-choices-container-wrapper {
+	height: 95%;
+	display: flex;
+}
+
+.type-choices-container {
+	margin: auto;
+	width: 98%;
+	height: 90%;
+	background: white;
+	border: thin 1px gray;
+	display: flex;
+}
+
+.type-choice-wrapper {
+	border: 1px solid gray;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	height: 8rem;
+}
+
+.type-choice {
+	width: 95%;
+	height: 95%;
+	border: 1px solid gray;
+	border-radius: 2px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.type-choice:hover {
+	background-color: green;
+}
+
+.type-icon {
+	width: 90%;
+	height: 90%;
+}
+
+.config-container {
+	flex-grow: 1;
+	margin: auto;
+	width: 95%;
+	justify-content: center;
+	border-top: 1px solid black;
 }

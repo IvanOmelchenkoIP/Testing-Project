@@ -3,8 +3,6 @@
 import { domSelector } from "../../../utils/html/html-utils.js";
 import assignmentConstructorContext from "../../../context/assignments/assignment-constructor-context.js"; 
 
-// add tracking if last answer, add blank answer if so
-
 const deleteAnswerListenerHandler = (event) => {
 	const focusedTask = assignmentConstructorContext.focusedTask.getFocus();
 	if (focusedTask == null) return;
