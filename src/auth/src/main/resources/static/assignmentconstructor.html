@@ -18,7 +18,7 @@
 
 	<div class="editor-area">
 
-		<div tabindex="0" class="task-body">
+		<div tabindex="0" class="task-body single-answer">
 			<div class="task-content-container">
 				<div class="task-content">
 					<div class="editable-input" role="textbox" contenteditable=true>Enter
@@ -39,8 +39,66 @@
 				</div>
 			</div>
 		</div>
-
+		
+		<div tabindex="0" class="task-body multiple-answers">
+			<div class="task-content-container">
+				<div class="task-content">
+					<div class="editable-input" role="textbox" contenteditable=true>Enter
+						the question</div>
+				</div>
+			</div>
+			<div class="answers-container">
+				<div class="answer-row">
+					<div class="square-checkmark"></div>
+					<div class="answer-content">Enter the answer</div>
+					<div class="delete-answer-button">DELETE</div>
+				</div>
+				<div class="answer-row add-answer">
+					<div class="square-checkmark add-new-answer">
+						<p>+</p>
+					</div>
+					<div class="answer-content">Add new answer</div>
+				</div>
+			</div>
+		</div>
+		
+		<div tabindex="0" class="task-body matching-answers">
+			<div class="task-content-container">
+				<div class="task-content">
+					<div class="editable-input" role="textbox" contenteditable=true>Enter
+						the question</div>
+				</div>
+			</div>
+			<div class="answers-container">
+				<div class="answer-row">
+					<div class="round-checkmark"></div>
+					<div class="answer-content">Enter the answer</div>
+					<div class="delete-answer-button">DELETE</div>
+				</div>
+				<div class="answer-row add-answer">
+					<div class="round-checkmark add-new-answer">
+						<p>+</p>
+					</div>
+					<div class="answer-content">Add new answer</div>
+				</div>
+			</div>
+		</div>
+		
+		<div tabindex="0" class="task-body short-answer">
+			<div class="task-content-container">
+				<div class="task-content">
+					<div class="editable-input" role="textbox" contenteditable=true>Enter
+						the question</div>
+				</div>
+			</div>
+			<div class="answers-container">
+				<div class="short-answer-field" role="textbox" contenteditable=true>Enter short answer</div>
+			</div>
+		</div>
+		
 	</div>
+
+	
 
 	<div class="editor-panel">
 		<div class="task-window"></div>
@@ -63,12 +121,12 @@
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
-						<label>Single answer</label>
+						<label>Single correct answer</label>
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> 
-						<label for="last-selected-default-id">Set last selected type as
+							name="last-selected-defalt" checked> 
+						<label for="last-selected-default-id">Set as
 							default</label>
 					</div>
 				</div>
@@ -76,12 +134,38 @@
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
-						<label>Multiple answers</label>
+						<label>Multiple correct answers</label>
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
 							name="last-selected-defalt"> 
-						<label for="last-selected-default-id">Set last selected type as
+						<label for="last-selected-default-id">Set as
+							default</label>
+					</div>
+				</div>
+				
+				<div class="type-choice-wrapper">
+					<div class="type-choice">
+						<div class="type-icon"></div>
+						<label>Matching answers</label>
+					</div>
+					<div class="config-option">
+						<input type="checkbox" id="last-selected-default-id"
+							name="last-selected-defalt"> 
+						<label for="last-selected-default-id">Set as
+							default</label>
+					</div>
+				</div>
+				
+				<div class="type-choice-wrapper">
+					<div class="type-choice">
+						<div class="type-icon"></div>
+						<label>Short answer</label>
+					</div>
+					<div class="config-option">
+						<input type="checkbox" id="last-selected-default-id"
+							name="last-selected-defalt"> 
+						<label for="last-selected-default-id">Set as
 							default</label>
 					</div>
 				</div>
