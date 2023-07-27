@@ -193,14 +193,14 @@ body {
 }
 
 /* extended task addition */
-.extended-add-task {
+.extended-task-selection {
 	position:absolute;
 	right: 0;
     left: 0;
     top: 0;
   	bottom: 0;
 	margin: auto;
-	display: flex;
+	display: none;
 	width: 90%;
 	height: 90%;
 	flex-direction: column;
@@ -209,7 +209,6 @@ body {
 
 .menu-panel-container {
 	width: 99%;
-	height: .5%;
 }
 
 .type-choices-container-wrapper {

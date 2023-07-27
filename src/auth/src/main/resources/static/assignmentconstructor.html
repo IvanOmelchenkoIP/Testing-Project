@@ -39,7 +39,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div tabindex="0" class="task-body multiple-answers">
 			<div class="task-content-container">
 				<div class="task-content">
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div tabindex="0" class="task-body matching-answers">
 			<div class="task-content-container">
 				<div class="task-content">
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div tabindex="0" class="task-body short-answer">
 			<div class="task-content-container">
 				<div class="task-content">
@@ -92,32 +92,32 @@
 				</div>
 			</div>
 			<div class="answers-container">
-				<div class="short-answer-field" role="textbox" contenteditable=true>Enter short answer</div>
+				<div class="short-answer-field" role="textbox" contenteditable=true>Enter
+					short answer</div>
 			</div>
 		</div>
-		
+
 	</div>
 
-	
 
 	<div class="editor-panel">
 		<div class="task-window"></div>
 		<div class="config-panel">
 			<button id="add-task">Add new Task</button>
-			<button id="add-task-with-contructor">Add Task with type
-				choice</button>
+			<button id="add-task-selection">Add Task with type choice</button>
 		</div>
 	</div>
-
-	<div class="extended-add-task">
-		<div class="menu-panel-container">
-			<button name="close-extended-menu">CLOSE</button>
-		</div>
 	
+
+	<div class="extended-task-selection">
+		<div class="menu-panel-container">
+			<button id="close-extended-selection">CLOSE</button>
+		</div>
+
 		<div class="type-choices-container-wrapper">
-		
+
 			<div class="type-choices-container">
-			
+
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
@@ -125,12 +125,11 @@
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt" checked> 
-						<label for="last-selected-default-id">Set as
-							default</label>
+							name="last-selected-defalt" checked> <label
+							for="last-selected-default-id">Set as default</label>
 					</div>
 				</div>
-				
+
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
@@ -138,12 +137,11 @@
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> 
-						<label for="last-selected-default-id">Set as
-							default</label>
+							name="last-selected-defalt"> <label
+							for="last-selected-default-id">Set as default</label>
 					</div>
 				</div>
-				
+
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
@@ -151,12 +149,11 @@
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> 
-						<label for="last-selected-default-id">Set as
-							default</label>
+							name="last-selected-defalt"> <label
+							for="last-selected-default-id">Set as default</label>
 					</div>
 				</div>
-				
+
 				<div class="type-choice-wrapper">
 					<div class="type-choice">
 						<div class="type-icon"></div>
@@ -164,19 +161,18 @@
 					</div>
 					<div class="config-option">
 						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> 
-						<label for="last-selected-default-id">Set as
-							default</label>
+							name="last-selected-defalt"> <label
+							for="last-selected-default-id">Set as default</label>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 		<div class="config-container">
 			<div class="config-option">
 				<input type="checkbox" id="last-selected-default-id"
-					name="last-selected-defalt"> 
-				<label for="last-selected-default-id">Set last selected type as
+					name="last-selected-defalt"> <label
+					for="last-selected-default-id">Set last selected type as
 					default</label>
 			</div>
 		</div>
@@ -194,6 +190,10 @@
 	<script type="module"
 		src="./js/listeners/assignments/select-task-focus.js"></script>
 	<script type="module" src="./js/listeners/assignments/delete-answer.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/show-extended-selection.js"></script>
+	<script type="module"
+		src="./js/listeners/assignments/close-extended-selection.js"></script>
 </body>
 
 </html>
