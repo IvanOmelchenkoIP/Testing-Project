@@ -18,28 +18,42 @@
 
 	<div class="editor-area">
 
-		<div tabindex="0" class="task-body single-answer">
-			<div class="task-content-container">
-				<div class="task-content">
-					<div class="editable-input" role="textbox" contenteditable=true>Enter
-						the question</div>
-				</div>
-			</div>
-			<div class="answers-container">
-				<div class="answer-row">
-					<div class="round-checkmark"></div>
-					<div class="answer-content">Enter the answer</div>
-					<div class="delete-answer-button">DELETE</div>
-				</div>
-				<div class="answer-row add-answer">
-					<div class="round-checkmark add-new-answer">
-						<p>+</p>
+		<div tabindex="0" class="task-wrapper single-answer">
+			<div class="focus-wrapper">
+				<div class="task-body">
+					<div class="task-content-container">
+						<div class="task-content">
+							<div class="editable-input" role="textbox" contenteditable=true>
+								Enter the question</div>
+						</div>
 					</div>
-					<div class="answer-content">Add new answer</div>
+					<div class="answers-container-wrapper">
+						<div class="answers-container">
+							<div class="answer-row">
+								<div class="answer-content-wrapper">
+									<div class="round-checkmark"></div>
+									<div class="answer-content">
+										<div class="editable-input" role="textbox"
+											contenteditable=true>Enter the answer</div>
+									</div>
+								</div>
+								<div class="answer-deleter">DELETE</div>
+							</div>
+						</div>
+						<div class="answers-config-container">
+							<div class="answer-config-entry answer-adder">Add new
+								answer</div>
+							<div class="answer-config-entry all-answer-deleter">Delete
+								all answers</div>
+						</div>
+					</div>
 				</div>
 			</div>
+
+
 		</div>
 
+		<!-- 
 		<div tabindex="0" class="task-body multiple-answers">
 			<div class="task-content-container">
 				<div class="task-content">
@@ -69,7 +83,27 @@
 						the question</div>
 				</div>
 			</div>
-			<div class="answers-container">
+			
+			<div class="matched-answers-container-wrapper">
+				<div class="matched-answers-column left-column">
+					<div class="answer-row">
+						
+					</div>
+					<div class="answer-row">
+					</div>
+				</div>
+				<div class="matched-answers-column right-column">
+				
+				</div>
+			</div>
+			<div class="matched-answers-container">
+				<div class="answers-row">
+					
+				</div>
+			
+			</div>
+			
+			<div class="answers-container matched-answers">
 				<div class="answer-row">
 					<div class="round-checkmark"></div>
 					<div class="answer-content">Enter the answer</div>
@@ -96,7 +130,7 @@
 					short answer</div>
 			</div>
 		</div>
-
+ -->
 	</div>
 
 
@@ -107,7 +141,7 @@
 			<button id="add-task-selection">Add Task with type choice</button>
 		</div>
 	</div>
-	
+
 
 	<div class="extended-task-selection">
 		<div class="menu-panel-container">

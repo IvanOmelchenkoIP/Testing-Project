@@ -68,59 +68,125 @@ body {
 }
 
 /* tasks */
-.task-body {
+.task-wrapper {
 	margin: auto;
 	width: 65%;
-	border: 1px solid black;
+	border-radius: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	padding-top: 10px;
 	display: flex;
 	flex-direction: column;
 }
 
 @media (orientation: portrait) {
-	.task-body {
+	.task-wrapper {
 		width: 85%; 
 	}
 }
 
-.task-body:hover {
-	border: 2px solid blue;
+.focus-wrapper {
+	width: 100%;
+	border-radius: 5px;
+	background: yellow;
+	padding: 0.15rem;
+	flex-grow: 100%;
+	display: flex;
+	box-sizing: border-box;
 }
 
-.task-body:focus {
-	border: 2px solid green;
+.task-wrapper:hover > .focus-wrapper {
+	background: gray;
 }
+
+.focused-task {
+	background: green;
+}
+
+.task-body {
+	flex-grow: 1;
+	border-radius: 5px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 
 .task-content-container {
+	display: flex;
+	flex-grow: 1;
 	width: 98%;
 	margin: 0 auto;
-	margin-bottom: 1em;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
 }
 
-.answers-container {
+.task-content {
+	width: 100%;
+}
+
+.editable-input {
+	box-sizing: border-box;
+}
+
+.editable-input:focus {
+	background: lightgray;
+	outline: none;
+}
+
+.task-content > .editable-input:hover {
+	border-bottom: 3px solid lightgreen;
+}
+
+.task-content > .editable-input:focus {
+	border-bottom: 3px solid green;	
+}
+
+.answers-container-wrapper {
 	width: 95%;
 	flex-grow: 1;
-	background: lightgray;
+	background: rgb(240, 240, 240);
 	margin: 0 auto;
 	margin-bottom: 20px;
 	display: flex;
 	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.answers-container {
+	display: flex;
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+	box-sizing: border-box;
 }
 
 .answer-row {
 	display: flex;
+	flex-grow: 1;
 	padding: 0.5em;
+	box-sizing: border-box;
 }
 
-.answer-row:hover {
-	background-color: green;
+.answer-deleter {
+	cursor: default;
+	width: 11%;
+	color: rgb(140, 140, 140);	
+}
+
+.answer-deleter:hover {
+	color: rgb(70, 70, 70);
+}
+
+.answer-content-wrapper {
+	flex-grow: 1;
+	display: flex;
+	box-sizing: border-box;
 }
 
 .round-checkmark {
 	width: 2rem;
 	height: 2rem;
+	flex-shrink: 0;
 	border-radius: 50%;
 	background-color: white;
 	border: 2px solid gray;
@@ -133,30 +199,32 @@ body {
 	border: 2px solid gray;
 }
 
-.add-new-answer {
+.answer-content {
+	flex-grow: 100%;
+	box-sizing: border-box;
+}
+
+.answer-content > .editable-area {
+	box-sizing: border-box;
+}
+
+.answers-config-container {
 	border: 0px;
-	background-color: green;
-	border: 2px solid green;
 	text-align: center;
 	align-items: center;
   	justify-content: center;
+  	display: flex;
 }
 
-.answer-content {
-	flex-grow: 1;
+.answer-config-entry {
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: default;
+	color: gray;
 }
 
-.delete-answer-button {
-	width: 4rem;
-	height: 2 rem;
-}
-
-.delete-answer-button:hover {
-	background: yellow;
-}
-
-.editable-input:hover {
-	border-bottom: 3px solid green;
+.answer-config-entry:hover {
+	color: rgb(70, 70, 70);
 }
 
 .short-answer-field {
