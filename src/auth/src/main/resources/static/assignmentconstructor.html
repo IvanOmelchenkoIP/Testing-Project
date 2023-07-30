@@ -18,41 +18,50 @@
 
 	<div class="editor-area">
 
+		<!-- single answer task -->
 		<div tabindex="0" class="task-wrapper single-answer">
 			<div class="focus-wrapper">
 				<div class="task-body">
 					<div class="task-content-container">
 						<div class="task-content">
-							<div class="editable-input" role="textbox" contenteditable=true>
-								Enter the question</div>
+							<span class="editable-input" role="textbox" contenteditable=true>
+								Enter the question</span>
 						</div>
 					</div>
 					<div class="answers-container-wrapper">
 						<div class="answers-container">
-							<div class="answer-row">
+							<div class="answer-row">							
 								<div class="answer-content-wrapper">
-									<div class="round-checkmark"></div>
+									<div class="checkmark-wrapper">
+										<div class="checkmark round-checkmark"></div>
+									</div>
 									<div class="answer-content">
-										<div class="editable-input" role="textbox"
-											contenteditable=true>Enter the answer</div>
+										<span class="editable-input" role="textbox"
+											contenteditable=true><wbr>Enter the answer</span>
 									</div>
 								</div>
-								<div class="answer-deleter">DELETE</div>
+								<div class="answer-options-wrapper">
+									<div class="answer-option answer-deleter">X</div>
+									<div class="answer-option answer-mover"><|></div>
+									<div class="answer-option more-options">::</div>
+								</div>
 							</div>
 						</div>
 						<div class="answers-config-container">
-							<div class="answer-config-entry answer-adder">Add new
-								answer</div>
-							<div class="answer-config-entry all-answer-deleter">Delete
-								all answers</div>
+							<div class="answer-config-entry add-answer">+</div>
+							<div class="answer-config-entry make-all-answers-blank">[ ]</div>
+							<div class="answer-config-entry copy-all-answers">C</div>
+							<div class="answer-config-entry cut-all-answers">Y</div>
+							<div class="answer-config-entry paste-answer">P</div>
+							<div class="answer-config-entry delete-all-answers">X</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
 		</div>
-
+		
+		<!-- short answer task -->
+		
 		<!-- 
 		<div tabindex="0" class="task-body multiple-answers">
 			<div class="task-content-container">
