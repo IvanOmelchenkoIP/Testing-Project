@@ -5,6 +5,11 @@
 <meta charset="UTF-8">
 <title>Assignment constructor</title>
 <link rel="stylesheet" href="./css/assignment/assignmentconstructor.css">
+
+<script type="module" defer
+	src="./js/listeners/assignments/tasks-listeners.js"></script>
+<script type="module" defer
+	src="./js/listeners/assignments/page-state-listeners.js"></script>
 </head>
 
 <body>
@@ -20,7 +25,7 @@
 
 		<!-- single answer task -->
 		<div tabindex="0" class="task-wrapper single-answer">
-			<div class="focus-wrapper">
+			<div class="selection-wrapper">
 				<div class="task-body">
 					<div class="task-content-container">
 						<div class="task-content">
@@ -30,7 +35,7 @@
 					</div>
 					<div class="answers-container-wrapper">
 						<div class="answers-container">
-							<div class="answer-row">							
+							<div class="answer-row">
 								<div class="answer-content-wrapper">
 									<div class="checkmark-wrapper">
 										<div class="checkmark round-checkmark"></div>
@@ -59,9 +64,9 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- short answer task -->
-		
+
 		<!-- 
 		<div tabindex="0" class="task-body multiple-answers">
 			<div class="task-content-container">
@@ -220,21 +225,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script type="module"
-		src="./js/listeners/assignments/add-task-to-end.js"></script>
-	<script type="module" src="./js/listeners/assignments/add-answer.js"></script>
-	<script type="module"
-		src="./js/listeners/assignments/page-state-listeners.js"></script>
-	<script type="module"
-		src="./js/listeners/assignments/reset-task-focus.js"></script>
-	<script type="module"
-		src="./js/listeners/assignments/select-task-focus.js"></script>
-	<script type="module" src="./js/listeners/assignments/delete-answer.js"></script>
-	<script type="module"
-		src="./js/listeners/assignments/show-extended-selection.js"></script>
-	<script type="module"
-		src="./js/listeners/assignments/close-extended-selection.js"></script>
 </body>
 
 </html>

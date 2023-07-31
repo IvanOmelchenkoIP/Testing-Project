@@ -7,8 +7,8 @@ const selectTaskAndSetFocusHandler = (event) => {
 	while (true) {
 		if (target == null) return;
 		if (target.className == "task-body") {
-			target.focus();
-			assignmentConstructorContext.focusedTask.setFocus(target);
+			target.classList.append("selected-task");
+			assignmentConstructorContext.selectedTask.select(target);
 			return;
 		}
 		target = target.parentElement;
