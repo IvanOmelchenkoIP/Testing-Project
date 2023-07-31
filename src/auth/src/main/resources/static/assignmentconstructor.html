@@ -13,18 +13,73 @@
 </head>
 
 <body>
-
-	<div class="edit-options-menu task-edit-menu">
-		<div class="edit-option"></div>
-		<div class="edit-option"></div>
-		<div class="edit-option"></div>
-		<div class="edit-option"></div>
+	<div class="layers-container-wrapper">
+		<div class="layers-container-title-wrapper">
+			<div class="layers-container-title">STRUCTURE</div>
+		</div>
+		<div class="layers-container">
+			<div class="layer-row-wrapper">
+				<div class="layer-row-current">
+					<div class="layer-show-children-wrapper">
+						<div class="layer-show-children">></div>
+					</div>
+					<div class="layers-row-content-wrapper">
+						<div class="layer-icon-wrapper">
+							<div class="layer-icon">Q</div>
+						</div>
+						<div class="layer-name-wrapper">
+							<div class="layer-name">Question 1</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-rows-children">
+					
+					<div class="layer-row-wrapper">
+					<div class="layer-row-current">
+						<div class="layer-show-children-wrapper">
+							<div class="layer-show-children">></div>
+						</div>
+						<div class="layers-row-content-wrapper">
+							<div class="layer-icon-wrapper">
+								<div class="layer-icon">C</div>
+							</div>
+							<div class="layer-name-wrapper">
+								<div class="layer-name">Question content</div>
+							</div>
+						</div>
+					</div>
+					<div class="layer-rows-children">
+					 	
+					 	<div class="layers-row-wrapper">
+					 		<div class="layer-show-children-wrapper"></div>
+					 		<div class="layer-row-current">
+					 			<div class="layers-row-content-wrapper">
+					 				<div class="layer-icon-wrapper">
+					 					<div class="layer-icon">S</div>
+					 				</div>
+					 				<div class="layer-name-wrapper">
+										<div class="layer-name">SPAN</div>
+									</div>
+					 			</div>
+					 		</div>
+					 	</div>
+					 	
+					</div>
+			</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="layers-options-container">
+			<button class="layers-options-entry" id="add-task">+</button>
+			<button class="layers-options-entry" id="add-task-selection">+>></button>
+		</div>
 	</div>
 
-	<div class="editor-area">
+	<div class="view-area">
 
 		<!-- single answer task -->
-		<div tabindex="0" class="task-wrapper single-answer">
+		<!-- <div tabindex="0" class="task-wrapper single-answer">
 			<div class="selection-wrapper">
 				<div class="task-body">
 					<div class="task-content-container">
@@ -64,7 +119,7 @@
 				</div>
 			</div>
 		</div>
-
+ 		-->
 		<!-- short answer task -->
 
 		<!-- 
@@ -145,15 +200,6 @@
 			</div>
 		</div>
  -->
-	</div>
-
-
-	<div class="editor-panel">
-		<div class="task-window"></div>
-		<div class="config-panel">
-			<button id="add-task">Add new Task</button>
-			<button id="add-task-selection">Add Task with type choice</button>
-		</div>
 	</div>
 
 

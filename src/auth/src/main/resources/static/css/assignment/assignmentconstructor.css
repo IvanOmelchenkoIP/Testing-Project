@@ -12,29 +12,93 @@ body {
 	height: 100%;
 	width: 100%;
 	min-height: 100%;
-	flex-direction: column;
+	box-sizing: border-box;
 }
 
-/*.working-area {
-	display: flex;
-	margin: 0;
-	flex-grow: 1;
-	height: 100%;
-	width: 100%;
-	min-height: 100%;
-	flex-direction: column;
-}*/
+/* layers panel css */
 
-.editor-panel {
-	width: 100%;
+.layers-container-wrapper {
+	height: 100%;
 	background-color: rgb(180, 180, 200);
-	height: 15%;
+	width: 20%;
 	display: flex;
+	flex-direction: column;
 	border-top: 1px solid rgb(150, 150, 150);
 	overflow-x: auto;
+	box-sizing: border-box;
 }
 
-.editor-area {
+.layers-container-title-wrapper {
+	height: 1.2rem;
+	border-bottom: 1px solid gray;
+}
+
+.layers-options-container {
+	height: 1.6rem;
+	display: flex;
+	background-color: rgb(170, 170, 190);
+}
+
+.layers-options-entry {
+	height: inherit;
+	background: none;
+	border: none;
+}
+
+.layers-options-entry:hover {
+	color: darkblue;
+}
+
+.layers-container {
+	flex-grow: 1;
+	box-sizing: border-box;
+	flex-direction: column;
+}
+
+.layer-row-wrapper {
+	background: blue;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.layer-row-current {
+	width: 100%;
+	background: lightblue;
+	align-items: center;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	height: 2rem;
+	display: flex;
+}
+
+.layer-show-children-wrapper {
+	width: 1rem;
+	padding-left: 0.4rem;
+} 
+
+.layers-row-content-wrapper {
+	display: flex;
+}
+
+.layer-icon-wrapper {
+	width: 1.2rem;
+}
+
+.layer-name-wrapper {
+	flex-grow: 1;
+}
+
+.layer-rows-children {
+	flex-grow: 1;
+	width: 100%;
+	background: green;
+	margin-left: 1rem;
+}
+
+/* view area css */
+
+.view-area {
 	flex-grow: 100%;
 	width: 100%;
 	background-color: rgb(194, 194, 214);
@@ -42,30 +106,17 @@ body {
 	overflow-y: auto;
 }
 
-.editor-area::-webkit-scrollbar {
+.view-area::-webkit-scrollbar {
 	width: 10px;
 }
 
-.editor-area::-webkit-scrollbar-thumb {
+.view-area::-webkit-scrollbar-thumb {
   background: rgb(140, 140, 140); 
   border-radius: 20px;
 }
 
-.editor-area::-webkit-scrollbar-thumb:hover {
+.view-area::-webkit-scrollbar-thumb:hover {
   background: rgb(100, 100, 100); 
-}
-
-/* editor panel */
-.task-window {
-	height: 100%;
-	flex-grow: 1;
-	overflow-y: auto;
-}
-
-.config-panel {
-	height: 100%;
-	width: 20%;
-	background-color: rgb(170, 170, 190);
 }
 
 /* tasks */
