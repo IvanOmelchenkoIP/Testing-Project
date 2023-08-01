@@ -318,7 +318,7 @@ body {
 }
 
 /* extended task addition */
-.extended-task-selection {
+.add-selection-menu {
 	position:absolute;
 	right: 0;
     left: 0;
@@ -383,4 +383,10 @@ body {
 	width: 95%;
 	justify-content: center;
 	border-top: 1px solid black;
+}
+
+/* different display classes */
+
+.display-flex {
+	display: flex;
 }
