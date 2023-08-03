@@ -11,7 +11,7 @@ const constructorOnloadHandler = () => {
 	assignmentConstructorContext.namingOrders = {
 		question: new OrderState(),
 		task: new OrderState(),
-		chapter: new OrderState()
+		chapter: new OrderState()  
 	}
 }
 
