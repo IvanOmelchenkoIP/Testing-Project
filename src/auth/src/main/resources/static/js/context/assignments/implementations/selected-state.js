@@ -1,6 +1,6 @@
 "use strict";
 
-class SelectedTaskState {
+class SelectedState {
 	#selected = null;
 
 	select(target) {
@@ -16,4 +16,4 @@ class SelectedTaskState {
 	}
 }
 
-export default SelectedTaskState;
+export default SelectedState;
