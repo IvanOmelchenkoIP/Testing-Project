@@ -14,7 +14,7 @@ class FinalLayerPreset extends AbstractConstructor {
 	}
 
 	static new(name) {
-		return new FinalLayerPreset();
+		return new FinalLayerPreset(name);
 	}
 }
 
