@@ -4,6 +4,7 @@ import selectTaskListenerHandler from "../../functions/listener-handlers/assignm
 import deselectTaskListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/deselect-task-handler.js";
 import showAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/show-add-selection-handler.js";
 import closeAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/close-add-selection-handler.js";
+import quickAddListenerHandler from "../../functions/listener-handlers/assignments/layers/quick-add-handler.js";
 
 import { domSelector } from "../../utils/html/html-utils.js";
 
@@ -33,4 +34,12 @@ import { domSelector } from "../../utils/html/html-utils.js";
 	domSelector.document
 		       .selectById("close-add-selection")
 		       .addEventListener("click", closeAddSelectionListenerHandler);
+})();
+
+// layers
+
+(() => {
+	domSelector.document
+			   .selectById("quick-add")
+			   .addEventListener("click", quickAddListenerHandler);
 })();

@@ -1,10 +1,14 @@
 "use strict";
 
 class AbstractConstructor {
-	static new(...params) {
-		if (this.prototype = AbstractConstructor) {
+	constructor(...params) {
+		if (this.constructor = AbstractConstructor) {
 			throw new Error("Cannot call abstract class static method");
 		}
+	}
+	
+	static new(...params) {
+		return new AbstractConstructor(...params);
 	}
 }
 

@@ -3,7 +3,9 @@
 class LayerOrderState {
 	#order = 0;
 	
-	nextOrder() {
+	next() {
 		return ++this.#order;
 	}
 }
+
+export default LayerOrderState;
