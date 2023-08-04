@@ -24,6 +24,11 @@ class DOMConstructor {
 		return this.setInnerHtml(innerHtml);
 	}
 	
+	addValue(value) {
+		this.#element.setAttribute("value", value);
+		return this;
+	}
+	
 	addTabindex(tabindex) {
 		this.#element.setAttribute("tabindex", tabindex);
 		return this;
@@ -41,6 +46,16 @@ class DOMConstructor {
 	
 	setContentEditableFalse() {
 		this.#element.setAttribute("contenteditable", false);
+		return this;
+	}
+	
+	setReadonlyTrue() {
+		this.#element.setAttribute("readonly", true);
+		return this;
+	}
+	
+	setReadonlyFalse() {
+		this.#element.setAttribute("readonly", false);
 		return this;
 	}
 	

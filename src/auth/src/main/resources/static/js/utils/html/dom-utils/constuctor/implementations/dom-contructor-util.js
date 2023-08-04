@@ -14,6 +14,14 @@ class DOMConstructorUtil {
 	newP(innerText = "") {
 		return this.newDOMElement("p", innerText);
 	}
+	
+	newInput(innerText = "") {
+		return this.newDOMElement("input", innerText);
+	}
+	
+	newButton(innerText = "") {
+		return this.newDOMElement("button", innerText);
+	}
 }
 
 export default DOMConstructorUtil;
