@@ -3,14 +3,14 @@
 import FinalLayerPreset from "./presets/final-layer-preset.js";
 import AbstractConstructor from "../../../generic/abstract-constructor.js";
 
-class QuestionContentEditableLayer extends AbstractConstructor {
+class EditableQuestionContentLayer extends AbstractConstructor {
 	constructor() {
 		return FinalLayerPreset.new("Enter your question contents");
 	}
 	
 	static new() {
-		return new QuestionContentEditableLayer();
+		return new EditableQuestionContentLayer();
 	}
 }
 
-export default QuestionContentEditableLayer;
+export default EditableQuestionContentLayer;
