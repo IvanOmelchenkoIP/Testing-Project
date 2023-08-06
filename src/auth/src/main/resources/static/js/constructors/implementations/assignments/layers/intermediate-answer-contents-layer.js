@@ -6,7 +6,7 @@ const TYPE_LABEL = "Answer";
 
 class IntermediateAnswerContentsLayer extends IntermediateContentsLayer {
 	constructor(...children) {
-		return super.constructor(TYPE_LABEL, ...children);
+		return super(TYPE_LABEL, ...children);
 	}
 	
 	static new(...children) {

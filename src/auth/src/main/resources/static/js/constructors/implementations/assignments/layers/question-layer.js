@@ -17,7 +17,7 @@ class QuestionLayer extends AbstractConstructor {
 			),
 			IntermediateAnswersLayer.new(
 				AnswerLayer.new()
-			)
+			 )
 		);
 	}
 	

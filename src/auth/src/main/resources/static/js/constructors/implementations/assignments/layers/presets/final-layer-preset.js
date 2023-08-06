@@ -2,7 +2,7 @@
 
 import AbstractConstructor from "../../../../generic/abstract-constructor.js";
 import { domConstructor } from "../../../../../utils/html/html-utils.js";
-import LayerContentPreset from "./presets/layer-content-preset.js";
+import LayerContentPreset from "./layer-content-preset.js";
 
 class FinalLayerPreset extends AbstractConstructor {
 	constructor(name) {
