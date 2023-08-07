@@ -2,7 +2,6 @@
 
 import AbstractConstructor from "../../../../generic/abstract-constructor.js";
 import { domConstructor } from "../../../../../utils/html/html-utils.js";
-import LayerShowChildrenPreset from "./layer-show-children-preset.js";
 
 class LayerContentPreset extends AbstractConstructor {
 	constructor(content) {

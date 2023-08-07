@@ -15,19 +15,108 @@ body {
 	box-sizing: border-box;
 }
 
-/* layers panel css */
+/* options panel css */
 
-.layers-container-wrapper {
+.options-container-wrapper {
 	height: 100%;
-	background-color: rgb(180, 180, 200);
 	width: 20%;
 	display: flex;
+}
+
+.options-contents-container-wrapper {
+	width: 100%;
+	height: 100%;
+	display: none;
 	flex-direction: column;
+	background-color: rgb(180, 180, 200);
 	border-top: 1px solid rgb(150, 150, 150);
-	overflow-x: auto;
 	box-sizing: border-box;
 }
 
+.options-container-title-wrapper {
+	height: 1.2rem;
+	border-bottom: 1px solid gray;
+	display: flex;
+}
+
+.menu-caller-wrapper {
+	width: 1.4rem;
+	height: 100%;
+}
+
+.menu-caller-wrapper > button {
+	width: 100%;
+	height: 100%;
+	background: none;
+	border: none;
+	color: green;
+}
+
+.menu-caller-wrapper > button:hover {
+	color: darkblue;
+}
+
+.options-title-wrapper {
+	flex-grow: 1;
+}
+
+.options-menu-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: darkblue;
+	box-sizing: border-box;
+}
+
+.options-title {
+	color: white;
+}
+
+.options-back-panel {
+	height: 1.2rem;
+}
+
+.options-back-panel > button {
+	height: 100%;
+	background: none;
+	border: none;
+	color: lightgray;
+}
+
+.options-back-panel > button:hover {
+	color: white;
+}
+
+.options-list-container {
+	flex-grow: 1;
+}
+
+.options-list {
+	padding: 0;
+	list-style: none;
+	width: 100%;
+}
+
+.option-list-entry-wrapper {
+	width: 100%;
+}
+
+.option-list-entry-wrapper > button {
+	width: 100%;
+	font-size: 1rem;
+	height: 1.6rem;
+	text-decoration: none;
+	border: none;
+	background: none;
+	color: white;
+}
+
+.option-list-entry-wrapper > button:hover {
+	background: blue;
+}
+
+/*
 .layers-container-title-wrapper {
 	height: 1.2rem;
 	border-bottom: 1px solid gray;
@@ -55,47 +144,23 @@ body {
 	flex-direction: column;
 }
 
+
 .layer-row-wrapper {
 	background: blue;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
 .layer-row-current {
 	width: 100%;
-	background: lightblue;
-	align-items: center;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	height: 2rem;
-	display: flex;
 }
 
-.layer-show-children-wrapper {
-	width: 1rem;
-	padding-left: 0.4rem;
-} 
-
-.layer-row-content-wrapper {
-	display: flex;
-}
-
-.layer-icon-wrapper {
-	width: 1.2rem;
-}
-
-.layer-name-wrapper {
-	flex-grow: 1;
-}
-
-.layer-rows-children {
-	flex-grow: 1;
+.layer-row-children {
 	width: 100%;
-	background: green;
-	margin-left: 1rem;
 }
-
+*/
 /* view area css */
 
 .view-area {
