@@ -4,7 +4,10 @@ import selectTaskListenerHandler from "../../functions/listener-handlers/assignm
 import deselectTaskListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/deselect-task-handler.js";
 import showAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/show-add-selection-handler.js";
 import closeAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/close-add-selection-handler.js";
-import quickAddListenerHandler from "../../functions/listener-handlers/assignments/layers/quick-add-handler.js";
+//import quickAddListenerHandler from "../../functions/listener-handlers/assignments/layers/quick-add-handler.js";
+import callStructureOptionsMenuListenerHandler from "../../functions/listener-handlers/assignments/structure-options/call-structure-options-menu-handler.js";
+import closeStructureOptionsMenuListenerHandler from "../../functions/listener-handlers/assignments/structure-options/close-structure-options-menu-handler.js";
+import selectStructureMenuOptionEntryListenerHandler from "../../functions/listener-handlers/assignments/structure-options/select-structure-menu-option-entry-handler.js";
 
 import { domSelector } from "../../utils/html/html-utils.js";
 
@@ -24,7 +27,7 @@ import { domSelector } from "../../utils/html/html-utils.js";
 
 // extended selection of tasks on addition
 
-(() => {
+/*(() => {
 	domSelector.document
 			   .selectById("show-add-selection")
 			   .addEventListener("click", showAddSelectionListenerHandler);
@@ -34,12 +37,31 @@ import { domSelector } from "../../utils/html/html-utils.js";
 	domSelector.document
 		       .selectById("close-add-selection")
 		       .addEventListener("click", closeAddSelectionListenerHandler);
-})();
+})();*/
 
-// layers
+// structure options
 
-(() => {
+/*(() => {
 	domSelector.document
 			   .selectById("quick-add")
 			   .addEventListener("click", quickAddListenerHandler);
+})();*/
+
+(() => {
+	domSelector.document
+			   .selectById("call-structure-options-menu")
+			   .addEventListener("click", callStructureOptionsMenuListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("close-structure-options-menu")
+			   .addEventListener("click", closeStructureOptionsMenuListenerHandler);
+})();
+
+(() => {
+	const structureMenuEntries = domSelector.document.selectAllByClass("structure-option-list-entry");
+	for (const entry of structureMenuEntries) {
+		entry.addEventListener("click", selectStructureMenuOptionEntryListenerHandler);
+	} 
 })();

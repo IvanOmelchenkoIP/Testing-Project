@@ -13,46 +13,46 @@ class CurriedInnerHtmlSetter {
 	}
 	
 	setIdInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectById(name));
+		return this.setInnerHtml(this._domSelector.document.selectById(name));
 	}
 	
 	setAllNameInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectAllByName(name));
+		return this.setInnerHtml(this._domSelector.document.selectAllByName(name));
 
 	}
 	
 	setAllTagInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectAllByTag(name));
+		return this.setInnerHtml(this._domSelector.document.selectAllByTag(name));
 
 	}
 	
 	setAllClassInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectAllByClass(name));
+		return this.setInnerHtml(this._domSelector.document.selectAllByClass(name));
 
 	}
 	
 	setFirstNameInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectFirstByName(name));
+		return this.setInnerHtml(this._domSelector.document.selectFirstByName(name));
 	}
 	
 	setFirstTagInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectFirstByTag(name));
+		return this.setInnerHtml(this._domSelector.document.selectFirstByTag(name));
 	}
 	
 	setFirstClassInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectFirstByClass(name));
+		return this.setInnerHtml(this._domSelector.document.selectFirstByClass(name));
 	}
 	
 	setLastNameInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectLastByName(name));
+		return this.setInnerHtml(this._domSelector.document.selectLastByName(name));
 	}
 	
 	setLastTagInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectLastByTag(name));
+		return this.setInnerHtml(this._domSelector.document.selectLastByTag(name));
 	}
 	
 	setLastClassInnerHtml(name) {
-		return this.setInnerHtml(this._domSelector.selectLastByClass(name));
+		return this.setInnerHtml(this._domSelector.document.selectLastByClass(name));
 	}
 }
 

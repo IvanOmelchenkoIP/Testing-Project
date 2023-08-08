@@ -17,13 +17,13 @@ body {
 
 /* options panel css */
 
-.options-container-wrapper {
+.structure-options-container-wrapper {
 	height: 100%;
 	width: 20%;
 	display: flex;
 }
 
-.options-contents-container-wrapper {
+.structure-options-contents-container-wrapper {
 	width: 100%;
 	height: 100%;
 	display: none;
@@ -33,18 +33,18 @@ body {
 	box-sizing: border-box;
 }
 
-.options-container-title-wrapper {
+.structure-options-container-title-wrapper {
 	height: 1.2rem;
 	border-bottom: 1px solid gray;
 	display: flex;
 }
 
-.menu-caller-wrapper {
+.structure-menu-caller-wrapper {
 	width: 1.4rem;
 	height: 100%;
 }
 
-.menu-caller-wrapper > button {
+.structure-menu-caller-wrapper > button {
 	width: 100%;
 	height: 100%;
 	background: none;
@@ -52,16 +52,16 @@ body {
 	color: green;
 }
 
-.menu-caller-wrapper > button:hover {
+.structure-menu-caller-wrapper > button:hover {
 	color: darkblue;
 }
 
-.options-title-wrapper {
+.structure-options-title-wrapper {
 	flex-grow: 1;
 }
 
-.options-menu-wrapper {
-	display: flex;
+.structure-options-menu-wrapper {
+	display: none;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
@@ -69,40 +69,40 @@ body {
 	box-sizing: border-box;
 }
 
-.options-title {
+.structure-options-title {
 	color: white;
 }
 
-.options-back-panel {
+.close-structure-options-menu-wrapper {
 	height: 1.2rem;
 }
 
-.options-back-panel > button {
+.close-structure-options-menu-wrapper > button {
 	height: 100%;
 	background: none;
 	border: none;
 	color: lightgray;
 }
 
-.options-back-panel > button:hover {
+.close-structure-options-menu-wrapper > button:hover {
 	color: white;
 }
 
-.options-list-container {
+.structure-options-list-container {
 	flex-grow: 1;
 }
 
-.options-list {
+.structure-options-list {
 	padding: 0;
 	list-style: none;
 	width: 100%;
 }
 
-.option-list-entry-wrapper {
+.structure-option-list-entry-wrapper {
 	width: 100%;
 }
 
-.option-list-entry-wrapper > button {
+.structure-option-list-entry-wrapper > button {
 	width: 100%;
 	font-size: 1rem;
 	height: 1.6rem;
@@ -112,8 +112,14 @@ body {
 	color: white;
 }
 
-.option-list-entry-wrapper > button:hover {
+.structure-option-list-entry-wrapper > button:hover {
 	background: blue;
+}
+
+.structure-options-entry-contents-wrapper {
+	flex-grow: 1;
+	display: none;
+	flex-direction: column;
 }
 
 /*
