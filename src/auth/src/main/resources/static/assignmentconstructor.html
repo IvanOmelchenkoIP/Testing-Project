@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<div class="structure-options-container-wrapper">
+	<!-- <div class="structure-options-container-wrapper">
 		<div class="structure-options-contents-container-wrapper display-flex">
 			<div class="structure-options-container-title-wrapper">
 				<div class="structure-options-title-wrapper">
@@ -25,18 +25,26 @@
 			</div>
 			<div class="structure-options-contents-container">
 				<div class="structure-options-entry-contents-wrapper assignment-structure-container-wrapper display-flex">
-					<div class="structure-layers-container">DATA</div>
+					<div class="structure-layers-container">
+						<div class="structure-layer-row">
+							<div class="structure-layer-row-options">
+								<button class="show-children">></button>
+							</div>
+							<div class="structure-layer-row-contents">
+								<div class="structure-layer-row-icon">Q</div>
+								<div class="structure-layer-row-name-wrapper">
+									<input class="structure-layer-row-name" value="Question 1" readonly>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="structure-layers-options-container">
 						<button class="structure-layers-options-entry" id="quick-add">+</button>
 						<button class="structure-layers-options-entry" id="show-add-selection">+>></button>
+						<button class="structure-layers-options-entry" id="add-task">+T</button>
+						<button class="structure-layers-options-entry" id="add-chapter">+C</button>
 						<button class="structure-layers-options-entry" id="delete-selected">X</button>
 					</div>
-				</div>
-				<div class="structure-options-entry-contents-wrapper structure-flow-settings-container-wrapper">
-					FLOW WRAPPER
-				</div>
-				<div class="structure-options-entry-contents-wrapper structure-styles-container-wrapper">
-					STYLES
 				</div>
 			</div>
 		</div>
@@ -71,22 +79,58 @@
 			</div>
 		</div>
 	</div>
+ 	-->
 
-	<!--
 	<div class="layers-container-wrapper">
-		<div class="layers-container-title-wrapper">
-			<div class="layers-container-title">Assignment structure</div>
-		</div>
-		<div class="layers-container">
+		<div class="layers-contents-container-wrapper">
+			<div class="layers-container"></div>
+			<div class="layers-options-container">
+				<button class="layers-options-entry" id="quick-add">+</button>
+				<button class="layers-options-entry" id="show-add-selection">+>></button>
+				<button class="layers-options-entry" id="delete-selected">X</button>
+			</div>
 			
+			<div class="variant-change-container-wrapper">
+				<button id="change-variant">
+					<div class="variant-change-contents">Variant 1</div>
+					<div class="open-variant-change-menu-icon">></div>
+				</button>
+			</div>
 		</div>
-		<div class="layers-options-container">
-			<button class="layers-options-entry" id="quick-add">+</button>
-			<button class="layers-options-entry" id="show-add-selection">+>></button>
-			<button class="layers-options-entry" id="delete-selected">X</button>
+		
+		<div class="layers-contents-container-wrapper variants-menu-wrapper display-flex">
+			<div class="layers-title-container-wrapper">
+				<div class="layers-container-title">
+					<span class="layers-container-title">Select a variant</span>
+				</div>
+				<div class="layers-title-border-wrapper">
+					<div class="layers-title-border"></div>
+					<div class="flex-rest"></div>
+				</div>
+			</div>
+			<div class="variants-container-wrapper">
+				<div class="variants-container">
+					<div class="variant-row">
+						<div class="delete-variant-wrapper">
+							<button class="delete-vatiant">X</button>
+						</div>
+						<div class="variat-name-wrapper">
+							<span class="variant-name">Variant 1</span>
+						</div>
+						<div class="selection-indicator selection-indicator-selected"></div>
+					</div>					
+				</div>
+			</div>
+			<div class="layers-variants-options-contaier">
+				<div class="close-variants-wrapper">
+					<button id="close-variants"><</button>
+				</div>
+				<div class="add-new-variant-wrapper">
+					<button id="add-new-variant">+ Add new variant</button>
+				</div>
+			</div>
 		</div>
 	</div>
-	-->
 
 	<div class="view-area">
 
