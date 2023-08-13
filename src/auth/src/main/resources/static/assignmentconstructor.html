@@ -82,8 +82,8 @@
  	-->
 
 	<div class="layers-container-wrapper">
-		<div class="layers-contents-container-wrapper">
-			<div class="layers-container"></div>
+		<div class="layers-contents-container-wrapper layers-contents-wrapper display-flex">
+			<div class="layers-container">HERE</div>
 			<div class="layers-options-container">
 				<button class="layers-options-entry" id="quick-add">+</button>
 				<button class="layers-options-entry" id="show-add-selection">+>></button>
@@ -91,14 +91,14 @@
 			</div>
 			
 			<div class="variant-change-container-wrapper">
-				<button id="change-variant">
-					<div class="variant-change-contents">Variant 1</div>
+				<button id="call-variant-selection">
+					<div class="editable-variant-name">Variant 1</div>
 					<div class="open-variant-change-menu-icon">></div>
 				</button>
 			</div>
 		</div>
 		
-		<div class="layers-contents-container-wrapper variants-menu-wrapper display-flex">
+		<div class="layers-contents-container-wrapper variants-menu-wrapper">
 			<div class="layers-title-container-wrapper">
 				<div class="layers-container-title">
 					<span class="layers-container-title">Select a variant</span>
@@ -110,23 +110,25 @@
 			</div>
 			<div class="variants-container-wrapper">
 				<div class="variants-container">
-					<div class="variant-row">
+					<div class="variant-row variant-contents-wrapper">
 						<div class="delete-variant-wrapper">
-							<button class="delete-vatiant">X</button>
+							<button class="delete-variant">X</button>
 						</div>
-						<div class="variat-name-wrapper">
+						<div class="variant-name-wrapper">
 							<span class="variant-name">Variant 1</span>
 						</div>
 						<div class="selection-indicator selection-indicator-selected"></div>
+					</div>
+					<div class="variant-row">
+						<div class="add-new-variant-wrapper">
+							<button id="add-new-variant">+ Add new variant</button>
+						</div>
 					</div>					
 				</div>
 			</div>
 			<div class="layers-variants-options-contaier">
 				<div class="close-variants-wrapper">
-					<button id="close-variants"><</button>
-				</div>
-				<div class="add-new-variant-wrapper">
-					<button id="add-new-variant">+ Add new variant</button>
+					<button id="close-variant-selection"><</button>
 				</div>
 			</div>
 		</div>

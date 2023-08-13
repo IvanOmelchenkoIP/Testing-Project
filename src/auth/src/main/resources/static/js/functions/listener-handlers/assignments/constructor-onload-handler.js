@@ -11,7 +11,8 @@ const constructorOnloadHandler = () => {
 	assignmentConstructorContext.namingOrders = {
 		question: new LayerOrderState(),
 		task: new LayerOrderState(),
-		chapter: new LayerOrderState()  
+		chapter: new LayerOrderState(),
+		variant: new LayerOrderState(),  
 	}
 }
 

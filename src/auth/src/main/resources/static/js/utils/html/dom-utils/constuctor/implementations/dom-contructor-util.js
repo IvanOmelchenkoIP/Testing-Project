@@ -22,6 +22,10 @@ class DOMConstructorUtil {
 	newButton(innerText = "") {
 		return this.newDOMElement("button", innerText);
 	}
+	
+	newSpan(innerText = "") {
+		return this.newDOMElement("span", innerText);
+	}
 }
 
 export default DOMConstructorUtil;

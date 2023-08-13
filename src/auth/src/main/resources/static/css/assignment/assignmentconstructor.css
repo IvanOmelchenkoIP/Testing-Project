@@ -229,7 +229,7 @@ body {
 	width: 10%;
 }
 
-.variant-change-contents {
+.editable-variant-name {
 	flex-grow: 1;
 }
 
@@ -297,14 +297,6 @@ body {
 	height: 100%;
 }
 
-.add-new-variant-wrapper {
-	flex-grow: 1; 
-}
-
-.add-new-variant-wrapper > button {
-	float: right;
-}
-
 .variants-container-wrapper {
 	width: 100%;
 	flex-grow: 1;
@@ -338,6 +330,17 @@ body {
 	padding-left: 1rem;
 }
 
+.delete-variant {
+	display: none;
+	background: none;
+	border: none;
+	color: gray;
+}
+
+.delete-variant:hover {
+	color: black;
+}
+
 .selection-indicator {
 	width: 1rem;
 }
@@ -346,13 +349,25 @@ body {
 	background: purple;
 }
 
-.variat-name-wrapper {
+.variant-name-wrapper {
 	flex-grow: 1;
 }
 
 .variant-name {
 	float: right;
 	padding-right: 1rem;
+}
+
+.add-new-variant-wrapper {
+	flex-grow: 1; 
+	display: flex;
+}
+
+.add-new-variant-wrapper > button {
+	flex-grow: 1;
+	border: none;
+	background: none;
+	border-top: 1px solid gray;
 }
 
 /* view area css */
@@ -648,6 +663,10 @@ body {
 
 .display-flex {
 	display: flex;
+}
+
+.display-block {
+	display: block;
 }
 
 .flex-rest {

@@ -1,7 +1,7 @@
 "use strict";
 
 class LayerOrderState {
-	#order = 0;
+	#order = 1;
 	
 	next() {
 		return ++this.#order;

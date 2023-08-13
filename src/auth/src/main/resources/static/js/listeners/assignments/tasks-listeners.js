@@ -4,10 +4,13 @@ import selectTaskListenerHandler from "../../functions/listener-handlers/assignm
 import deselectTaskListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/deselect-task-handler.js";
 import showAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/show-add-selection-handler.js";
 import closeAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/close-add-selection-handler.js";
-import quickAddListenerHandler from "../../functions/listener-handlers/assignments/structure-options/quick-add-handler.js";
-import callStructureOptionsMenuListenerHandler from "../../functions/listener-handlers/assignments/structure-options/call-structure-options-menu-handler.js";
-import closeStructureOptionsMenuListenerHandler from "../../functions/listener-handlers/assignments/structure-options/close-structure-options-menu-handler.js";
-import selectStructureMenuOptionEntryListenerHandler from "../../functions/listener-handlers/assignments/structure-options/select-structure-menu-option-entry-handler.js";
+
+
+import variantSelectionCallListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-call-handler.js";
+import variantSelectionCloseListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-close-handler.js";
+import addVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/add-variant-handler.js";
+import selectVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/select-variant-handler.js";
+import deleteVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/delete-variant-handler.js";
 
 import { domSelector } from "../../utils/html/html-utils.js";
 
@@ -40,7 +43,7 @@ import { domSelector } from "../../utils/html/html-utils.js";
 })();
 
 // structure options
-
+/*
 (() => {
 	domSelector.document
 			   .selectById("quick-add")
@@ -64,4 +67,34 @@ import { domSelector } from "../../utils/html/html-utils.js";
 	for (const entry of structureMenuEntries) {
 		entry.addEventListener("click", selectStructureMenuOptionEntryListenerHandler);
 	} 
+})();
+*/
+// variant management
+
+(() => {
+	domSelector.document
+			   .selectById("add-new-variant")
+			   .addEventListener("click", addVariantListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("call-variant-selection")
+			   .addEventListener("click", variantSelectionCallListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("close-variant-selection")
+			   .addEventListener("click", variantSelectionCloseListenerHandler);
+})();
+
+(() => {
+	const variants = domSelector.document.selectAllByClass("variant-contents-wrapper");
+	for (const variant of variants) variant.addEventListener("click", selectVariantListenerHandler);
+})();
+
+(() => {
+	const variantDeleteBtns = domSelector.document.selectAllByClass("delete-variant");
+	for (const deleteBtn of variantDeleteBtns) deleteBtn.addEventListener("click", deleteVariantListenerHandler);
 })();
