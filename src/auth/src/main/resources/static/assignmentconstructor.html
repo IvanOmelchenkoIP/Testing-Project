@@ -13,81 +13,94 @@
 </head>
 
 <body>
-	<!-- <div class="structure-options-container-wrapper">
-		<div class="structure-options-contents-container-wrapper display-flex">
-			<div class="structure-options-container-title-wrapper">
-				<div class="structure-options-title-wrapper">
-					<span class="structure-replaceble-options-title">Assignment structure</span>
-				</div>
-				<div class="structure-menu-caller-wrapper">
-					<button id="call-structure-options-menu">=</button>
-				</div>
-			</div>
-			<div class="structure-options-contents-container">
-				<div class="structure-options-entry-contents-wrapper assignment-structure-container-wrapper display-flex">
-					<div class="structure-layers-container">
-						<div class="structure-layer-row">
-							<div class="structure-layer-row-options">
-								<button class="show-children">></button>
+	<div class="layers-area">
+		<div class="layers-contents-container-wrapper layers-contents-wrapper display-flex">
+			<div class="layers-container">
+						
+				<div class="layers-margin"></div>
+						
+				<div class="layer-row chapter-row">
+					<div class="current-chapter-wrapper">
+						<div class="current-layer">
+							<div class="row-contents">
+								<div class="chapter-left-margin"></div>
+								<div class="chapter-name-wrapper">
+									<div class="chapter-selection-indicator"></div>
+									<div class="layer-name-container">
+										<input class="layer-name" value="Chapter 1" readonly="true">
+									</div>
+								</div>
+								<div class="chapter-right-margin"></div>
 							</div>
-							<div class="structure-layer-row-contents">
-								<div class="structure-layer-row-icon">Q</div>
-								<div class="structure-layer-row-name-wrapper">
-									<input class="structure-layer-row-name" value="Question 1" readonly>
+							<div class="row-options">
+								<div class="row-option">
+									<button class="show-row-children">></button>
 								</div>
 							</div>
 						</div>
+						<div class="chapter-underline"></div>
 					</div>
-					<div class="structure-layers-options-container">
-						<button class="structure-layers-options-entry" id="quick-add">+</button>
-						<button class="structure-layers-options-entry" id="show-add-selection">+>></button>
-						<button class="structure-layers-options-entry" id="add-task">+T</button>
-						<button class="structure-layers-options-entry" id="add-chapter">+C</button>
-						<button class="structure-layers-options-entry" id="delete-selected">X</button>
+					
+					<div class="child-layers-wrapper">
+						<div class="chapter-children-margin"></div>
+						<div class="child-layers">
+						
+							<div class="layer-row question-row">
+								<div class="current-layer">
+									<div class="row-contents question-contents">
+										<div class="layer-icon-container">
+											<span class="layer-icon">Q</span>
+										</div>
+										<div class="layer-name-container">
+											<input class="layer-name" value="Question 1" readonly="true">
+										</div>
+									</div>
+								</div>
+								<div class="child-layers-wrapper">
+									<div class="layers-margin"></div>
+								</div>
+							</div>
+														
+							<div class="layer-row question-row">
+								<div class="current-layer">
+									<div class="row-contents question-contents">
+										<div class="layer-icon-container">
+											<span class="layer-icon">Q</span>
+										</div>
+										<div class="layer-name-container">
+											<input class="layer-name" value="Question 2" readonly="true">
+										</div>
+									</div>
+								</div>
+								<div class="child-layers-wrapper">
+									<div class="layers-margin"></div>
+								</div>
+							</div>
+							
+							<!-- 
+							<div class="layer-row task-row">
+								<div class="current-layer">
+								</div>
+								<div class="child-layers-wrapper">
+									<div class="layers-margin"></div>
+									
+									<div class="layers-margin"></div>
+								</div>
+							</div>
+							 -->							
+						</div>
+						<div class="chapter-end-margin"></div>
 					</div>
 				</div>
+			
 			</div>
-		</div>
-		
-		<div class="structure-options-menu-wrapper">
-			<div class="structure-options-container-title-wrapper">
-				<div class="structure-options-title-wrapper">
-					<span class="structure-options-title">Options selection</span>	
+			<div class="layers-options-container-wrapper">
+				<div class="layers-options-container general-layers-options display-flex">
+					<button class="layers-options-entry" id="add-blank-question">+Q</button>
+					<button class="layers-options-entry" id="add-new-chapter">+C</button>
+					<button class="layers-options-entry" id="show-add-selection">+></button>
+					<button class="layers-options-entry" id="delete-all">XA</button>		
 				</div>
-			</div>
-			<div class="structure-options-list-container">
-				<ul class="structure-options-list">
-					<li><div class="structure-option-list-entry-wrapper">
-						<button class="structure-option-list-entry" id="assignment-structure">
-							Assignment structure
-						</button>
-					</div></li>
-					<li><div class="structure-option-list-entry-wrapper">
-						<button class="structure-option-list-entry" id="structure-flow-settings">
-							Structure flow settings
-						</button>
-					</div></li>
-					<li><div class="structure-option-list-entry-wrapper">
-						<button class="structure-option-list-entry" id="structure-styles">
-							Structure styles
-						</button>
-					</div></li>
-				</ul>
-			</div>
-			<div class="close-structure-options-menu-wrapper">
-				<button id="close-structure-options-menu"><-</button>
-			</div>
-		</div>
-	</div>
- 	-->
-
-	<div class="layers-container-wrapper">
-		<div class="layers-contents-container-wrapper layers-contents-wrapper display-flex">
-			<div class="layers-container">HERE</div>
-			<div class="layers-options-container">
-				<button class="layers-options-entry" id="quick-add">+</button>
-				<button class="layers-options-entry" id="show-add-selection">+>></button>
-				<button class="layers-options-entry" id="delete-selected">X</button>
 			</div>
 			
 			<div class="variant-change-container-wrapper">
@@ -261,74 +274,249 @@
 	</div>
 
 
-	<div class="add-selection-menu">
-		<div class="menu-panel-container">
-			<button id="close-add-selection">CLOSE</button>
-		</div>
-
-		<div class="type-choices-container-wrapper">
-
-			<div class="type-choices-container">
-
-				<div class="type-choice-wrapper">
-					<div class="type-choice">
-						<div class="type-icon"></div>
-						<label>Single correct answer</label>
+	<div class="add-selection-menu-wrapper">
+		<div class="add-selection-menu-container">
+		
+			<!-- types of selectables -->
+		
+			<div class="add-selection-types-container">
+			
+				<div class="add-selectable add-selectable-type add-selectable-type-selected" id="add-selectable-type-all">
+					<div class="add-selectable-img-wrapper">
+						<div class="add-selectable-img"></div>
 					</div>
-					<div class="config-option">
-						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt" checked> <label
-							for="last-selected-default-id">Set as default</label>
+					<div class="add-selectable-name-wrapper">
+						<span class="add-selectable-name">All types</span>
 					</div>
 				</div>
-
-				<div class="type-choice-wrapper">
-					<div class="type-choice">
-						<div class="type-icon"></div>
-						<label>Multiple correct answers</label>
+				
+				<div class="add-selectable add-selectable-type" id="add-selectable-type-questions">
+					<div class="add-selectable-img-wrapper">
+						<div class="add-selectable-img"></div>
 					</div>
-					<div class="config-option">
-						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> <label
-							for="last-selected-default-id">Set as default</label>
+					<div class="add-selection-types-name-wrapper">
+						<span class="add-selectable-name">Question types</span>
 					</div>
 				</div>
-
-				<div class="type-choice-wrapper">
-					<div class="type-choice">
-						<div class="type-icon"></div>
-						<label>Matching answers</label>
+				
+				<div class="add-selectable add-selectable-type" id="add-selectable-type-containers">
+					<div class="add-selectable-img-wrapper">
+						<div class="add-selectable-img"></div>
 					</div>
-					<div class="config-option">
-						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> <label
-							for="last-selected-default-id">Set as default</label>
+					<div class="add-selectable-name-wrapper">
+						<span class="add-selectable-name">Question containers types</span>
 					</div>
 				</div>
-
-				<div class="type-choice-wrapper">
-					<div class="type-choice">
-						<div class="type-icon"></div>
-						<label>Short answer</label>
-					</div>
-					<div class="config-option">
-						<input type="checkbox" id="last-selected-default-id"
-							name="last-selected-defalt"> <label
-							for="last-selected-default-id">Set as default</label>
+				
+				<!--  -->
+				
+			</div>
+			
+			<div class="add-selection-container-wrapper">
+			
+				<div class="add-selection-search-wrapper">
+					<div class="flex-rest"></div>
+					<div class="add-selection-search-bar-container">
+						<input class="add-selection-seach-bar" name="add-selection-search-bar" placeholder="Search...">
 					</div>
 				</div>
-
+				
+				<div class="add-selection-container-wrapper">
+				
+					<!-- All selectables -->
+				
+					<div class="add-selection-container display-flex" id="add-selectable-type-all-container">
+					
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-chapter">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Chapter</span>
+							</div>
+						</div>
+						 
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-task">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Task</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-pool">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question pool</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-blank">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Blank question</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-single-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with single correct answer</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-multiple-answers">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectale-name">Question with multiple correct answers</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-matching-answers">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with matching answers</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-short-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with short answer</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-long-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with long answer</span>
+							</div>
+						</div>
+						
+					</div>
+					
+					<!-- Question selectables -->
+					
+					<div class="add-selection-container" id="add-selectable-type-questions-container">
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-blank">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Blank question</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-single-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with single correct answer</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-multiple-answers">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectale-name">Question with multiple correct answers</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-matching-answers">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with matching answers</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-short-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with short answer</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-long-answer">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question with long answer</span>
+							</div>
+						</div>
+						
+					</div>
+					
+					<!-- Selectable containers -->
+					
+					<div class="add-selection-container" id="add-selectable-type-containers-container">
+					
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-chapter">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Chapter</span>
+							</div>
+						</div>
+						 
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-task">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Task</span>
+							</div>
+						</div>
+						
+						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-pool">
+							<div class="add-selectable-img-wrapper">
+								<div class="add-selectable-img"></div>
+							</div>
+							<div class="add-selectable-name-wrapper">
+								<span class="add-selectable-name">Question pool</span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="config-container">
-			<div class="config-option">
-				<input type="checkbox" id="last-selected-default-id"
-					name="last-selected-defalt"> <label
-					for="last-selected-default-id">Set last selected type as
-					default</label>
+		<div class="add-selection-bottom-container-wrapper">
+			<div class="add-selection-bottom-container">
+				<div class="flex-rest"></div>
+				<div class="add-selection-options-container">
+					<button class="add-selection-options-entry" id="select-add-selection">Select</button>
+					<button class="add-selection-options-entry" id="cancel-add-selection">Cancel</button>
+				</div>	
 			</div>
 		</div>
 	</div>
+	
+	
 </body>
 
 </html>

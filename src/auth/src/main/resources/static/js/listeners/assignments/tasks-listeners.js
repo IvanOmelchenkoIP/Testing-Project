@@ -1,11 +1,16 @@
 "use strict";
 
+//page
 import selectTaskListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/select-task-handler.js";
 import deselectTaskListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/deselect-task-handler.js";
-import showAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/show-add-selection-handler.js";
-import closeAddSelectionListenerHandler from "../../functions/listener-handlers/assignments/tasks/configs/close-add-selection-handler.js";
-
-
+//add selection
+import addSelectionShowListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-show-handler.js";
+import addSelectionCancelListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-cancel-handler.js";
+import selectableListenerHandler from "../../functions/listener-handlers/assignments/layers/add/selectable-handler.js";
+import addSelectionListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-handler.js";
+import addSelectionSearchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-search-handler.js";
+import addSelectionResetSearchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-reset-search-handler.js";
+//variants
 import variantSelectionCallListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-call-handler.js";
 import variantSelectionCloseListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-close-handler.js";
 import addVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/add-variant-handler.js";
@@ -33,14 +38,37 @@ import { domSelector } from "../../utils/html/html-utils.js";
 (() => {
 	domSelector.document
 			   .selectById("show-add-selection")
-			   .addEventListener("click", showAddSelectionListenerHandler);
+			   .addEventListener("click", addSelectionShowListenerHandler);
 })();
 
 (() => {
 	domSelector.document
-		       .selectById("close-add-selection")
-		       .addEventListener("click", closeAddSelectionListenerHandler);
+		       .selectById("cancel-add-selection")
+		       .addEventListener("click", addSelectionCancelListenerHandler);
 })();
+
+(() => {
+	const selectables = domSelector.document.selectAllByClass("add-selectable");
+	for (const selectable of selectables) selectable.addEventListener("click", selectableListenerHandler);	
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("select-add-selection")
+			   .addEventListener("click", addSelectionListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectFirstByName("add-selection-search-bar")
+			   .addEventListener("keyup", addSelectionSearchListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectFirstByName("add-selection-sarch-bar")
+			   .addEventListener("reset", addSelectionResetSearchListenerHandler);
+})
 
 // structure options
 /*

@@ -13,7 +13,11 @@ const constructorOnloadHandler = () => {
 		task: new LayerOrderState(),
 		chapter: new LayerOrderState(),
 		variant: new LayerOrderState(),  
-	}
+	};
+	assignmentConstructorContext.addSelection = {
+		typeItems: null,
+		selectedItem: null,
+	};
 }
 
 export default constructorOnloadHandler;
