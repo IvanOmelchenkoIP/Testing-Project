@@ -3,12 +3,12 @@
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
 import { domSelector } from "../../../../../utils/html/html-utils.js"; 
 
-const deselectItemMediator = () => {
+const resetSelectedItemMediator = () => {
 	if (assignmentConstructorContext.addSelection.selectedItem != null) {
-		const selected = domSelector.document.selectFirstByClass("add-selectable-item-selected");
-		selected.classList.remove("add-selectable-item-selected");
 		assignmentConstructorContext.addSelection.selectedItem = null;
+		const selectedItem = domSelector.document.selectFirstByClass("add-selectable-item-selected");
+		selectedItem.classList.remove("add-selectable-item-selected");
 	}
 }
 
-export default deselectItemMediator;
+export default resetSelectedItemMediator;

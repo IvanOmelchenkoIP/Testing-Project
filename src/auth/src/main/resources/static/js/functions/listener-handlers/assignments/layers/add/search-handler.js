@@ -1,12 +1,12 @@
 "use strict";
 
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
-import addSelectionSearchItemsResetMediator from "../../../../mediators/assignment/layers/add/add-selection-search-items-reset-mediator.js";
+import searchItemsResetMediator from "../../../../mediators/assignment/layers/add/search-items-reset-mediator.js";
 
 const searchListenerHandler = (event) => {
 	const value = event.target.value;
 	if (value == "") {
-		addSelectionSearchItemsResetMediator();
+		searchItemsResetMediator();
 		return;
 	} 
 	const itemTypes = assignmentConstructorContext.addSelection.typeItems;

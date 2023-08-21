@@ -2,7 +2,7 @@
 
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
 
-const addSelectionSearchItemsResetMediator = () => {
+const searchItemsResetMediator = () => {
 	const typeItems = assignmentConstructorContext.addSelection.typeItems;
 	const items = Object.values(typeItems);
 	for (const item of items) {
@@ -12,4 +12,4 @@ const addSelectionSearchItemsResetMediator = () => {
 	}
 }
 
-export default addSelectionSearchItemsResetMediator;
+export default searchItemsResetMediator;

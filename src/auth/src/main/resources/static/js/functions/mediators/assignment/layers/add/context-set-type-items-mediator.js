@@ -3,7 +3,7 @@
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
 import { domSelector } from "../../../../../utils/html/html-utils.js"; 
  
-const addSelectionSetTypeItemsMediator = () => {
+const contextSetTypeItemsMediator = () => {
 	const container = domSelector.document.selectFirstByClass("add-selection-container display-flex");
 	const items = domSelector.selectAllByClass(container, "add-selectable-item");
 	const typeItems = new Object();
@@ -14,4 +14,4 @@ const addSelectionSetTypeItemsMediator = () => {
 	assignmentConstructorContext.addSelection.typeItems = typeItems;	
 }
 
-export default addSelectionSetTypeItemsMediator;
+export default contextSetTypeItemsMediator;

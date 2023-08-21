@@ -1,8 +1,9 @@
 "use strict";
 
 import { domSelector } from "../../../../../utils/html/html-utils.js";
-import addSelectionResetSelectedItemMediator from "../../../../mediators/assignment/layers/add/add-selection-reset-selected-item-mediator.js";
-import addSelectionSetTypeItemsMediator from "../../../../mediators/assignment/layers/add/add-selection-set-type-items-mediator.js";
+import resetSelectedItemMediator from "../../../../mediators/assignment/layers/add/reset-selected-item-mediator.js";
+import contextSetTypeItemsMediator from "../../../../mediators/assignment/layers/add/context-set-type-items-mediator.js";
+import resetSelectedTypeContainerMediator from "../../../../mediators/assignment/layers/add/reset-selected-type-container-mediator.js";
 
 const selectableTypesListenerHandler = (currentSelected) => {
 	const previousSelected = domSelector.document.selectFirstByClass("add-selectable-type-selected");
@@ -12,15 +13,14 @@ const selectableTypesListenerHandler = (currentSelected) => {
 	
 	const currentSelectedContainerId = currentSelected.id + "-container";
 	const currentSelectedContainer = domSelector.document.selectById(currentSelectedContainerId);
-	const previousSelectedContainer = domSelector.document.selectFirstByClass("add-selection-container display-flex");
-	if (previousSelectedContainer) previousSelectedContainer.classList.remove("display-flex");
+	resetSelectedTypeContainerMediator();
 	currentSelectedContainer.classList.add("display-flex");
 	
-	addSelectionResetSelectedItemMediator();
+	resetSelectedItemMediator();
 
-	addSelectionSetTypeItemsMediator();
+	contextSetTypeItemsMediator();
 	
-	const resetSearch = domSelector.document.selectFirstByName("add-selection-search-reset");
+	const resetSearch = domSelector.document.selectById("add-selection-search-reset");
 	resetSearch.click();
 }
 
