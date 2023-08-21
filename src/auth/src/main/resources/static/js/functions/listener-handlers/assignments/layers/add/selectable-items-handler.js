@@ -4,7 +4,7 @@ import { domSelector } from "../../../../../utils/html/html-utils.js";
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
 
 const selectableItemsListenerHandler = (currentSelected) => {
-	if (assignmentConstructorContext.addedSelection != null) {
+	if (assignmentConstructorContext.addSelection.selectedItem != null) {
 		const previousSelected = domSelector.document.selectFirstByClass("add-selectable-item-selected");
 		previousSelected.classList.remove("add-selectable-item-selected")
 	}
