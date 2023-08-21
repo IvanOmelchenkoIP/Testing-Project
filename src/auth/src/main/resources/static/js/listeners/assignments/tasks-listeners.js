@@ -9,7 +9,6 @@ import addSelectionCancelListenerHandler from "../../functions/listener-handlers
 import selectableListenerHandler from "../../functions/listener-handlers/assignments/layers/add/selectable-handler.js";
 import addSelectionListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-handler.js";
 import addSelectionSearchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-search-handler.js";
-import addSelectionResetSearchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-reset-search-handler.js";
 //variants
 import variantSelectionCallListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-call-handler.js";
 import variantSelectionCloseListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-close-handler.js";
@@ -63,12 +62,6 @@ import { domSelector } from "../../utils/html/html-utils.js";
 			   .selectFirstByName("add-selection-search-bar")
 			   .addEventListener("keyup", addSelectionSearchListenerHandler);
 })();
-
-(() => {
-	domSelector.document
-			   .selectFirstByName("add-selection-sarch-bar")
-			   .addEventListener("reset", addSelectionResetSearchListenerHandler);
-})
 
 // structure options
 /*
