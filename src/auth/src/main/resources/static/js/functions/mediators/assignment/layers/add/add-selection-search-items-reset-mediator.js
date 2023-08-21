@@ -1,6 +1,7 @@
 "use strict";
 
 import assignmentConstructorContext from "../../../../../context/assignments/assignment-constructor-context.js";
+
 const addSelectionSearchItemsResetMediator = () => {
 	const typeItems = assignmentConstructorContext.addSelection.typeItems;
 	const items = Object.values(typeItems);

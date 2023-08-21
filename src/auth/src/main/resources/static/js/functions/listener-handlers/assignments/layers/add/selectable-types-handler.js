@@ -3,7 +3,6 @@
 import { domSelector } from "../../../../../utils/html/html-utils.js";
 import addSelectionResetSelectedItemMediator from "../../../../mediators/assignment/layers/add/add-selection-reset-selected-item-mediator.js";
 import addSelectionSetTypeItemsMediator from "../../../../mediators/assignment/layers/add/add-selection-set-type-items-mediator.js";
-import addSelectionSearchItemsResetMediator from "../../../../mediators/assignment/layers/add/add-selection-search-items-reset-mediator.js";
 
 const selectableTypesListenerHandler = (currentSelected) => {
 	const previousSelected = domSelector.document.selectFirstByClass("add-selectable-type-selected");
@@ -18,12 +17,11 @@ const selectableTypesListenerHandler = (currentSelected) => {
 	currentSelectedContainer.classList.add("display-flex");
 	
 	addSelectionResetSelectedItemMediator();
+
+	addSelectionSetTypeItemsMediator();
 	
-	addSelectionSetTypeItemsMediator(currentSelectedContainer);
-	
-	const searchBar = domSelector.document.selectFirstByName("add-selection-search-bar");
-	searchBar.value = "";
-	addSelectionSearchItemsResetMediator();
+	const resetSearch = domSelector.document.selectFirstByName("add-selection-search-reset");
+	resetSearch.click();
 }
 
 export default selectableTypesListenerHandler;

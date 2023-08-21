@@ -8,7 +8,8 @@ import addSelectionShowListenerHandler from "../../functions/listener-handlers/a
 import addSelectionCancelListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-cancel-handler.js";
 import selectableListenerHandler from "../../functions/listener-handlers/assignments/layers/add/selectable-handler.js";
 import addSelectionListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-handler.js";
-import addSelectionSearchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/add-selection-search-handler.js";
+import searchListenerHandler from "../../functions/listener-handlers/assignments/layers/add/search-handler.js";
+import searchResetListenerHandler from "../../functions/listener-handlers/assignments/layers/add/search-reset-handler.js";
 //variants
 import variantSelectionCallListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-call-handler.js";
 import variantSelectionCloseListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/variant-selection-close-handler.js";
@@ -60,7 +61,13 @@ import { domSelector } from "../../utils/html/html-utils.js";
 (() => {
 	domSelector.document
 			   .selectFirstByName("add-selection-search-bar")
-			   .addEventListener("keyup", addSelectionSearchListenerHandler);
+			   .addEventListener("keyup", searchListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("add-selection-search-reset")
+			   .addEventListener("click", searchResetListenerHandler);
 })();
 
 // structure options
