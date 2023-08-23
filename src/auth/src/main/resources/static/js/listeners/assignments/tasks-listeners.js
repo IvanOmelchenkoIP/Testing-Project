@@ -16,7 +16,9 @@ import variantSelectionCloseListenerHandler from "../../functions/listener-handl
 import addVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/add-variant-handler.js";
 import selectVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/select-variant-handler.js";
 import deleteVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/delete-variant-handler.js";
-
+//layers management
+import toggleChildLayersListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/toggle-child-layers-handler.js";
+// dom selector
 import { domSelector } from "../../utils/html/html-utils.js";
 
 // selecting and deselecting tasks
@@ -125,4 +127,11 @@ import { domSelector } from "../../utils/html/html-utils.js";
 (() => {
 	const variantDeleteBtns = domSelector.document.selectAllByClass("delete-variant");
 	for (const deleteBtn of variantDeleteBtns) deleteBtn.addEventListener("click", deleteVariantListenerHandler);
+})();
+
+// layers management
+
+(() => {
+	const toggleChildrenBtns = domSelector.document.selectAllByClass("toggle-row-children");
+	for (const toggleBtn of toggleChildrenBtns) toggleBtn.addEventListener("click", toggleChildLayersListenerHandler);	
 })();
