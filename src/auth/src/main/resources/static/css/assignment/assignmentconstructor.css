@@ -256,10 +256,22 @@ body {
 	flex-direction: column;
 }
 
+.current-row-underline {
+	height: 0.15rem;
+	width: 100%;
+}
+
 .chapter-underline {
 	height: 0.2rem;
-	width: 100%;
 	background: darkblue;
+}
+
+.task-underline {
+	background: darkgray;
+}
+
+.qpool-underline {
+	background: darkgreen;
 }
 
 .chapter-left-margin {
@@ -290,8 +302,16 @@ body {
 	width: 85%;
 }
 
-.question-contents {
+.question-layer {
 	background: lightgray;
+}
+
+.task-layer {
+	background: purple;
+}
+
+.qpool-layer {
+	background: green;
 }
 
 .layer-icon-container {
@@ -303,6 +323,14 @@ body {
 
 .layers-margin {
 	height: 1px;
+}
+
+.task-child-layers {
+	background: cyan;
+}
+
+.qpool-child-layers {
+	background: lightgreen;
 }
 
 /*-------------------------------------*/
