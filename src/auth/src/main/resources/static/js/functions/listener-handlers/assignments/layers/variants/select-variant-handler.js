@@ -4,14 +4,12 @@ import changeVariantMediator from "../../../../mediators/assignment/layers/varia
 import variantSelectionCloseListenerHandler from "./variant-selection-close-handler.js";
 
 const selectVariantListenerHandler = (event) => {
-	let selectedVariant = event.target;
-	if (selectedVariant == null || selectedVariant == undefined) return;
-	if (selectedVariant.className.split(" ").shift() == "delete-variant") return;
+	let target = event.target;
+	if (target == null || target == undefined) return;
+	if (target.className.split(" ").shift() == "delete-variant") return;
 	if (selectedVariant.className != "variant-row") {
-		while (true) {
-			if (selectedVariant.className.split(" ").shift() == "variant-row") break;
-			selectedVariant = selectedVariant.parentElement;
-		}
+		const selectedVariant = target.closest(".variant-row");
+		if (selectedVariant == null || selectedVariant == undefined) return;
 	}
 	changeVariantMediator(selectedVariant);
 	variantSelectionCloseListenerHandler();

@@ -13,12 +13,9 @@ const SELECTABLES_LISTENER_HANDLER = {
 };
 
 const selectableListenerHandler = (event) => {
-	let selectable = event.target;
+	let target = event.target;
+	const selectable = target.closest(".add-selectable");
 	if (selectable == null || selectable == undefined) return;
-	while (true) {
-		if (selectable.className.split(" ")[0] == "add-selectable") break;
-		selectable = selectable.parentElement;
-	}
 	const selectableType = selectable.className.split(" ")[1];
 	const handler = SELECTABLES_LISTENER_HANDLER[selectableType];
 	handler(selectable);

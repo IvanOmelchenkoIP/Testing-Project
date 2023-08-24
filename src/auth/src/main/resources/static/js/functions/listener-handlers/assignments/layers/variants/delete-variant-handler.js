@@ -4,12 +4,9 @@ import changeVariantMediator from "../../../../mediators/assignment/layers/varia
 import { domSelector } from "../../../../../utils/html/html-utils.js";
 
 const deletedVariantListenerHandler = (event) => {
-	let deletedVariant = event.target;
+	const target = event.target;
+	const deletedVariant = target.closest(".variant-row");
 	if (deletedVariant == null || deletedVariant == undefined) return;
-	while (true) {
-		if (deletedVariant.className.split(" ").shift() == "variant-row") break;
-		deletedVariant = deletedVariant.parentElement;
-	}
 	
 	const deletedSelectionIndicator = domSelector.selectFirstByClass(deletedVariant, "selection-indicator");
 	if (deletedSelectionIndicator.className.split(" ").length > 1) {
