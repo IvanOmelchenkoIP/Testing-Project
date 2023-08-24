@@ -14,12 +14,124 @@
 
 <body>
 	<div class="layers-area">
-		<div class="layers-contents-container-wrapper layers-contents-wrapper display-flex">
+		<div
+			class="layers-contents-container-wrapper layers-contents-wrapper display-flex">
 			<div class="layers-container">
-						
 				<div class="layers-margin"></div>
-						
-				<div class="layer-row chapter-row">
+				<div class="layers-wrapper">
+
+					<div class="layer-row chapter-row">
+						<div class="layer-row-wrapper">
+							<div class="current-row-wrapper">
+								<div class="current-layer">
+									<div class="row-contents">
+										<div class="chapter-left-margin"></div>
+										<div class="chapter-name-wrapper">
+											<div class="chapter-selection-indicator"></div>
+											<div class="layer-name-container">
+												<input class="layer-name" value="Chapter 1" readonly="true">
+											</div>
+										</div>
+										<div class="chapter-right-margin"></div>
+									</div>
+									<div class="row-options">
+										<div class="row-option">
+											<button class="toggle-row-children">></button>
+										</div>
+									</div>
+								</div>
+								<div class="chapter-underline"></div>
+							</div>
+							<div class="child-layers-wrapper">
+								<div class="chapter-children-margin"></div>
+								<div class="child-layers"></div>
+								<div class="chapter-end-margin"></div>
+							</div>
+						</div>
+						<div class="layers-margin"></div>
+					</div>
+
+					<div class="layer-row question-row">
+						<div class="layer-row-wrapper">
+							<div class="current-row-wrapper">
+								<div class="current-layer">
+									<div class="row-contents question-contents">
+										<div class="layer-icon-container">
+											<span class="layer-icon">Q</span>
+										</div>
+										<div class="layer-name-container">
+											<input class="layer-name" value="Question 1" readonly="true">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="layers-margin"></div>
+					</div>
+
+					<div class="layer-row task-row">
+						<div class="layer-row-wrapper">
+							<div class="current-row-wrapper">
+								<div class="current-layer">
+									<div class="row-options">
+										<div class="row-option">
+											<button class="toggle-row-children">></button>
+										</div>
+									</div>
+									<div class="row-contents">
+										<div class="layer-icon-container">
+											<span class="layer-icon">T</span>
+										</div>
+										<div class="layer-name-container">
+											<input class="layer-name" value="Task 1" readonly="true">
+										</div>
+									</div>
+								</div>
+								<div class="chapter-underline"></div>
+							</div>
+							<div class="child-layers-wrapper">
+								<div class="layers-margin"></div>
+								<div class="child-layers"></div>
+								<div class="layers-margin"></div>
+								<div class="child-layers-underline task-children-underline"></div>
+							</div>
+						</div>
+						<div class="layers-margin"></div>
+					</div>
+
+					<div class="layer-row qpool-row">
+						<div class="layer-row-wrapper">
+							<div class="current-row-wrapper">
+								<div class="current-layer">
+									<div class="row-options">
+										<div class="row-option">
+											<button class="toggle-row-children">></button>
+										</div>
+									</div>
+									<div class="row-contents">
+										<div class="layer-icon-container">
+											<span class="layer-icon">P</span>
+										</div>
+										<div class="layer-name-container">
+											<input class="layer-name" value="Question pool 1" readonly="true">
+										</div>
+									</div>
+								</div>
+								<div class="chapter-underline"></div>
+							</div>
+							<div class="child-layers-wrapper">
+								<div class="layers-margin"></div>
+								<div class="child-layers"></div>
+								<div class="layers-margin"></div>
+								<div class="child-layers-underline task-children-underline"></div>
+							</div>
+						</div>
+						<div class="layers-margin"></div>
+					</div>
+
+				</div>
+
+				<!--<div class="layer-row chapter-row">
 					<div class="current-chapter-wrapper">
 						<div class="current-layer">
 							<div class="row-contents">
@@ -87,22 +199,23 @@
 									<div class="layers-margin"></div>
 								</div>
 							</div>
-							 -->							
-						</div>
+							 -->
+				<!-- </div>
 						<div class="chapter-end-margin"></div>
 					</div>
-				</div>
-			
+				</div> -->
+
 			</div>
 			<div class="layers-options-container-wrapper">
-				<div class="layers-options-container general-layers-options display-flex">
+				<div
+					class="layers-options-container general-layers-options display-flex">
 					<button class="layers-options-entry" id="add-blank-question">+Q</button>
 					<button class="layers-options-entry" id="add-new-chapter">+C</button>
 					<button class="layers-options-entry" id="show-add-selection">+></button>
-					<button class="layers-options-entry" id="delete-all">XA</button>		
+					<button class="layers-options-entry" id="delete-all">XA</button>
 				</div>
 			</div>
-			
+
 			<div class="variant-change-container-wrapper">
 				<button id="call-variant-selection">
 					<div class="editable-variant-name">Variant 1</div>
@@ -110,7 +223,7 @@
 				</button>
 			</div>
 		</div>
-		
+
 		<div class="layers-contents-container-wrapper variants-menu-wrapper">
 			<div class="layers-title-container-wrapper">
 				<div class="layers-container-title">
@@ -136,7 +249,7 @@
 						<div class="add-new-variant-wrapper">
 							<button id="add-new-variant">+ Add new variant</button>
 						</div>
-					</div>					
+					</div>
 				</div>
 			</div>
 			<div class="layers-variants-options-contaier">
@@ -276,12 +389,13 @@
 
 	<div class="add-selection-menu-wrapper">
 		<div class="add-selection-menu-container">
-		
+
 			<!-- types of selectables -->
-		
+
 			<div class="add-selection-types-container">
-			
-				<div class="add-selectable add-selectable-type" id="add-selectable-type-all">
+
+				<div class="add-selectable add-selectable-type"
+					id="add-selectable-type-all">
 					<div class="add-selectable-img-wrapper">
 						<div class="add-selectable-img"></div>
 					</div>
@@ -289,8 +403,9 @@
 						<span class="add-selectable-name">All types</span>
 					</div>
 				</div>
-				
-				<div class="add-selectable add-selectable-type" id="add-selectable-type-questions">
+
+				<div class="add-selectable add-selectable-type"
+					id="add-selectable-type-questions">
 					<div class="add-selectable-img-wrapper">
 						<div class="add-selectable-img"></div>
 					</div>
@@ -298,8 +413,9 @@
 						<span class="add-selectable-name">Question types</span>
 					</div>
 				</div>
-				
-				<div class="add-selectable add-selectable-type" id="add-selectable-type-containers">
+
+				<div class="add-selectable add-selectable-type"
+					id="add-selectable-type-containers">
 					<div class="add-selectable-img-wrapper">
 						<div class="add-selectable-img"></div>
 					</div>
@@ -307,28 +423,32 @@
 						<span class="add-selectable-name">Question containers types</span>
 					</div>
 				</div>
-				
+
 				<!--  -->
-				
+
 			</div>
-			
+
 			<div class="add-selection-container-wrapper">
-			
+
 				<div class="add-selection-search-wrapper">
 					<div class="flex-rest"></div>
 					<div class="add-selection-search-bar-container">
-						<button class="add-selection-reset-search-btn" id="add-selection-search-reset">X</button>
-						<input class="add-selection-seach-bar" name="add-selection-search-bar" placeholder="Search...">
+						<button class="add-selection-reset-search-btn"
+							id="add-selection-search-reset">X</button>
+						<input class="add-selection-seach-bar"
+							name="add-selection-search-bar" placeholder="Search...">
 					</div>
 				</div>
-				
+
 				<div class="add-selection-container-wrapper">
-				
+
 					<!-- All selectables -->
-				
-					<div class="add-selection-container" id="add-selectable-type-all-container">
-					
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-chapter">
+
+					<div class="add-selection-container"
+						id="add-selectable-type-all-container">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-chapter">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -336,8 +456,9 @@
 								<span class="add-selectable-name">Chapter</span>
 							</div>
 						</div>
-						 
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-task">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-task">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -345,8 +466,9 @@
 								<span class="add-selectable-name">Task</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-pool">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-pool">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -354,8 +476,9 @@
 								<span class="add-selectable-name">Question pool</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-blank">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-blank">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -363,59 +486,71 @@
 								<span class="add-selectable-name">Blank question</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-single-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-single-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with single correct answer</span>
+								<span class="add-selectable-name">Question with single
+									correct answer</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-multiple-answers">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-multiple-answers">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with multiple correct answers</span>
+								<span class="add-selectable-name">Question with multiple
+									correct answers</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-matching-answers">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-matching-answers">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with matching answers</span>
+								<span class="add-selectable-name">Question with matching
+									answers</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-short-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-short-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with short answer</span>
+								<span class="add-selectable-name">Question with short
+									answer</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-long-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-long-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with long answer</span>
+								<span class="add-selectable-name">Question with long
+									answer</span>
 							</div>
 						</div>
-						
+
 					</div>
-					
+
 					<!-- Question selectables -->
-					
-					<div class="add-selection-container" id="add-selectable-type-questions-container">
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-blank">
+
+					<div class="add-selection-container"
+						id="add-selectable-type-questions-container">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-blank">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -423,59 +558,71 @@
 								<span class="add-selectable-name">Blank question</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-single-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-single-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with single correct answer</span>
+								<span class="add-selectable-name">Question with single
+									correct answer</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-multiple-answers">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-multiple-answers">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with multiple correct answers</span>
+								<span class="add-selectable-name">Question with multiple
+									correct answers</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-matching-answers">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-matching-answers">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with matching answers</span>
+								<span class="add-selectable-name">Question with matching
+									answers</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-short-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-short-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with short answer</span>
+								<span class="add-selectable-name">Question with short
+									answer</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-long-answer">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-long-answer">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
 							<div class="add-selectable-name-wrapper">
-								<span class="add-selectable-name">Question with long answer</span>
+								<span class="add-selectable-name">Question with long
+									answer</span>
 							</div>
 						</div>
-						
+
 					</div>
-					
+
 					<!-- Selectable containers -->
-					
-					<div class="add-selection-container" id="add-selectable-type-containers-container">
-					
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-chapter">
+
+					<div class="add-selection-container"
+						id="add-selectable-type-containers-container">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-chapter">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -483,8 +630,9 @@
 								<span class="add-selectable-name">Chapter</span>
 							</div>
 						</div>
-						 
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-task">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-task">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -492,8 +640,9 @@
 								<span class="add-selectable-name">Task</span>
 							</div>
 						</div>
-						
-						<div class="add-selectable add-selectable-item" id="add-selectable-item-question-pool">
+
+						<div class="add-selectable add-selectable-item"
+							id="add-selectable-item-question-pool">
 							<div class="add-selectable-img-wrapper">
 								<div class="add-selectable-img"></div>
 							</div>
@@ -501,7 +650,7 @@
 								<span class="add-selectable-name">Question pool</span>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -510,14 +659,16 @@
 			<div class="add-selection-bottom-container">
 				<div class="flex-rest"></div>
 				<div class="add-selection-options-container">
-					<button class="add-selection-options-entry" id="select-add-selection">Select</button>
-					<button class="add-selection-options-entry" id="cancel-add-selection">Cancel</button>
-				</div>	
+					<button class="add-selection-options-entry"
+						id="select-add-selection">Select</button>
+					<button class="add-selection-options-entry"
+						id="cancel-add-selection">Cancel</button>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 </body>
 
 </html>

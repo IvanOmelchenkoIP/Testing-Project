@@ -74,33 +74,6 @@ import { domSelector } from "../../utils/html/html-utils.js";
 			   .addEventListener("click", searchResetListenerHandler);
 })();
 
-// structure options
-/*
-(() => {
-	domSelector.document
-			   .selectById("quick-add")
-			   .addEventListener("click", quickAddListenerHandler);
-})();
-
-(() => {
-	domSelector.document
-			   .selectById("call-structure-options-menu")
-			   .addEventListener("click", callStructureOptionsMenuListenerHandler);
-})();
-
-(() => {
-	domSelector.document
-			   .selectById("close-structure-options-menu")
-			   .addEventListener("click", closeStructureOptionsMenuListenerHandler);
-})();
-
-(() => {
-	const structureMenuEntries = domSelector.document.selectAllByClass("structure-option-list-entry");
-	for (const entry of structureMenuEntries) {
-		entry.addEventListener("click", selectStructureMenuOptionEntryListenerHandler);
-	} 
-})();
-*/
 // variant management
 
 (() => {
