@@ -18,6 +18,8 @@ import selectVariantListenerHandler from "../../functions/listener-handlers/assi
 import deleteVariantListenerHandler from "../../functions/listener-handlers/assignments/layers/variants/delete-variant-handler.js";
 //layers management
 import toggleChildLayersListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/toggle-child-layers-handler.js";
+import addLayerQuestionListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-question-handler.js";
+import addLayerChapterListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-chapter-handler.js";
 // dom selector
 import { domSelector } from "../../utils/html/html-utils.js";
 
@@ -134,4 +136,16 @@ import { domSelector } from "../../utils/html/html-utils.js";
 (() => {
 	const toggleChildrenBtns = domSelector.document.selectAllByClass("toggle-row-children");
 	for (const toggleBtn of toggleChildrenBtns) toggleBtn.addEventListener("click", toggleChildLayersListenerHandler);	
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("add-blank-question")
+			   .addEventListener("click", addLayerQuestionListenerHandler);
+})();
+
+(() => {
+	domSelector.document
+			   .selectById("add-new-chapter")
+			   .addEventListener("click", addLayerChapterListenerHandler);
 })();

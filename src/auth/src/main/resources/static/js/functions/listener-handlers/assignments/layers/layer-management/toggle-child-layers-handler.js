@@ -10,4 +10,4 @@ const toggleChildLayersListenerHandler = (event) => {
 	target.innerText = target.innerText == ">" ? "<" : ">";
 }
 
-export default toggleChildLayersListenerHandler
+export default toggleChildLayersListenerHandler;
