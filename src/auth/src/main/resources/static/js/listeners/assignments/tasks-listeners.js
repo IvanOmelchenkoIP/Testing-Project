@@ -20,6 +20,9 @@ import deleteVariantListenerHandler from "../../functions/listener-handlers/assi
 import toggleChildLayersListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/toggle-child-layers-handler.js";
 import addLayerQuestionListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-question-handler.js";
 import addLayerChapterListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-chapter-handler.js";
+import addLayerTaskListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-task-handler.js";
+import addLayerQuestionPoolListenerHandler from "../../functions/listener-handlers/assignments/layers/layer-management/add-layer-qpool-handler.js";
+
 // dom selector
 import { domSelector } from "../../utils/html/html-utils.js";
 

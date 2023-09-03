@@ -10,7 +10,7 @@ class RowContentsChapterPreset extends AbstractConstructor {
 	constructor(icon, name, selection) {
 		return domConstructor.newDiv().addClasses("row-contents").addChildren(
 			domConstructor.newDiv().addClasses("chapter-left-margin").getElement(),
-			domConstructor.newDiv().addClasses().addChildren(
+			domConstructor.newDiv().addClasses("chapter-name-wrapper").addChildren(
 				LayerSelectionPreset.new(selection),
 				LayerIconContainerPreset.new(icon),
 				LayerNameContainerPreset.new(name)
