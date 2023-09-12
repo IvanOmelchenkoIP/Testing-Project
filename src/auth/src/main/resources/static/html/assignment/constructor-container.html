@@ -3,34 +3,95 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Assignment Creator</title>
 <link rel="stylesheet" href="../../css/generic/generic-styles.css">
+<link rel="stylesheet" href="../../css/assignments/constructor.css">
 </head>
 
 <body>
-	<div class="container">
-		<div class="menu-container">
-			<div class="main-menu-container">
-				<div class="menu-instance">
-					<button id="get-assignment-settings">Settings</button>	
-				</div>
-				
-				<div class="menu-instance">
-					<button id="get-assignment-constructor">Assignment Constructor</button>
-				</div>
-				
-				<div class="menu-instance">
-					<button id="get-assignment-stats">Assignment Statistics</button>
-				</div>
-				
-				<div class="menu-instance">
-					<button id="get-assignment-preview">Assignment Preview</button>
+	<div class="displayable-container-wrapper">
+		<div class="menu-wrapper">
+			<div class="menu-navigation-area-wrapper">
+				<ul>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item">
+							<div class="menu-navigation-item-name">
+								<span>Settings</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item">
+							<div class="menu-navigation-item-name">
+								<span>Layers</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item">
+							<div class="menu-navigation-item-name">
+								<span>Preview</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<div class="menu-assignment-area-wrapper">
+				<div class="menu-assignment-used-area">
+					<div class="menu-assignment-area-options">
+						<button class="menu-assignment-area-option-item"
+							id="assignment-contructor-return"><</button>
+						<button class="menu-assignment-area-option-item"
+							id="assignment-constructor-cancel">X</button>
+					</div>
+					<div class="menu-assignment-name-wrapper">
+						<div class="menu-assignment-route">assignments/constructor/</div>
+						<div class="menu-assignment-name-container">
+							<input id="menu-assignment-name" class="menu-assignment-name"
+								value="New Assignment">
+							<div class="menu-assignment-name-selector"></div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="menu-user-area-wrapper">
+				<div>DATA</div>
+			</div>
 		</div>
-		
-		<div class="fillable">
+		<div class="contents-wrapper"></div>
+		<!-- <div class="menu-wrapper">
+			<div class="menu">
+				<div class="navigation-area-wrapper">
+					<ul>
+						<li>
+							<div class="navigation-item-wrapper">
+								<div class="navigation-item-name">Settings</div>
+								<div class="navigation-item-selector-indicator"></div>
+							</div>
+						</li>
+						<li>
+							<div class="navigation-item-wrapper">
+								<div class="navigation-item-name">Layers</div>
+								<div class="navigation-item-selector-indicator"></div>
+							</div>
+						</li>
+						<li>
+							<div class="navigation-item-wrapper">
+								<div class="navigation-item-name">Preview</div>
+								<div class="navigation-item-selector-indicator"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="assignment-area-wrapper">AREA</div>
+				<div class="user-area-wrapper">USER</div>
+			</div>
 		</div>
+		<div class="contents-wrapper">
+			DATA
+		</div> -->
 	</div>
 </body>
 
