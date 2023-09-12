@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+html {
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	display: flex;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	box-sizing: border-box;
+	font-size: 1rem;
+}

@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("/assignment")
+@RequestMapping("/assignment/constructor")
 @RestController
 public class AssignmentController {
 
 	@GetMapping
 	public ModelAndView showTestCreatorTool() {
-		return new ModelAndView("assignment.html");
+		return new ModelAndView("../html/assignment/constructor-container.html");
 	}
 }
