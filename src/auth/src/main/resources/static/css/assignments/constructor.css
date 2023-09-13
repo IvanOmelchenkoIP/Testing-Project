@@ -114,6 +114,10 @@
 	background: #4a5255;
 }
 
+.menu-assignment-area-option-item:focus {
+	outline: none;
+}
+
 .menu-assignment-name-wrapper {
 	display: flex;
 }
@@ -130,13 +134,26 @@
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 1rem;
 }
 
-.menu-assignment-name:active {
-	border: none;
+.menu-assignment-name-selector {
+	height: 0.2rem;
 }
 
-.menu-assignment-name-container:hover > .menu-assignment-name-selector {
+.menu-assignment-name:focus {
+	outline: none;
+}
+
+.menu-assignment-name-container:hover>.menu-assignment-name-selector {
+	background: #95959f;
+}
+
+.menu-assignment-name-container.selected>.menu-assignment-name {
+	color: #EF6461
+}
+
+.menu-assignment-name-container.selected>.menu-assignment-name-selector {
 	background: #EF6461;
 }
 
