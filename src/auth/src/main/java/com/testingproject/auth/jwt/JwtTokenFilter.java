@@ -37,8 +37,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		String token = "";
 		System.out.println("\n---------------------------\nCOOKIES");
-		Cookie[] cookies = request.getCookies();
-		for (Cookie cookie : cookies) System.out.println(cookie.getName() + " = " + cookie.getValue());
+		//Cookie[] cookies = request.getCookies();
+		//for (Cookie cookie : cookies) System.out.println(cookie.getName() + " = " + cookie.getValue());
 		final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (header == null || !header.startsWith(JWT_HEADER)) {
 			Cookie jwtCookie = WebUtils.getCookie(request, "jwtToken");
