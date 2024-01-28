@@ -12,39 +12,71 @@
 
 <body>
 	<div class="auth-form-container-wrapper">
-		<div class="auth-menu-container"></div>
+		<div class="auth-menu-container">
+			<div class="auth-menu teacher-registration-form">
+				<div class="logo-container">
+					<img src="" alt="logo">
+				</div>
+				<div class="message-container">
+					<span>Please fill in the form to register your Student
+						Account</span>
+				</div>
+				<div class="buttons-container">
+					<div class="auth-menu-btn-container">
+						<button class="auth-menu-btn select-register-teacher">I
+							want to register as a Teacher</button>
+					</div>
+					<div class="auth-menu-btn-container">
+						<button class="auth-menu-btn select-login">I already have
+							an account and want to Log In</button>
+					</div>
+					<div class="auth-menu-btn-container">
+						<button class="auth-menu-btn select-login">Return me to
+							Index Page</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="auth-form-container">
-			
+			<div class="auth-form teacher-registration-form">
+				<div class="form-title-container">
+					<div class="form-title">
+						<span>Student Account Registration</span>
+					</div>
+				</div>
+				<div class="fillable-container">
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Username"
+							name="username" required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your First Name"
+							name="firstname" required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Second Name"
+							name="secondname" required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Email" name="email"
+							required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Username"
+							name="username" required>
+					</div>
+				</div>
+				<div class="form-button-container">
+					<button class="form-button" id="register-teacher">Register</button>
+				</div>
+				<div class="msg-field-container">
+					<div class="msg-field">
+						<p id="msg-field"></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- 
-	<form>
-		<div class="register-form">
-			<div class="input-form">
-				<p id="username-error-field"></p>
-				<input type="text" placeholder="Enter Your Username" name="username"
-					autofocus required>
-			</div>
-			<div class="input-form">
-				<p id="email-error-field"></p>
-				<input type="email" placeholder="Enter Your Email" name="email"
-					required>
-			</div>
-			<div class="input-form">
-				<p id="passwd-error-field"></p>
-				<input type="text" placeholder="Enter Your Password" name="passwd"
-					required>
-			</div>
-
-			<button type="button" id="register-user">Sign Up</button>
-			<a href="./login">Already Have An Account? Log In</a>
-
-			<div>
-				<p id="error-field"></p>
-			</div>
-		</div>
-	</form>	
-	 -->
 </body>
 
 </html>
