@@ -24,7 +24,7 @@ import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.http.Cookie;
 
-@RequestMapping("/register")
+@RequestMapping("/join/register")
 @RestController
 public class RegisterController {
 
@@ -43,11 +43,14 @@ public class RegisterController {
 	@Autowired
 	private PasswordEncoder encoder;
 
-	@GetMapping
-	public ModelAndView showRegisterPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("register.html");
-		return mav;
+	@GetMapping("/student")
+	public ModelAndView showStudentRegisterPage() {
+		return new ModelAndView("../../register-student.html");
+	}
+	
+	@GetMapping("teacher")
+	public ModelAndView showTeacherRegistrationPage() {
+		return new ModelAndView("../../register-teacher.html");
 	}
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

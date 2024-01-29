@@ -22,7 +22,7 @@ import com.testingproject.auth.service.UserService;
 
 import jakarta.servlet.http.Cookie;
 
-@RequestMapping("/login")
+@RequestMapping("/join/login")
 @RestController
 public class LoginController {
 
@@ -40,9 +40,8 @@ public class LoginController {
 
 	@GetMapping
 	public ModelAndView showLoginPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("login.html");
-		return mav;
+		System.out.println("ok");
+		return new ModelAndView("../login.html");
 	}
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
