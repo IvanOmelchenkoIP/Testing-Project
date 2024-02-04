@@ -1,7 +1,11 @@
 "use strict";
 
 import { userAuthService } from "../../../services/services.js";
+<<<<<<< HEAD
 import domSelector from "../../../dom/select/instances/dom-selector.js";
+=======
+import selector from "../dom/select/dom-selector.js";
+>>>>>>> main
 import authValidateMediator from "../../../mediators/user/auth-validate-mediator.js";
 import authResetErrorFieldsMediator from "../../../mediators/user/auth-reset-error-mediator.js";
 import deepCopy from "../../../utils/generic/deep-copy/deep-copy.js";

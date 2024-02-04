@@ -7,6 +7,7 @@ import storeWorkspaceHtml from "../../callbacks/workspace/navigation/store-works
 
 import { /*cookiesProcessor,*/ sessionStorageProcessor } from "../../data/storage/storages.js";
 
+
 const navigateMediator = (route, state) => {
 	if (sessionStorageProcessor.getItem("workspaceState") == state) return;
 	
@@ -16,7 +17,6 @@ const navigateMediator = (route, state) => {
 	fetchUtil.getHtml({
 		route: route,
 		headers: allHeaders,
-		//jwtToken: jwt,
 		htmlCallback: htmlCallback,
 		sessionStorageCallback: storeWorkspaceHtml
 	});
