@@ -1,9 +1,10 @@
 "use strict";
 
 const ROUTES = {
+	main: "/",
 	register: "/register",
 	login: "/login",
-	logout: "/logout",
+	logout: "/logoutUser",
 	emailVerify: "/verifyEmail",
 	resetPassword: "/resetPasswd",
 	workspace: "/workspace",

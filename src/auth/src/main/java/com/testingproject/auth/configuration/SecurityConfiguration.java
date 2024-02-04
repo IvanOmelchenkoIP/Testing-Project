@@ -34,7 +34,7 @@ public class SecurityConfiguration {
 				.requestMatchers("/workspace**", "/workspace/**", "/workspaceDashboard**", "/workspaceDashboard/**",
 						"/workspaceArchive**", "/workspaceArchive/**", "/workspaceCourses**", "/workspaceCourses/**")
 				.authenticated()
-				.requestMatchers("/**", "/register**", "register/**", "/login**", "/login/**", "/verifyEmail**",
+				.requestMatchers("/**", "join**", "join/**", "join/register**", "register/**", "/login**", "/login/**", "/verifyEmail**",
 						"/verifyEmail/**", "/resetPasswd**", "/resetPasswd/**")
 				.permitAll().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class).build();
