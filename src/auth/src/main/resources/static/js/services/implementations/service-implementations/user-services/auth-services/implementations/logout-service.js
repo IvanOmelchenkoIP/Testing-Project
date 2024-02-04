@@ -2,6 +2,8 @@
 
 import AbstractService from "../../../../../abstract-service/abstract-service.js";
 import { fetchUtil } from "../../../../../../utils/fetch/instances/fetch-util/fetch-utils.js";
+import allHeadersMediator from "../../../../../../mediators/fetch/headers/all-headers-mediator.js";
+import logoutCallback from "../../../../../../callbacks/user/auth/logout-callback.js";
 
 class LogoutService extends AbstractService {
 	constructor(route) {
@@ -9,11 +11,12 @@ class LogoutService extends AbstractService {
 	}
 
 	static withRoute(route) {
-		new LogoutService(route);
+		return new LogoutService(route);
 	}
 
 	execute(...params) {
-		fetchUtil.post({ route: this._route });
+		const allHeaders = allHeadersMediator();
+		fetchUtil.post({ route: this._route, headers: allHeaders, resSuccessCallback: logoutCallback });
 	}
 }
 

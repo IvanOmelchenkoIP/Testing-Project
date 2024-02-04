@@ -7,7 +7,7 @@ class WorkspaceNavigationService {
 	
 	constructor(dashboardService, archiveService, coursesService) {
 		this.#dashboardService = dashboardService;
-			this.#archiveService = archiveService;
+		this.#archiveService = archiveService;
 		this.#coursesService = coursesService;
 	}
 	

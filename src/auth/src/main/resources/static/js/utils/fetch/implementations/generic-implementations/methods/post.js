@@ -16,10 +16,11 @@ const post = ({
 	fetch(route, {
 		method: FETCH_METHODS.post,
 		headers: headers,
+		credentials: "include",
 		body: JSON.stringify(json),
 	})
 		.then(
-			(response) => new Promise((resolve) =>
+			(response) => new Promise((resolve) => 
 				response.json().then((json) => resolve({ ok: response.ok, json }))
 			)
 		)

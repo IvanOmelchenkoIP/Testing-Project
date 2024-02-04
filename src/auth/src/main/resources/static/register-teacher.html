@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Log In Page</title>
+<title>Registration Page</title>
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="../../css/auth-forms.css">
@@ -18,20 +18,17 @@
 					<img src="" alt="logo">
 				</div>
 				<div class="message-container">
-					<span>Please fill in the form to log in your Account</span>
+					<span>Please fill in the form to register your Teacher
+						Account</span>
 				</div>
 				<div class="buttons-container">
-					<div class="auth-menu-btn-container">
-						<button class="auth-menu-btn select-register-teacher">I
-							want to register as a Teacher</button>
-					</div>
 					<div class="auth-menu-btn-container">
 						<button class="auth-menu-btn select-register-student">I
 							want to register as a Student</button>
 					</div>
 					<div class="auth-menu-btn-container">
-						<button class="auth-menu-btn select-forgot-password">I forgot my 
-							password and would like to reset it</button>
+						<button class="auth-menu-btn select-login">I already have
+							an account and want to Log In</button>
 					</div>
 					<div class="auth-menu-btn-container">
 						<button class="auth-menu-btn select-index">Return me to
@@ -41,10 +38,10 @@
 			</div>
 		</div>
 		<div class="auth-form-container">
-			<div class="auth-form teacher-registration-form">
+			<div class="auth-form student-registration-form">
 				<div class="form-title-container">
 					<div class="form-title">
-						<span>Log In</span>
+						<span>Teacher Account Registration</span>
 					</div>
 				</div>
 				<div class="fillable-container">
@@ -53,12 +50,24 @@
 							name="username" required>
 					</div>
 					<div class="input-field">
+						<input type="text" placeholder="Enter Your First Name"
+							name="firstname" required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Second Name"
+							name="secondname" required>
+					</div>
+					<div class="input-field">
+						<input type="text" placeholder="Enter Your Email" name="email"
+							required>
+					</div>
+					<div class="input-field">
 						<input type="password" placeholder="Enter Your Password"
 							name="password" required>
 					</div>
 				</div>
 				<div class="form-button-container">
-					<button class="form-button" id="login">Log In</button>
+					<button class="form-button" id="register-teacher">Register</button>
 				</div>
 				<div class="msg-field-container">
 					<div class="msg-field">

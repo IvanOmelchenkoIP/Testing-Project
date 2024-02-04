@@ -13,6 +13,7 @@ const getHtml = ({
 }) => {
 	fetch(route, {
 		method: FETCH_METHODS.get,
+		credentials: "same-origin",
 		headers: headers,
 	})
 		.then((response) => {
