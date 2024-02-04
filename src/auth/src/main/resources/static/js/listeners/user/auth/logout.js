@@ -1,9 +1,6 @@
 "use strict";
 
-import { userAuthService } from "../../../services/services.js";
-import domSelector from "../../../dom/select/instances/dom-selector.js";
+import { domSelector } from "../../../utils/html/html-utils.js";
+import logoutListenerHandler from "../../../functions/listener-handlers/user/auth/logout-handler.js";
 
-domSelector.selectById("logout-user").addEventListener("click", () => {
-	console.log("working");
-	userAuthService.logout({});
-});
+domSelector.document.selectById("logout-user").addEventListener("click", logoutListenerHandler);

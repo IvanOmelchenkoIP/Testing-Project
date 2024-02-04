@@ -1,0 +1,160 @@
+.displayable-container-wrapper {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-wrapper {
+	height: 3rem;
+	background: #313638;
+	display: flex;
+}
+
+.contents-wrapper {
+	flex-grow: 1;
+}
+
+/* menu */
+
+.menu-navigation-area-wrapper {
+	display: flex;
+}
+
+.menu-user-area-wrapper {
+	display: flex;
+}
+
+.menu-assignment-area-wrapper {
+	flex-grow: 1;
+	display: flex;
+}
+
+/* constructor navigation */
+.menu-navigation-area-wrapper > ul {
+	flex-grow: 1;
+	display: flex;
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+}
+
+.menu-navigation-item-wrapper {
+	flex-grow: 1;
+	display: flex;
+}
+
+.menu-navigation-item {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	font-size: 1rem;
+	background: none;
+	border: none;
+  	color: #E9E9EB;
+  	margin: 0;
+  	padding: 0;
+}
+
+.menu-navigation-item:hover {
+	background: #4a5255;
+}
+
+.menu-navigation-selector {
+	height: 0.25rem;
+	width: 100%;
+}
+
+.menu-navigation-item-name {
+	flex-grow: 1;
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
+	text-align: center;
+	display: flex;
+}
+
+.menu-navigation-item-name > span {
+	display: flex;
+   	align-items: center;	
+}
+
+.menu-navigation-item.selected > .menu-navigation-selector {
+	background: #EF6461;
+}
+
+.menu-navigation-item.selected > .menu-navigation-item-name {
+	color: #f5a3a0;
+}
+
+/* assignment data */
+
+.menu-assignment-used-area {
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.menu-assignment-area-options {
+	display: flex;
+	padding-right: 0.5rem;
+}
+
+.menu-assignment-area-option-item {
+	margin-left: 0.2rem;
+	font-size: 0.8rem;
+	color: #E9E9EB;
+	border-radius: 40%;
+	border-width: 0px;
+	height: 1.2rem;
+	width: 1.2rem;
+	background: none;
+}
+
+.menu-assignment-area-option-item:hover {
+	background: #4a5255;
+}
+
+.menu-assignment-area-option-item:focus {
+	outline: none;
+}
+
+.menu-assignment-name-wrapper {
+	display: flex;
+}
+
+.menu-assignment-route {
+	font-size: 0.9rem;
+	color: #95959f;
+}
+
+.menu-assignment-name {
+	border: none;
+	color: #E9E9EB;
+	background: none;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.menu-assignment-name-selector {
+	height: 0.2rem;
+}
+
+.menu-assignment-name:focus {
+	outline: none;
+}
+
+.menu-assignment-name-container:hover>.menu-assignment-name-selector {
+	background: #95959f;
+}
+
+.menu-assignment-name-container.selected>.menu-assignment-name {
+	color: #EF6461
+}
+
+.menu-assignment-name-container.selected>.menu-assignment-name-selector {
+	background: #EF6461;
+}
+
+/* user data */

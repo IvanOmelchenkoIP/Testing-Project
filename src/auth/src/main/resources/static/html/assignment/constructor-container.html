@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../css/generic/generic-styles.css">
+<link rel="stylesheet" href="../../css/assignments/constructor.css">
+<script type="module" defer src="../../js/listeners/assignments/constructor/constructor-main.js"></script>
+</head>
+
+<body>
+	<div class="displayable-container-wrapper">
+		<div class="menu-wrapper">
+			<div class="menu-navigation-area-wrapper">			
+				<ul>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item" id="menu-select-settings">
+							<div class="menu-navigation-item-name">
+								<span>Settings</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item" id="menu-select-layers">
+							<div class="menu-navigation-item-name">
+								<span>Layers</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+					<li class="menu-navigation-item-wrapper">
+						<button class="menu-navigation-item" id="menu-select-preview">
+							<div class="menu-navigation-item-name">
+								<span>Preview</span>
+							</div>
+							<div class="menu-navigation-selector"></div>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<div class="menu-assignment-area-wrapper">
+				<div class="menu-assignment-used-area">
+					<div class="menu-assignment-name-wrapper">
+						<div class="menu-assignment-route">assignments/constructor/</div>
+						<div class="menu-assignment-name-container">
+							<input id="menu-assignment-name" class="menu-assignment-name"
+								value="New Assignment">
+							<div class="menu-assignment-name-selector"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="menu-user-area-wrapper">
+				<div>DATA</div>
+			</div>
+		</div>
+		<div class="contents-wrapper">
+		
+		<!-- settings markdown -->
+		
+		<div class="assignment-settings">
+			<div class="assignment-settings-wrapper">
+				<div class="assignment-setings-container"></div>
+			</div>
+			<div class="assignment-save-wrapper">
+				<div class="assignment-save-container">
+					<button class="assignment-save-button" id="export">
+						<span></span>
+					</button>
+					<button class="assignment-save-button" id="synchronize-with-archive">
+					</button>
+					<button class="assignment-save-button" id="save-to-archive">
+						<span>Save to archive</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+	</div>
+</body>
+
+</html>
