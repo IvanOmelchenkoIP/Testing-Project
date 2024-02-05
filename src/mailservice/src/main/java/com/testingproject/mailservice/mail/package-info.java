@@ -1,0 +1,1 @@
+package com.testingproject.mailservice.mail;

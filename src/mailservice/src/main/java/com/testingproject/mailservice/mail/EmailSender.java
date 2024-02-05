@@ -1,4 +1,4 @@
-package com.testingproject.auth.mail;
+package com.testingproject.mailservice.mail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmailSenderService {
+public class EmailSender {
 	
 	@Autowired
 	private JavaMailSender mailSender;
